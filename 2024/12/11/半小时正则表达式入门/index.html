@@ -21,14 +21,14 @@
   
     <meta name="description" content="正则表达式基础今天想要学习一些正则表达式的内容，但是找了好几个教程都不怎么说人话，有点看不懂，为整理混乱的思绪，写一写来做个总结吧 简答介绍与吐槽在学习正则表达式之前我们应当先知道这是个什么东西：一种字符串匹配规则，用于筛选出满足条件的字符串。正则表达式在Java，JavaScript，Python等语言中得到了广泛的支持。但是，我有一点还是想吐槽的，这玩意的符号体系到底是谁想出来的，这是地球人该">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式">
-<meta property="og:url" content="http://soulmate.org.cn/2024/12/11/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:title" content="半小时正则表达式入门">
+<meta property="og:url" content="http://soulmate.org.cn/2024/12/11/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="Soul的小站">
 <meta property="og:description" content="正则表达式基础今天想要学习一些正则表达式的内容，但是找了好几个教程都不怎么说人话，有点看不懂，为整理混乱的思绪，写一写来做个总结吧 简答介绍与吐槽在学习正则表达式之前我们应当先知道这是个什么东西：一种字符串匹配规则，用于筛选出满足条件的字符串。正则表达式在Java，JavaScript，Python等语言中得到了广泛的支持。但是，我有一点还是想吐槽的，这玩意的符号体系到底是谁想出来的，这是地球人该">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Soulmate404/img/main/img/bfd37b4c-006e-4deb-957b-39de872f2467.jpg">
-<meta property="article:published_time" content="2024-12-11T04:58:58.000Z">
-<meta property="article:modified_time" content="2024-12-11T11:52:07.555Z">
+<meta property="article:published_time" content="2024-12-11T11:57:33.000Z">
+<meta property="article:modified_time" content="2024-12-11T11:59:11.082Z">
 <meta property="article:author" content="Soul">
 <meta property="article:tag" content="杂谈">
 <meta name="twitter:card" content="summary_large_image">
@@ -38,7 +38,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>正则表达式 - Soul的小站</title>
+  <title>半小时正则表达式入门 - Soul的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="正则表达式"></span>
+            <span id="subtitle" data-typed-text="半小时正则表达式入门"></span>
           
         </div>
 
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-11 12:58" pubdate>
-          2024年12月11日 下午
+        <time datetime="2024-12-11 19:57" pubdate>
+          2024年12月11日 晚上
         </time>
       </span>
     
@@ -275,7 +275,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">正则表达式</h1>
+            <h1 id="seo-header">半小时正则表达式入门</h1>
             
             
               <div class="markdown-body">
@@ -323,7 +323,7 @@
 <p>同时，如果稍作修改，加上^就能使范围表达反义，如<code>[^asd]</code>表示不是asd的所有字符</p>
 <p>应用实例：</p>
 <p>如果我们要求用户输入自己的邮箱，我们该如何判断它的格式是否正确呢,首先，我们要考虑一个邮箱的格式一般满足如下格式</p>
-<p><a href="mailto:&#120;&#x78;&#x78;&#120;&#x78;&#120;&#120;&#64;&#120;&#x78;&#46;&#120;&#120;&#x78;">&#120;&#x78;&#x78;&#120;&#x78;&#120;&#120;&#64;&#120;&#x78;&#46;&#120;&#120;&#x78;</a>,查阅资料可知，@之前的部分除了常见的字母与数字之外还允许包含._%+-,@后的部分一定为xx.xxx</p>
+<p><a href="mailto:&#x78;&#x78;&#120;&#x78;&#120;&#x78;&#x78;&#x40;&#x78;&#x78;&#x2e;&#x78;&#x78;&#x78;">&#x78;&#x78;&#120;&#x78;&#120;&#x78;&#x78;&#x40;&#x78;&#x78;&#x2e;&#x78;&#x78;&#x78;</a>,查阅资料可知，@之前的部分除了常见的字母与数字之外还允许包含._%+-,@后的部分一定为xx.xxx</p>
 <figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs inform7">^<span class="hljs-comment">[a-zA-Z0-9._%+-]</span>+@<span class="hljs-comment">[a-zA-Z0-9.-]</span>+\.<span class="hljs-comment">[a-zA-Z]</span>&#123;2,&#125;$<br></code></pre></td></tr></table></figure>
 
 <p>我们来分解一下这段表达式的含义</p>
@@ -430,8 +430,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>正则表达式</div>
-      <div>http://soulmate.org.cn/2024/12/11/正则表达式/</div>
+      <div>半小时正则表达式入门</div>
+      <div>http://soulmate.org.cn/2024/12/11/半小时正则表达式入门/</div>
     </div>
     <div class="license-meta">
       
@@ -500,8 +500,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'http://soulmate.org.cn/2024/12/11/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/';
-          this.page.identifier = '/2024/12/11/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/';
+          this.page.url = 'http://soulmate.org.cn/2024/12/11/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/';
+          this.page.identifier = '/2024/12/11/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
