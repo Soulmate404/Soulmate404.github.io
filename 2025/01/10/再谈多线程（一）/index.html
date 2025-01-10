@@ -19,26 +19,26 @@
   <meta name="author" content="Soul">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java中的注解这应该是Java基础部分的最后一篇了。这一篇中我们来详细了解一下什么是注解，注解到底有什么用 什么是注解 ava中的注解（Annotation）是一种元数据机制，能够为代码元素（如类、方法、变量等）添加额外的信息，而不会直接影响代码的运行逻辑。注解为编译器、工具和运行时环境提供信息，通常用于以下目的：   编译时检查（例如，@Override 检查方法是否正确重写）。 生成文档（例">
+    <meta name="description" content="再谈多线程好久没有更新了，最近忙的复习期末，一直顾不上写博客，今天实在有点手痒，于是就有了这一篇，来进一步谈一谈关于多线程的事，主题如你所见，是关于多线程的内容。至于这一篇，我们就先来看一看Java中的锁机制到底是怎样实现的 锁机制的原始实现事实上，我们的锁机制是经历了多次的迭代的，我们先来看一看在jdk6之前的锁是怎样实现的 我们都知道想要给某个对象加锁，最简单的方法就是使用synchroniz">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的注解">
-<meta property="og:url" content="http://soulmate.org.cn/2024/12/31/Java%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/index.html">
+<meta property="og:title" content="再谈多线程（一）">
+<meta property="og:url" content="http://soulmate.org.cn/2025/01/10/%E5%86%8D%E8%B0%88%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Soul的小站">
-<meta property="og:description" content="Java中的注解这应该是Java基础部分的最后一篇了。这一篇中我们来详细了解一下什么是注解，注解到底有什么用 什么是注解 ava中的注解（Annotation）是一种元数据机制，能够为代码元素（如类、方法、变量等）添加额外的信息，而不会直接影响代码的运行逻辑。注解为编译器、工具和运行时环境提供信息，通常用于以下目的：   编译时检查（例如，@Override 检查方法是否正确重写）。 生成文档（例">
+<meta property="og:description" content="再谈多线程好久没有更新了，最近忙的复习期末，一直顾不上写博客，今天实在有点手痒，于是就有了这一篇，来进一步谈一谈关于多线程的事，主题如你所见，是关于多线程的内容。至于这一篇，我们就先来看一看Java中的锁机制到底是怎样实现的 锁机制的原始实现事实上，我们的锁机制是经历了多次的迭代的，我们先来看一看在jdk6之前的锁是怎样实现的 我们都知道想要给某个对象加锁，最简单的方法就是使用synchroniz">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s1.imagehub.cc/images/2024/12/31/e8372536385c07540fd478dc524a5e25.jpg">
-<meta property="article:published_time" content="2024-12-31T07:49:37.000Z">
-<meta property="article:modified_time" content="2024-12-31T09:07:42.533Z">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2025/01/10/bfefc14487b740459839738d444d64d0.jpg">
+<meta property="article:published_time" content="2025-01-10T13:39:56.000Z">
+<meta property="article:modified_time" content="2025-01-10T14:51:06.350Z">
 <meta property="article:author" content="Soul">
-<meta property="article:tag" content="Java基础">
+<meta property="article:tag" content="多线程那些事">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s1.imagehub.cc/images/2024/12/31/e8372536385c07540fd478dc524a5e25.jpg">
+<meta name="twitter:image" content="https://s1.imagehub.cc/images/2025/01/10/bfefc14487b740459839738d444d64d0.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Java中的注解 - Soul的小站</title>
+  <title>再谈多线程（一） - Soul的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java中的注解"></span>
+            <span id="subtitle" data-typed-text="再谈多线程（一）"></span>
           
         </div>
 
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-31 15:49" pubdate>
-          2024年12月31日 下午
+        <time datetime="2025-01-10 21:39" pubdate>
+          2025年1月10日 晚上
         </time>
       </span>
     
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.4k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
         
-          11 分钟
+          12 分钟
         
       </span>
     
@@ -275,98 +275,33 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Java中的注解</h1>
+            <h1 id="seo-header">再谈多线程（一）</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Java中的注解"><a href="#Java中的注解" class="headerlink" title="Java中的注解"></a>Java中的注解</h1><p>这应该是Java基础部分的最后一篇了。这一篇中我们来详细了解一下什么是注解，注解到底有什么用</p>
-<h2 id="什么是注解"><a href="#什么是注解" class="headerlink" title="什么是注解"></a>什么是注解</h2><blockquote>
-<p>ava中的注解（Annotation）是一种元数据机制，能够为代码元素（如类、方法、变量等）添加额外的信息，而不会直接影响代码的运行逻辑。注解为编译器、工具和运行时环境提供信息，通常用于以下目的：</p>
-</blockquote>
-<ol>
-<li><strong>编译时检查</strong>（例如，@Override 检查方法是否正确重写）。</li>
-<li><strong>生成文档</strong>（例如，Javadoc 支持的 @author）。</li>
-<li><strong>运行时行为的改变</strong>（例如，依赖注入框架中的 @Autowired）。</li>
-<li><strong>代码生成</strong>（例如，Lombok 通过注解生成代码）。</li>
-</ol>
-<p>不知道你是否能看懂,让我们接下来详细解释一下</p>
-<h2 id="原生注解"><a href="#原生注解" class="headerlink" title="原生注解"></a>原生注解</h2><p>jdk中存在以下的原生注解</p>
-<ul>
-<li><p>@Override - 检查（仅仅是检查，不保留到运行时）该方法是否是重写方法。如果发现其父类，或者是引用的接口中并没有该方法时，会报编译错误。</p>
-</li>
-<li><p>@Deprecated - 标记过时方法。如果使用该方法，会报编译警告。</p>
-</li>
-<li><p>@SuppressWarnings - 指示编译器去忽略注解中声明的警告（仅仅编译器阶段，不保留到运行时）</p>
-</li>
-<li><p>@FunctionalInterface - Java 8 开始支持，标识一个匿名函数或函数式接口。</p>
-</li>
-<li><p>@SafeVarargs - Java 7 开始支持，忽略任何使用参数为泛型变量的方法或构造函数调用产生的警告。</p>
-</li>
-</ul>
-<p>这些注解你应当或多或少在jdk的源码中都可以发现</p>
-<h2 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h2><p>什么是元注解,就是用来定义注解的注解,包括以下几种</p>
-<ul>
-<li><p>@Retention - 标识这个注解怎么保存，是只在代码中，还是编入class文件中，或者是在运行时可以通过反射访问。</p>
-</li>
-<li><p>@@Document - 标记这些注解是否包含在用户文档中。</p>
-</li>
-<li><p>@Target - 标记这个注解应该用于哪种 Java 成员。</p>
-</li>
-<li><p>@Inherited - 标记这个注解是继承于哪个注解类(默认 注解并没有继承于任何子类)</p>
-</li>
-<li><p>@Repeatable - Java 8 开始支持，标识某注解可以在同一个声明上使用多次。</p>
-</li>
-</ul>
-<p>这些注解用来规定一个注解的使用规则</p>
-<p>例如我们最常用的@Orverride的定义</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Target(ElementType.METHOD)</span><span class="hljs-comment">//标识用于方法</span><br><span class="hljs-meta">@Retention(RetentionPolicy.SOURCE)</span><span class="hljs-comment">//标识只在源码中保留</span><br><span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> Override &#123;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="再谈多线程"><a href="#再谈多线程" class="headerlink" title="再谈多线程"></a>再谈多线程</h1><p>好久没有更新了，最近忙的复习期末，一直顾不上写博客，今天实在有点手痒，于是就有了这一篇，来进一步谈一谈关于多线程的事，主题如你所见，是关于多线程的内容。至于这一篇，我们就先来看一看Java中的锁机制到底是怎样实现的</p>
+<h2 id="锁机制的原始实现"><a href="#锁机制的原始实现" class="headerlink" title="锁机制的原始实现"></a>锁机制的原始实现</h2><p>事实上，我们的锁机制是经历了多次的迭代的，我们先来看一看在jdk6之前的锁是怎样实现的</p>
+<p>我们都知道想要给某个对象加锁，最简单的方法就是使用<code>synchronized</code>关键字,那么加入这个关键字会具体产生哪些影响呢</p>
+<p>首先我们需要简单的了解一个类<code>ObjectMonitor</code>,这个类具体有哪些方法我们暂且不看,只先了解它有哪些属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java">objectMonitor() &#123;<br>    _header       = NULL;<br>    _count        = <span class="hljs-number">0</span>; <br>    _waiters      = <span class="hljs-number">0</span>,<br>    _recursions   = <span class="hljs-number">0</span>;<br>    _object       = NULL;<br>    _owner        = NULL;<span class="hljs-comment">//用来表示当前锁的持有者</span><br>    _WaitSet      = NULL; <span class="hljs-comment">//处于wait状态的线程，会被加入到_WaitSet</span><br>    _WaitSetLock  = <span class="hljs-number">0</span> ;<br>    _Responsible  = NULL ;<br>    _succ         = NULL ;<br>    _cxq          = NULL ;<br>    FreeNext      = NULL ;<br>    _EntryList    = NULL ; <span class="hljs-comment">//处于等待锁block状态的线程，会被加入到该列表</span><br>    _SpinFreq     = <span class="hljs-number">0</span> ;<br>    _SpinClock    = <span class="hljs-number">0</span> ;<br>    OwnerIsThread = <span class="hljs-number">0</span> ;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<p>每个对象都有一个与之对应的Monitor对象相对应,在这个对象的监视对象有一个entryLIst,所有的需要获得该对象的锁的线程都将被包装为一个<code>objectWaiter</code>对象并放入这个LIst中,随后将会依据LIst中的顺序依次让这些线程获得锁,而使用完锁的线程则调用wait函数挂起并进入waitset,在entryLIst变为空后再次从waitset中获取需要的锁的线程,如此循环往复</p>
+<h2 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h2><p>但这样的锁机制其实存在一个问题,反复的将线程挂起再唤醒的操作实际上会消耗大量的不必要的资源,所以在jdk6时提出来自旋锁的概念,每个线程在使用完锁后不再挂起而是选择进入一个循环,反复尝试获取锁,这避免了挂起与唤醒时将线程中数据保存再读取的资源浪费</p>
+<p>但这个操作实际上基于一个认知:每个线程都不会长时间占用一个锁,所有的线程都能在可接受的时间内等到锁.如果一个线程长时间无法获得锁,那么这个线程实际上最好还是挂起,避免算力上的无意义浪费.所以后来自旋锁实际上做出了一定的改进,在循环一定的次数后如果仍然无法获取锁,那么这个线程同样会被挂起,这个具体的次数由JVM决定</p>
+<h2 id="轻量级锁"><a href="#轻量级锁" class="headerlink" title="轻量级锁"></a>轻量级锁</h2><p>上面说到的锁的原始实现实际上也被称之为重量级锁或者说悲观锁,即我们认为随时都存在某个线程会和当前的线程发生竞争,这种情况我们无法预料也无法阻止.这种做法当然没有问题,但是这会增加切换锁状态的算力开销</p>
+<p>所以后来人们又提出了轻量级锁的概念,在某一个线程希望获取锁时这个线程将复制此时对象的信息并在该对象的对象头添加此时该对象已经被其他线程获取的信息.,在需要修改这个对象时先检查这个对象的值是否和获取锁时保持一致如果不一致则此次循环无效,一致则正常修改(这种操作成为CAS操作)</p>
+<p>(注意,不管是重量级锁还是轻量级锁,它们的实现实际上都涉及到了硬件底层的不同指令,不止是简单的软件层面的差异)</p>
+<p>由于这种做法在底层实现上与重量级锁的差异,实际上无法阻止别的线程去获取这个对象,所以实际上如果某次CAS操作失败,这个锁就将被直接升级为重量级锁,</p>
+<p>轻量级锁更适合各个线程之间竞争不激烈时使用,这可以显著的加快程序的运行速度,但如果各个线程之间的竞争过于激烈,轻量级锁被升级为重量级锁的过程本身要消耗不少的资源,这是得不偿失的</p>
+<p>Java中的atomic类与unsafe类就是使用轻量级锁实现的</p>
+<h2 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h2><p>实际上还有一类情况,如果在大部分时间内某个对象都是由一个线程反复的占有再释放,那么我们可以使用偏向锁来进一步提升性能,在这种锁机制下,当一个对象的锁反复被同一个线程获取时,这个对象的锁就会被一直打上这个线程的标签,此后该线程获取这个锁时不再需要反复的给对象的对象头添加信息,进一步的提高性能.不过如果某次CAS操作发生异常,这个锁就会升级为轻量级锁</p>
+<p>要使用偏向锁，请修改JVM参数</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">-XX:<span class="hljs-attribute">BiasedLockingStartupDelay</span>=0<br></code></pre></td></tr></table></figure>
 
-
-<p>我们一个个来</p>
-<ol>
-<li><p>@Retention注解标记了这个注解到底该被保存到什么时候,可以选择以下三种</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">RetentionPolicy</span> &#123;<br>    <br>    SOURCE,<span class="hljs-comment">//只保留在源码中,编译时移除</span><br><br>    <br>    CLASS,<span class="hljs-comment">//保留到编译后的Class文件中，但运行时不可见</span><br><br>    <br>    RUNTIME<span class="hljs-comment">//一直保留,运行时仍然可见</span><br>&#125;<br><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>@Document.这个注解被用来生成Javadoc文档,也就是我们在使用idea时将光标对准jdk提供的方法时出现的对方法的规定,比如每个方法都有的</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@author</span>  xxx<br></code></pre></td></tr></table></figure>
-
-<p>用来说明这个方法的作者</p>
-</li>
-<li><p>@Target这个注解标识注解该用于那种Java成员,包括</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">ElementType</span> &#123;<br>    <br>    TYPE,<span class="hljs-comment">//包括所有的类,接口,枚举类</span><br><br>   <br>    FIELD,<span class="hljs-comment">//所有的属性</span><br><br>   <br>    METHOD,<span class="hljs-comment">//所有的方法</span><br><br>  <br>    PARAMETER,<span class="hljs-comment">//所有的参数</span><br><br>    <br>    CONSTRUCTOR,<span class="hljs-comment">//构造器或者构造方法</span><br><br>   <br>    LOCAL_VARIABLE,<span class="hljs-comment">//局部变量</span><br><br>    <br>    ANNOTATION_TYPE,<span class="hljs-comment">//元注解</span><br><br>   <br>    PACKAGE,<span class="hljs-comment">//包</span><br><br>    <br>    TYPE_PARAMETER,<span class="hljs-comment">//泛型类型参数</span><br><br>    <br>    TYPE_USE,<span class="hljs-comment">//任何的类型,包括泛型,数组,变量</span><br><br>  <br>&#125;<br><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>@Inherited用于注解之间的继承</p>
-</li>
-<li><p>@Repeatable - Java 8 开始支持，标识某注解可以在同一个声明上使用多次。</p>
-</li>
-</ol>
-<h2 id="创建注解"><a href="#创建注解" class="headerlink" title="创建注解"></a>创建注解</h2><p>接下来我们先自己创建一个注解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Retention(RetentionPolicy.RUNTIME)</span><span class="hljs-comment">//保留到运行时</span><br><span class="hljs-meta">@Target(ElementType.TYPE)</span><span class="hljs-comment">//在类上使用</span><br><span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> Myanno &#123;<br>    String <span class="hljs-title function_">value</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> <span class="hljs-string">&quot;666&quot;</span>;<span class="hljs-comment">//有一个String,默认值为666(默认值不是必须的)</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>注解中指允许有成员变量而不允许存在方法,且成员变量的格式为”无形参方法”,方法名为成员变量名</p>
-<p>接下来是注解的使用</p>
-<h2 id="注解的使用"><a href="#注解的使用" class="headerlink" title="注解的使用"></a>注解的使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Myanno(&quot;sss&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">People</span> &#123;<br>    <span class="hljs-keyword">private</span>  <span class="hljs-type">int</span> age=<span class="hljs-number">10</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getAge</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> age;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>看不出来有什么作用吗,别急,先讲讲注解的使用规则</p>
-<ol>
-<li><p>如果注解中只有一个成员变量且名称为value,那么可以直接在括号内输入想要赋的值,如果想使用默认值,可以直接不加括号</p>
-</li>
-<li><p>如果单一变量但名称不为value,需要使用如下格式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Myanno(name = &quot;666&quot;)</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>如果有多个变量且有默认值,对有默认值的变量不强制要求赋值,多个变量赋值时用逗号分隔</p>
-</li>
-<li><p>如果某个变量为数组类型,则赋值时用大括号标识集合</p>
-</li>
-</ol>
-<p>注解的内容可以通过反射获取</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>      <span class="hljs-type">Class</span> <span class="hljs-variable">clazz</span> <span class="hljs-operator">=</span> People.class;<br>       Annotation[] annotations = clazz.getAnnotations();<br>       <span class="hljs-keyword">for</span> (Annotation annotation : annotations) &#123;<br>          System.out.println(annotation);<br>       &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>这意味着我们通过注解的形式在不该变类的结构的同时给类贴上来某些标签,而框架正是通过这些标签来判断怎样处理一个类的</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>总的来说这部分是比较简单的,就这样简单的结束吧</p>
-<p><img src="https://s1.imagehub.cc/images/2024/12/31/e8372536385c07540fd478dc524a5e25.jpg" srcset="/img/loading.gif" lazyload alt="cab47c06 b2e5 41ad 844d c1d1c1be7fb6"></p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>这里补充一点,所有的锁的升级过程都是不可逆的且消耗资源,所以在码代码时要实现考虑清楚各个线程之间资源的使用情况,避免锁升级造成的资源浪费</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>兴之所至才写了这么一篇,所以内容有点简单,字数也不怎么样,将就着看吧.</p>
+<p><img src="https://s1.imagehub.cc/images/2025/01/10/bfefc14487b740459839738d444d64d0.jpg" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -379,7 +314,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java%E5%9F%BA%E7%A1%80/" class="print-no-link">#Java基础</a>
+        <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%82%A3%E4%BA%9B%E4%BA%8B/" class="print-no-link">#多线程那些事</a>
       
     </div>
   
@@ -391,8 +326,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Java中的注解</div>
-      <div>http://soulmate.org.cn/2024/12/31/Java中的注解/</div>
+      <div>再谈多线程（一）</div>
+      <div>http://soulmate.org.cn/2025/01/10/再谈多线程（一）/</div>
     </div>
     <div class="license-meta">
       
@@ -404,7 +339,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年12月31日</div>
+          <div>2025年1月10日</div>
         </div>
       
       
@@ -436,18 +371,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/10/%E5%86%8D%E8%B0%88%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/" title="再谈多线程（一）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">再谈多线程（一）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/12/30/Java%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/" title="Java的反射机制">
-                        <span class="hidden-mobile">Java的反射机制</span>
+                      <a href="/2024/12/31/Java%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/" title="Java中的注解">
+                        <span class="hidden-mobile">Java中的注解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -467,8 +396,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'http://soulmate.org.cn/2024/12/31/Java%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/';
-          this.page.identifier = '/2024/12/31/Java%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/';
+          this.page.url = 'http://soulmate.org.cn/2025/01/10/%E5%86%8D%E8%B0%88%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/';
+          this.page.identifier = '/2025/01/10/%E5%86%8D%E8%B0%88%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');

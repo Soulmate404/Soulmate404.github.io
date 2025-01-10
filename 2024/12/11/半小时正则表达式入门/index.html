@@ -323,7 +323,7 @@
 <p>同时，如果稍作修改，加上^就能使范围表达反义，如<code>[^asd]</code>表示不是asd的所有字符</p>
 <p>应用实例：</p>
 <p>如果我们要求用户输入自己的邮箱，我们该如何判断它的格式是否正确呢,首先，我们要考虑一个邮箱的格式一般满足如下格式</p>
-<p><a href="mailto:&#x78;&#120;&#120;&#120;&#x78;&#120;&#x78;&#64;&#x78;&#120;&#46;&#120;&#x78;&#120;">&#x78;&#120;&#120;&#120;&#x78;&#120;&#x78;&#64;&#x78;&#120;&#46;&#120;&#x78;&#120;</a>,查阅资料可知，@之前的部分除了常见的字母与数字之外还允许包含._%+-,@后的部分一定为xx.xxx</p>
+<p><a href="mailto:&#120;&#120;&#x78;&#x78;&#x78;&#x78;&#120;&#x40;&#x78;&#x78;&#x2e;&#x78;&#x78;&#x78;">&#120;&#120;&#x78;&#x78;&#x78;&#x78;&#120;&#x40;&#x78;&#x78;&#x2e;&#x78;&#x78;&#x78;</a>,查阅资料可知，@之前的部分除了常见的字母与数字之外还允许包含._%+-,@后的部分一定为xx.xxx</p>
 <figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs inform7">^<span class="hljs-comment">[a-zA-Z0-9._%+-]</span>+@<span class="hljs-comment">[a-zA-Z0-9.-]</span>+\.<span class="hljs-comment">[a-zA-Z]</span>&#123;2,&#125;$<br></code></pre></td></tr></table></figure>
 
 <p>我们来分解一下这段表达式的含义</p>
