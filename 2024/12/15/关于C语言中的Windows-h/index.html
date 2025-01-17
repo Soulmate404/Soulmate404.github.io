@@ -1,0 +1,822 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Soul">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="C语言中的Windows.h其实吧这玩意我是不想写的，只要是个人就能理解这玩意的实用意义几乎为0，谁闲着没事会取用C语言去写一个交互界面啊，所以这玩意属于特殊情况下的特殊产物：老师强制要求使用C语言完成，又为了显得高级所以用这玩意（虽然最后也没有显得多么高级），这玩意写起来简直顶级折磨。其实经过查找，是可以用gui库代替的，但一是这玩意比Windows的原生API简单不了多少，二是引入gui库总会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于C语言中的Windows.h">
+<meta property="og:url" content="http://soulmate.org.cn/2024/12/15/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84Windows-h/index.html">
+<meta property="og:site_name" content="Soul的小站">
+<meta property="og:description" content="C语言中的Windows.h其实吧这玩意我是不想写的，只要是个人就能理解这玩意的实用意义几乎为0，谁闲着没事会取用C语言去写一个交互界面啊，所以这玩意属于特殊情况下的特殊产物：老师强制要求使用C语言完成，又为了显得高级所以用这玩意（虽然最后也没有显得多么高级），这玩意写起来简直顶级折磨。其实经过查找，是可以用gui库代替的，但一是这玩意比Windows的原生API简单不了多少，二是引入gui库总会">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2024/12/15/3af60031ab42fdf0b008c3cc77f308b9.jpg">
+<meta property="article:published_time" content="2024-12-15T06:40:00.000Z">
+<meta property="article:modified_time" content="2024-12-15T14:35:29.086Z">
+<meta property="article:author" content="Soul">
+<meta property="article:tag" content="C语言基础">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s1.imagehub.cc/images/2024/12/15/3af60031ab42fdf0b008c3cc77f308b9.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>关于C语言中的Windows.h - Soul的小站</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"soulmate.org.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Soul的小站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="关于C语言中的Windows.h"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-12-15 14:40" pubdate>
+          2024年12月15日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          31 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">关于C语言中的Windows.h</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="C语言中的Windows-h"><a href="#C语言中的Windows-h" class="headerlink" title="C语言中的Windows.h"></a>C语言中的Windows.h</h1><p>其实吧这玩意我是不想写的，只要是个人就能理解这玩意的实用意义几乎为0，谁闲着没事会取用C语言去写一个交互界面啊，所以这玩意属于特殊情况下的特殊产物：老师强制要求使用C语言完成，又为了显得高级所以用这玩意（虽然最后也没有显得多么高级），这玩意写起来简直顶级折磨。其实经过查找，是可以用gui库代替的，但一是这玩意比Windows的原生API简单不了多少，二是引入gui库总会发生各种各样奇奇怪怪的报错，折磨了一会只好放弃（如果你说还有easyx可以用，但不好意思，我没有用msvc，用的是gcc，所以用不了）</p>
+<p>总之经过一番痛苦面具，我终于写了一个基础的图形化界面出来，或许不怎么好看，但是它能跑，这就够了</p>
+<p>接下来简单介绍一些需要用到的知识吧</p>
+<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> WINAPI <span class="hljs-title function_">WinMain</span><span class="hljs-params">(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, <span class="hljs-type">int</span> nCmdShow)</span><br></code></pre></td></tr></table></figure>
+
+<p>如果你希望用Windows的API写一个图形化界面,那么必不可少的是首先引入<code>windows.h</code>,然后写一个主函数,就是上面那个函数,这个函数的作用就相当于一般的C语言中的main函数,是整个程序的入口,看到那一长串的参数了吗,你一个都不用管,不需要在函数前声明,这些是由系统本身提供的参数,在运行时自动生成,但是我仍然会解释一下各个参数的含义</p>
+<ul>
+<li><code>HINSTANCE</code>instance,翻译过来就是此刻,即刻,这个参数实际上是一个指针,指向的是程序此刻所占用的内存所在地,代表的是整个程序本身,你会发现第一个和第二个参数都是该类型,它们分别代表的是当前程序与上一个程序(或其父程序),现在,随着版本更新,第二个参数实际上已经没有了实际意义,在如今的代码中,系统将自动对齐赋值为NULL</li>
+<li><code>LPSTR ldCmdLine</code>这个参数实际上是个字符串,用来记录向命令行传递的参数,用来启动程序，我们接下来同样不用管</li>
+<li><code>nCmdShow</code>这个参数实际上是用来标识窗口状态的,如最大化最小化等等</li>
+</ul>
+<p>了解了这些就可以在这个函数中写一些代码创建自己的图形化界面了</p>
+<h2 id="创建窗口"><a href="#创建窗口" class="headerlink" title="创建窗口"></a>创建窗口</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs c">HWND hUsername<br><span class="hljs-type">const</span> <span class="hljs-type">char</span> CLASS_NAME[] = <span class="hljs-string">&quot;Login Window Class&quot;</span>;<br><br>WNDCLASS wc = &#123;<span class="hljs-number">0</span>&#125;;<br>wc.lpfnWndProc = WindowProc;<br>wc.hInstance = hInstance;<br>wc.lpszClassName = CLASS_NAME;<br>wc.hbrBackground = (HBRUSH)COLOR_WINDOW;<br>wc.hCursor = LoadCursor(<span class="hljs-literal">NULL</span>, IDC_ARROW);<br><br>RegisterClass(&amp;wc);<br><br><span class="hljs-comment">// 获取屏幕尺寸</span><br><span class="hljs-type">int</span> screenWidth = GetSystemMetrics(SM_CXSCREEN);<br><span class="hljs-type">int</span> screenHeight = GetSystemMetrics(SM_CYSCREEN);<br><br><span class="hljs-comment">// 设置窗口尺寸</span><br><span class="hljs-type">int</span> windowWidth = <span class="hljs-number">400</span>;<br><span class="hljs-type">int</span> windowHeight = <span class="hljs-number">300</span>;<br><br><span class="hljs-comment">// 计算窗口居中位置</span><br><span class="hljs-type">int</span> posX = (screenWidth - windowWidth) / <span class="hljs-number">2</span>;<br><span class="hljs-type">int</span> posY = (screenHeight - windowHeight) / <span class="hljs-number">2</span>;<br><br><span class="hljs-comment">// 创建窗口（更新位置参数）</span><br>HWND hwnd = CreateWindowEx(<br>        <span class="hljs-number">0</span>,                          <span class="hljs-comment">// 扩展样式</span><br>        CLASS_NAME,                 <span class="hljs-comment">// 窗口类名</span><br>        <span class="hljs-string">&quot;图书管理系统登录&quot;</span>,         <span class="hljs-comment">// 窗口标题</span><br>        WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX, <span class="hljs-comment">// 修改窗口样式，移除最大化按钮</span><br>        posX, posY,                <span class="hljs-comment">// 居中位置</span><br>        windowWidth, windowHeight,  <span class="hljs-comment">// 窗口大小</span><br>        <span class="hljs-literal">NULL</span>,       <span class="hljs-comment">// 父窗口句柄</span><br>        <span class="hljs-literal">NULL</span>,       <span class="hljs-comment">// 菜单句柄</span><br>        hInstance,  <span class="hljs-comment">// 实例句柄</span><br>        <span class="hljs-literal">NULL</span>        <span class="hljs-comment">// 附加数据</span><br>);<br>ShowWindow(hwnd, nCmdShow);<br></code></pre></td></tr></table></figure>
+
+<p>上面所展现的是简单的一个创建窗口流程,节选自我写的一个图书管理程序,接下来分开来讲一讲每个部分的含义</p>
+<h3 id="注册窗口类"><a href="#注册窗口类" class="headerlink" title="注册窗口类"></a>注册窗口类</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">const</span> <span class="hljs-type">char</span> CLASS_NAME[] = <span class="hljs-string">&quot;Login Window Class&quot;</span>;<br><br>   WNDCLASS wc = &#123;<span class="hljs-number">0</span>&#125;;<span class="hljs-comment">//用来初始化这个结构体,给所用的参数都赋默认值</span><br>   wc.lpfnWndProc = WindowProc;<br>   wc.hInstance = hInstance;<br>   wc.lpszClassName = CLASS_NAME;<br>   wc.hbrBackground = (HBRUSH)COLOR_WINDOW;<br>   wc.hCursor = LoadCursor(<span class="hljs-literal">NULL</span>, IDC_ARROW);<br><br>   RegisterClass(&amp;wc);<br></code></pre></td></tr></table></figure>
+
+<p>就是这部分,一个窗口类就代表一个窗口,每创建一个窗口就应当注册一个窗口类,在C语言中这体现为一个结构体,来看看这个结构体中都有些什么吧</p>
+<ul>
+<li><code>wc.lpfnWndProc = WindowProc</code>这是该窗口的过程函数,这个还没有提到,等会再说,如果向创建一个窗口看看效果的话直接写NULL就好</li>
+<li><code>wc.hInstance = hInstance</code>程序指针,说明这个窗口该运行在哪段程序下,赋的值就是刚才main函数中的第一个参数,这是有系统本身提供的,无需我们创造</li>
+<li><code> wc.lpszClassName = CLASS_NAME</code>这个类的名称,是这个类对外的标识,一般我们使用这个类的过程中都会以这个类的类名来作为指代,这里是刚定义的登陆界面类</li>
+<li><code>wc.hbrBackground = (HBRUSH)COLOR_WINDOW</code>这是这个类的背景的规定,,我调用了Windows的默认色彩(即5),并将其强制转换为画刷(HBRUSH),虽然这玩意事实上就是一个十六进制的数字用来表示十六种Windows常用的色彩,</li>
+<li><code> wc.hCursor = LoadCursor(NULL, IDC_ARROW)</code>这个参数是对当光标移动到当前页面时光标的参数的规定,使用默认值(等号左侧的函数无需关注其实际含义,就是用来获取当前鼠标歌参数的)</li>
+</ul>
+<p>接下来就是注册或者说初始化这个类,也就是最后一行</p>
+<h3 id="展示窗口"><a href="#展示窗口" class="headerlink" title="展示窗口"></a>展示窗口</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 获取屏幕尺寸</span><br><span class="hljs-type">int</span> screenWidth = GetSystemMetrics(SM_CXSCREEN);<br><span class="hljs-type">int</span> screenHeight = GetSystemMetrics(SM_CYSCREEN);<br><br><span class="hljs-comment">// 设置窗口尺寸</span><br><span class="hljs-type">int</span> windowWidth = <span class="hljs-number">400</span>;<br><span class="hljs-type">int</span> windowHeight = <span class="hljs-number">300</span>;<br><br><span class="hljs-comment">// 计算窗口居中位置</span><br><span class="hljs-type">int</span> posX = (screenWidth - windowWidth) / <span class="hljs-number">2</span>;<br><span class="hljs-type">int</span> posY = (screenHeight - windowHeight) / <span class="hljs-number">2</span>;<br><br><span class="hljs-comment">// 创建窗口（更新位置参数）</span><br>HWND hwnd = CreateWindowEx(<br>        <span class="hljs-number">0</span>,                          <span class="hljs-comment">// 扩展样式</span><br>        CLASS_NAME,                 <span class="hljs-comment">// 窗口类名</span><br>        <span class="hljs-string">&quot;图书管理系统登录&quot;</span>,         <span class="hljs-comment">// 窗口标题</span><br>        WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX, <span class="hljs-comment">// 修改窗口样式，移除最大化按钮</span><br>        posX, posY,                <span class="hljs-comment">// 居中位置</span><br>        windowWidth, windowHeight,  <span class="hljs-comment">// 窗口大小</span><br>        <span class="hljs-literal">NULL</span>,       <span class="hljs-comment">// 父窗口句柄</span><br>        <span class="hljs-literal">NULL</span>,       <span class="hljs-comment">// 菜单句柄</span><br>        hInstance,  <span class="hljs-comment">// 实例句柄</span><br>        <span class="hljs-literal">NULL</span>        <span class="hljs-comment">// 附加数据</span><br>);<br>ShowWindow(hwnd, nCmdShow);<br></code></pre></td></tr></table></figure>
+
+<p>上面前几次的计算都是为了创建窗口时确保窗口居中进行的,都是提前就规定好的,如果有需要直接用吧,</p>
+<p>这里稍微吐槽一下这些奇奇怪怪的参数,最开始那两个参数SM_CXSCREEN和SM_CYSCREEN分别是define的0和1,就很难评价这种东西,不管替不替换这玩意的可读性都是一绝</p>
+<p>接下来是创建窗口的部分也就是你所见的HWND</p>
+<p>这个玩意的全称应该是handle of Windows,就是窗口的句柄(又是国内的奇葩翻译),handle有解决,处理的意思,也有把手把柄的含义,具体的含义请自己品,我也有点不会翻译了,这个东西在C语言中的本质也是一个指针,用来指向一个具体的窗口</p>
+<p>CreateWindowEx的函数原型如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c">HWND <span class="hljs-title function_">CreateWindowEx</span><span class="hljs-params">(</span><br><span class="hljs-params">    DWORD     dwExStyle,      <span class="hljs-comment">// 扩展窗口样式</span></span><br><span class="hljs-params">    LPCTSTR   lpClassName,    <span class="hljs-comment">// 窗口类名</span></span><br><span class="hljs-params">    LPCTSTR   lpWindowName,   <span class="hljs-comment">// 窗口标题</span></span><br><span class="hljs-params">    DWORD     dwStyle,        <span class="hljs-comment">// 窗口样式</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span>       X,              <span class="hljs-comment">// 窗口的初始X坐标</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span>       Y,              <span class="hljs-comment">// 窗口的初始Y坐标</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span>       nWidth,         <span class="hljs-comment">// 窗口宽度</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span>       nHeight,        <span class="hljs-comment">// 窗口高度</span></span><br><span class="hljs-params">    HWND      hWndParent,     <span class="hljs-comment">// 父窗口句柄</span></span><br><span class="hljs-params">    HMENU     hMenu,          <span class="hljs-comment">// 菜单句柄</span></span><br><span class="hljs-params">    HINSTANCE hInstance,      <span class="hljs-comment">// 程序实例句柄</span></span><br><span class="hljs-params">    LPVOID    lpParam         <span class="hljs-comment">// 附加数据</span></span><br><span class="hljs-params">)</span>;<br><br></code></pre></td></tr></table></figure>
+
+<p>简单解释一下,大概来说所谓的扩展窗口样式就是一些特殊的效果,主要支持(这些参数也是一串十六进制的数字)</p>
+<ul>
+<li><p><code>WS_EX_TOPMOST</code>：窗口总是位于最前端。</p>
+</li>
+<li><p><code>WS_EX_TOOLWINDOW</code>：创建工具窗口（如浮动工具栏）。</p>
+</li>
+<li><p><code>WS_EX_LAYERED</code>：支持透明或半透明效果。</p>
+</li>
+</ul>
+<p>这里是0 ,即不需要任何样式,</p>
+<p>然后是窗口样式,常见的样式如下</p>
+<p><code>WS_OVERLAPPED</code>：标准的重叠窗口，带标题栏和边框。</p>
+<p><code>WS_CAPTION</code>：窗口有标题栏。</p>
+<p><code>WS_SYSMENU</code>：窗口有系统菜单（右键菜单）。</p>
+<p><code>WS_MINIMIZEBOX</code>：窗口有最小化按钮。</p>
+<p><code>WS_BORDER</code>：窗口带边框。</p>
+<p><code>WS_POPUP</code>：创建弹出窗口。</p>
+<p><code>WS_VISIBLE</code>：窗口初始时可见。</p>
+<p>不同样式之间以<code>|</code>分隔</p>
+<p>然后是接下来的内容,我们这是最开始的窗口,本身没有父窗口,也不需要菜单,所以是两个NULL,程序实例就是系统提供的,然后附加数据部分可以无限填各种参数,但是我们不需要,所以NULL</p>
+<p>然后展示对应的窗口<code> ShowWindow(hwnd, nCmdShow);</code>其中第二个参数可进行如下替换</p>
+<p>**<code>SW_SHOW</code>**：正常显示窗口。</p>
+<p>**<code>SW_HIDE</code>**：隐藏窗口。</p>
+<p>**<code>SW_MINIMIZE</code>**：最小化窗口。</p>
+<p>**<code>SW_MAXIMIZE</code>**：最大化窗口。</p>
+<p>**<code>SW_RESTORE</code>**：恢复窗口到正常状态。</p>
+<h2 id="信息输入"><a href="#信息输入" class="headerlink" title="信息输入"></a>信息输入</h2><p>有了基础的界面,接下来就应该添加一些按钮来实现窗口了</p>
+<p>首先我们要创建一个按钮</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c">HWND hUsername = CreateWindow(<br>            <span class="hljs-string">&quot;EDIT&quot;</span>, <span class="hljs-string">&quot;&quot;</span>,<br>            WS_VISIBLE | WS_CHILD | WS_BORDER,<br>            <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">280</span>, <span class="hljs-number">30</span>,<br>            hwnd, <span class="hljs-literal">NULL</span>, hInstance, <span class="hljs-literal">NULL</span><br>    );<span class="hljs-comment">//创建一个 输入框</span><br> hLogin = CreateWindow(<br>            <span class="hljs-string">&quot;BUTTON&quot;</span>, <span class="hljs-string">&quot;登录&quot;</span>,<br>            WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,<br>            <span class="hljs-number">50</span>, <span class="hljs-number">150</span>, <span class="hljs-number">280</span>, <span class="hljs-number">35</span>,<br>            hwnd, (HMENU)<span class="hljs-number">1</span>, hInstance, <span class="hljs-literal">NULL</span><br>    );<span class="hljs-comment">//创建一个按钮</span><br></code></pre></td></tr></table></figure>
+
+<p>这里就要提出一个思想,就是对于Windows来说,所有的组件都是不同属性的窗口,首先看一看这个函数的原型</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c">HWND <span class="hljs-title function_">CreateWindow</span><span class="hljs-params">(</span><br><span class="hljs-params">    LPCSTR    lpClassName,    <span class="hljs-comment">// 窗口类名（或控件类名）</span></span><br><span class="hljs-params">    LPCSTR    lpWindowName,   <span class="hljs-comment">// 窗口标题或控件的初始文本</span></span><br><span class="hljs-params">    DWORD     dwStyle,        <span class="hljs-comment">// 窗口或控件样式</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span>       X,              <span class="hljs-comment">// 控件的左上角X坐标</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span>       Y,              <span class="hljs-comment">// 控件的左上角Y坐标</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span>       nWidth,         <span class="hljs-comment">// 控件的宽度</span></span><br><span class="hljs-params">    <span class="hljs-type">int</span>       nHeight,        <span class="hljs-comment">// 控件的高度</span></span><br><span class="hljs-params">    HWND      hWndParent,     <span class="hljs-comment">// 父窗口句柄</span></span><br><span class="hljs-params">    HMENU     hMenu,          <span class="hljs-comment">// 菜单或控件ID</span></span><br><span class="hljs-params">    HINSTANCE hInstance,      <span class="hljs-comment">// 程序实例句柄</span></span><br><span class="hljs-params">    LPVOID    lpParam         <span class="hljs-comment">// 附加参数</span></span><br><span class="hljs-params">)</span>;<br><br></code></pre></td></tr></table></figure>
+
+<p>首先要解释一下关于窗口类名的事,Windows内置了几个窗口类名</p>
+<p>分别是</p>
+<p><code>&quot;BUTTON&quot;</code>：按钮。</p>
+<p><code>&quot;STATIC&quot;</code>：静态文本标签。</p>
+<p><code>&quot;COMBOBOX&quot;</code>：组合框。</p>
+<p><code>&quot;LISTBOX&quot;</code>：列表框。</p>
+<p><code>&quot;EDIT&quot;:</code>编辑控件</p>
+<p>然后这个按钮是登陆界面下的,所以是登陆窗口的字窗口,父窗口句柄选择登陆界面</p>
+<p>还有一点注意，我们创建登陆按钮时创建了一个一个菜单，并选择将这个按钮在菜单中的名称命名为1</p>
+<p>注意,这些窗口创建应当写在showWindows之前,写在展示窗口函数之后时不管用的</p>
+<p>那么问题来了,我们只是创建了这些按钮和输入栏,如何知道它们被使用呢</p>
+<p>这就需要理解电脑是如何获取键盘鼠标的操作信息的：消息队列</p>
+<p>电脑回以极高的速度扫描各种硬件，并获得一个信息流，即我们所说的消息对列，在无操作时获得默认信息，在操作出现时消息队列中出现具体的操作信息，系统将其转义为具体的操作并进行执行，所以我们也应当在main函数中创建一个自己的消息队列</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">MSG msg = &#123;<span class="hljs-number">0</span>&#125;;<br>   <span class="hljs-keyword">while</span> (GetMessage(&amp;msg, <span class="hljs-literal">NULL</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)) &#123;<br>       TranslateMessage(&amp;msg);<br>       DispatchMessage(&amp;msg);<br>   &#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>GetMessage(&amp;msg, NULL, 0, 0)</code>是读取函数,会从系统的消息队列中不断读取信息并保存在msg中,最后两个0是只不限制消息类型,消息类型常见的有</p>
+<p>**<code>WM_PAINT</code>**：窗口需要重绘。</p>
+<p>**<code>WM_KEYDOWN</code>**：键盘按下事件。</p>
+<p>**<code>WM_LBUTTONDOWN</code>**：鼠标左键按下事件。</p>
+<p>**<code>WM_QUIT</code>**：程序退出消息。</p>
+<p>然后是<code> TranslateMessage(&amp;msg);</code>这个函数没什么可说的,翻译函数,将键盘输入的信息转换为人能理解的字符</p>
+<p><code> DispatchMessage(&amp;msg);</code>这个函数是分发函数,msg中包含自己从属于那个窗口的信息,它将会根据这个信息将信息分发至对应的过程函数进行处理</p>
+<p>问题又来了,到底什么是过程函数呢 </p>
+<h2 id="过程函数"><a href="#过程函数" class="headerlink" title="过程函数"></a>过程函数</h2><p>贴一个我登录时的过程函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs c">LRESULT CALLBACK <span class="hljs-title function_">WindowProc</span><span class="hljs-params">(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)</span> &#123;<br>    <span class="hljs-keyword">switch</span> (uMsg) &#123;<br>        <span class="hljs-keyword">case</span> WM_CREATE: &#123;<br>            <span class="hljs-comment">// 设置窗口背景色为白色</span><br>            SetClassLongPtr(hwnd, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(RGB(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>)));<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">case</span> WM_COMMAND: &#123;<br>            <span class="hljs-keyword">if</span> (LOWORD(wParam) == <span class="hljs-number">1</span>) &#123; <span class="hljs-comment">// 登录按钮被点击</span><br>                <span class="hljs-type">char</span> username[<span class="hljs-number">100</span>];<br>                <span class="hljs-type">char</span> password[<span class="hljs-number">100</span>];<br><br>                GetWindowText(hUsername, username, <span class="hljs-number">100</span>);<br>                GetWindowText(hPassword, password, <span class="hljs-number">100</span>);<br><br>                <span class="hljs-comment">// 将用户名转换为整数ID</span><br>                <span class="hljs-type">int</span> userId = atoi(username);<br><br>                <span class="hljs-comment">// 调用Login函数进行验证</span><br>                <span class="hljs-type">int</span> loginResult = login(userId, password);<br><br>                <span class="hljs-keyword">switch</span>(loginResult) &#123;<br>                    <span class="hljs-keyword">case</span> <span class="hljs-number">-1</span>:<br>                        MessageBox(hwnd, <span class="hljs-string">&quot;用户不存在！&quot;</span>, <span class="hljs-string">&quot;错误&quot;</span>, MB_OK | MB_ICONERROR);<br>                        <span class="hljs-keyword">break</span>;<br>                    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>: <span class="hljs-comment">// 管理员登录成功</span><br>                        ShowWindow(hwnd, SW_HIDE);<br>                        HWND adminWindow = CreateAdminWindow(GetModuleHandle(<span class="hljs-literal">NULL</span>));<br>                        <span class="hljs-keyword">if</span> (adminWindow == <span class="hljs-literal">NULL</span>) &#123;<br>                            MessageBox(hwnd, <span class="hljs-string">&quot;创建管理员界面失败！&quot;</span>, <span class="hljs-string">&quot;错误&quot;</span>, MB_OK | MB_ICONERROR);<br>                            ShowWindow(hwnd, SW_SHOW);<br>                        &#125;<br>                        <span class="hljs-keyword">break</span>;<br>                    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-comment">// 普通用户登录成功</span><br>                        ShowWindow(hwnd, SW_HIDE);<br>                        HWND userWindow = CreateUserWindow(GetModuleHandle(<span class="hljs-literal">NULL</span>), userId);<br>                        <span class="hljs-keyword">if</span> (userWindow == <span class="hljs-literal">NULL</span>) &#123;<br>                            MessageBox(hwnd, <span class="hljs-string">&quot;创建用户界面失败！&quot;</span>, <span class="hljs-string">&quot;错误&quot;</span>, MB_OK | MB_ICONERROR);<br>                            ShowWindow(hwnd, SW_SHOW);<br>                        &#125;<br>                        <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">case</span> WM_DESTROY: &#123;<br>            PostQuitMessage(<span class="hljs-number">0</span>);<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br><br><br>    &#125;<br>    <span class="hljs-keyword">return</span> DefWindowProc(hwnd, uMsg, wParam, lParam);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>还记得吗,登陆界面被绑定了这个过程函数,我们来看一看具体的内容</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">LRESULT CALLBACK <span class="hljs-title function_">WindowProc</span><span class="hljs-params">(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)</span><br></code></pre></td></tr></table></figure>
+
+<p>首先看一看这一行</p>
+<p>这个函数的长相似乎不怎么对劲,它的返回值是什么类型?LRESULT,其实就是一个int,然后CALLBACK叫做函数签名或者说调用约定,CALLBACK是所有WINAPI的标准调用约定,然后就是函数名和参数了</p>
+<p>接下来的代码只要英语好一点就可以理解,三个case分别是窗口创建时,检测到窗口内有命令出发时,窗口被关闭时</p>
+<p>特别解释一下两点<code> if (LOWORD(wParam) == 1)</code>这个判断是重消息队列中读取到信息标识为1时进行操作,而这个标识就是刚才登陆按钮的标识</p>
+<p><code>DefWindowProc(hwnd, uMsg, wParam, lParam);</code>这个是兜底的默认处理函数,负责处理一般的最小化,移动窗口等操作</p>
+<p><code> MessageBox(hwnd, &quot;创建用户界面失败！&quot;, &quot;错误&quot;, MB_OK | MB_ICONERROR);</code>创建一个弹窗,从左到右依次是窗口句柄,窗口内容,窗口标题,窗口样式,具体样式类型如下</p>
+<p><strong>按钮类型</strong>（单选）：</p>
+<ul>
+<li><code>MB_OK</code>：只有一个 “确定” 按钮。</li>
+<li><code>MB_OKCANCEL</code>：包含 “确定” 和 “取消” 按钮。</li>
+<li><code>MB_YESNO</code>：包含 “是” 和 “否” 按钮。</li>
+<li><code>MB_RETRYCANCEL</code>：包含 “重试” 和 “取消” 按钮。</li>
+</ul>
+<p><strong>图标类型</strong>（单选）：</p>
+<ul>
+<li><code>MB_ICONERROR</code>：显示错误图标。</li>
+<li><code>MB_ICONWARNING</code>：显示警告图标。</li>
+<li><code>MB_ICONINFORMATION</code>：显示信息图标。</li>
+<li><code>MB_ICONQUESTION</code>：显示询问图标。</li>
+</ul>
+<p><strong>默认按钮类型</strong>：</p>
+<ul>
+<li><code>MB_DEFBUTTON1</code>：第一个按钮为默认按钮。</li>
+<li><code>MB_DEFBUTTON2</code>：第二个按钮为默认按钮。</li>
+<li><code>MB_DEFBUTTON3</code>：第三个按钮为默认按钮。</li>
+</ul>
+<h2 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">GetWindowText(hSearchId, idStr, <span class="hljs-number">100</span>);<br></code></pre></td></tr></table></figure>
+
+<p>从输入栏中获取信息,三个参数分别是窗口句柄等待被输入的字符串指针,最大输入限制</p>
+<p>接下来还有一个防止乱码的函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c">HFONT hFont = CreateFont(<br>        <span class="hljs-number">16</span>, <span class="hljs-number">0</span>,<br>        <span class="hljs-number">0</span>, <span class="hljs-number">0</span>,<br>        FW_NORMAL,<br>        FALSE, FALSE, FALSE,<br>        DEFAULT_CHARSET,<br>        OUT_DEFAULT_PRECIS,<br>        CLIP_DEFAULT_PRECIS,<br>        DEFAULT_QUALITY,<br>        FIXED_PITCH | FF_MODERN,<br>        <span class="hljs-string">&quot;Consolas&quot;</span><br>    );<br> SendMessage(hAdminResultText, WM_SETFONT, (WPARAM)hFont, TRUE);<br></code></pre></td></tr></table></figure>
+
+<p>这是以个创建字体的函数,具体的含义如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c">HFONT hFont = CreateFont(<br>    <span class="hljs-number">16</span>, <span class="hljs-number">0</span>,                    <span class="hljs-comment">// 高度16, 宽度自动</span><br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>,                     <span class="hljs-comment">// 文本倾斜和旋转角度</span><br>    FW_NORMAL,                <span class="hljs-comment">// 字体粗细</span><br>    FALSE, FALSE, FALSE,      <span class="hljs-comment">// 斜体、下划线、删除线</span><br>    DEFAULT_CHARSET,          <span class="hljs-comment">// 使用默认字符集</span><br>    OUT_DEFAULT_PRECIS,<br>    CLIP_DEFAULT_PRECIS,<br>    DEFAULT_QUALITY,<br>    FIXED_PITCH | FF_MODERN,  <span class="hljs-comment">// 使用等宽字体</span><br>    <span class="hljs-string">&quot;Consolas&quot;</span>                <span class="hljs-comment">// 使用 Consolas 等宽字体</span><br>);<br><br></code></pre></td></tr></table></figure>
+
+<p>最后将这以信息传递给对应的窗口即可</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>终于写完了,痛苦啊,足足写了一下午才写完，也是至今写过最长的一篇，但是，不管怎么说，我写完啦！！</p>
+<p>上今天的图</p>
+<p><img src="https://s1.imagehub.cc/images/2024/12/15/3af60031ab42fdf0b008c3cc77f308b9.jpg" srcset="/img/loading.gif" lazyload></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="print-no-link">#C语言基础</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>关于C语言中的Windows.h</div>
+      <div>http://soulmate.org.cn/2024/12/15/关于C语言中的Windows-h/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Soul</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年12月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/12/20/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" title="lambda表达式与函数式接口">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">lambda表达式与函数式接口</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/12/11/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/" title="半小时正则表达式入门">
+                        <span class="hidden-mobile">半小时正则表达式入门</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://soulmate.org.cn/2024/12/15/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84Windows-h/';
+          this.page.identifier = '/2024/12/15/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84Windows-h/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

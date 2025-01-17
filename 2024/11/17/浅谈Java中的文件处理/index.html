@@ -1,0 +1,848 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Soul">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="浅谈Java中的文件处理前言本篇文章面向小白,各位大佬无需浪费时间 今天来总结一下Java中的文件处理api，主要以java.nio.file包中的api为主（事实上，java.io.file中的相关api在过去更多的被使用，但nio包中的api技术更新，因此主要展示nio包中的api） Path apipath api 所对应的是文件的地址（可以是绝对的，也可以是相对的），从性质上来讲，它是一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈Java中的文件处理">
+<meta property="og:url" content="http://soulmate.org.cn/2024/11/17/%E6%B5%85%E8%B0%88Java%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/index.html">
+<meta property="og:site_name" content="Soul的小站">
+<meta property="og:description" content="浅谈Java中的文件处理前言本篇文章面向小白,各位大佬无需浪费时间 今天来总结一下Java中的文件处理api，主要以java.nio.file包中的api为主（事实上，java.io.file中的相关api在过去更多的被使用，但nio包中的api技术更新，因此主要展示nio包中的api） Path apipath api 所对应的是文件的地址（可以是绝对的，也可以是相对的），从性质上来讲，它是一个">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2024/11/17/69141a3a8a16e46ddbfffaa8fd4602b6.jpg">
+<meta property="article:published_time" content="2024-11-17T04:33:02.000Z">
+<meta property="article:modified_time" content="2024-11-17T04:38:24.828Z">
+<meta property="article:author" content="Soul">
+<meta property="article:tag" content="Java基础">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s1.imagehub.cc/images/2024/11/17/69141a3a8a16e46ddbfffaa8fd4602b6.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>浅谈Java中的文件处理 - Soul的小站</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"soulmate.org.cn","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Soul的小站</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="浅谈Java中的文件处理"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-11-17 12:33" pubdate>
+          2024年11月17日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">浅谈Java中的文件处理</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="浅谈Java中的文件处理"><a href="#浅谈Java中的文件处理" class="headerlink" title="浅谈Java中的文件处理"></a>浅谈Java中的文件处理</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>本篇文章面向小白,各位大佬无需浪费时间</strong></p>
+<p>今天来总结一下Java中的文件处理api，主要以<code>java.nio.file</code>包中的api为主（事实上，<code>java.io.file</code>中的相关api在过去更多的被使用，但nio包中的api技术更新，因此主要展示nio包中的api）</p>
+<h2 id="Path-api"><a href="#Path-api" class="headerlink" title="Path api"></a>Path api</h2><p>path api 所对应的是文件的地址（可以是绝对的，也可以是相对的），从性质上来讲，它是一个引用。下面是一些简单的实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Path</span> <span class="hljs-variable">path1</span> <span class="hljs-operator">=</span>Path.of(<span class="hljs-string">&quot;E:/some/s.txt&quot;</span>);<span class="hljs-comment">//注意，你无需区分/与\\,无论哪一种都可以被正常识别</span><br>System.out.println(path1);<br><span class="hljs-type">Path</span> <span class="hljs-variable">path2</span> <span class="hljs-operator">=</span>Path.of(<span class="hljs-string">&quot;E:/some/&quot;</span>).resolve(<span class="hljs-string">&quot;some.txt&quot;</span>);<br>System.out.println(path2);<br></code></pre></td></tr></table></figure>
+
+<p>（如果你使用的是Java11或更以前的版本，应当使用<code>Path.get</code>而不是of）</p>
+<p>我们可以先看看运行结果：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ada">E:\<span class="hljs-keyword">some</span>\s.txt<br>E:\<span class="hljs-keyword">some</span>\<span class="hljs-keyword">some</span>.txt<br></code></pre></td></tr></table></figure>
+
+
+
+<p>这里其实很难给出一个恰当的对resolve的翻译，你可以简单的理解为在原来的Path上继续增加一段字符串,到后面会有进一步的解释</p>
+<p>另外，<code>path.of</code>还支持另一种使用方法</p>
+<p>像这样<code>Path path3 =Path.of(&quot;E:&quot;,&quot;/some&quot;,&quot;/some.txt&quot;);</code>但我个人对此并不推荐，显然它会使输入更加的麻烦</p>
+<p><strong>应当注意的是path只是一个引用</strong>，他不能实际的确定文件是否存在，应当对此单独做出检查</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">System.out.println(Files.exists(path1));<span class="hljs-comment">//注意，是Files而不是File</span><br></code></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="常见的文件操作"><a href="#常见的文件操作" class="headerlink" title="常见的文件操作"></a>常见的文件操作</h2><p>接下来我们将了解一些与文件的增删改查相关的操作</p>
+<p>首先是创建目录与文件,这里我们需要使用Files包中相关的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">Path nweDir=Files.createDirectories(Path.of(<span class="hljs-string">&quot;E:/some&quot;</span>));<span class="hljs-comment">//创建目录</span><br>System.out.println(nweDir);<br>Path newFile=Files.createFile(nweDir.resolve(<span class="hljs-string">&quot;newFile.txt&quot;</span>));<span class="hljs-comment">//创建文件</span><br>System.out.println(newFile);<br></code></pre></td></tr></table></figure>
+
+<p>在这里其实就可以看的出resolve的作用是什么</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">E:\some<br>E:\some\newFile.txt<br></code></pre></td></tr></table></figure>
+
+
+
+<p>此时目录与文件就被顺利的创建了</p>
+<p>另外,其实还存在着创建临时目录与文件的<code>Files.createTempDirectory()</code> <code>Files.createTempFile()</code>方法,但同样的,我并不推荐,应为它们虽然被称为临时文件,但并不会在某个时间点自动被删除,与其如此,不如直接使用一般的文件创建方式</p>
+<p>接下来我们看一看文件的移动</p>
+<p>就像这样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Files.move(Path.of(<span class="hljs-string">&quot;E:/some/newFile.txt&quot;</span>), Path.of(<span class="hljs-string">&quot;E:/some/s/newFile.txt&quot;</span>));<span class="hljs-comment">//这一句的语法是正确的</span><br>Files.move(Path.of(<span class="hljs-string">&quot;E:/some/newFile.txt&quot;</span>), Path.of(<span class="hljs-string">&quot;E:/some/s&quot;</span>));<span class="hljs-comment">//这是错误的</span><br></code></pre></td></tr></table></figure>
+
+<p>在移动对应的文件时应当指明其所对应的绝对路径,而不是指明将其移向哪个目录下</p>
+<p>当然,如果文件已存在,该操作不会被执行,而是会抛出对应的异常,也可以这样</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coq">Files.<span class="hljs-built_in">move</span>(<span class="hljs-keyword">Path</span>.of(<span class="hljs-string">&quot;E:/some/newFile.txt&quot;</span>), <span class="hljs-keyword">Path</span>.of(<span class="hljs-string">&quot;E:/some/s/newFile.txt&quot;</span>),StandardCopyOption.REPLACE_EXISTING);<br></code></pre></td></tr></table></figure>
+
+<p>此时文件将会被强制覆盖</p>
+<p>此外,我们应当了解如何获取当前目录下的文件列表</p>
+<p>这分为两种情况,</p>
+<p>1.仅获取当前目录下的文件,不对子目录的文件做要求</p>
+<p>就像这样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Path dir=Path.of(<span class="hljs-string">&quot;E:/some&quot;</span>);<br>Files.list(dir).forEach(System.out::println);<br></code></pre></td></tr></table></figure>
+
+<p>值得一提的是list方法返回的是一个流,你可以对它进行一切流可以进行的操作,下面是输出结果</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">E:</span>\some\newFile.txt<br><span class="hljs-symbol">E:</span>\some\s<span class="hljs-comment">//这是一个目录</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>2.获取内容包括子目录的文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Path dir=Path.of(<span class="hljs-string">&quot;E:/some&quot;</span>);<br>Files.walk(dir).forEach(System.out::println);<br></code></pre></td></tr></table></figure>
+
+<p>walk方法会遍历所有的子目录,这是输出结果</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ada">E:\<span class="hljs-keyword">some</span><br>E:\<span class="hljs-keyword">some</span>\newFile.txt<br>E:\<span class="hljs-keyword">some</span>\s<br>E:\<span class="hljs-keyword">some</span>\s\newFile2.txt<br></code></pre></td></tr></table></figure>
+
+<p>但我们发现.有时候我们并不需要目录名,而只需要获取文件名,这时可以这样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Files.newDirectoryStream(dir,<span class="hljs-string">&quot;*.txt&quot;</span>).forEach(System.out::println);<br></code></pre></td></tr></table></figure>
+
+<p>这样我们就可以只获得对应目录下的TXT文件</p>
+<p>然后是目录与文件的删除,这点略有麻烦,java并没有提供删除一个非空目录的方法,而是仅提供了删除空目录的<code>Files.delete</code>方法,类似于这样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">Path dir=Path.of(<span class="hljs-string">&quot;E:/some/s&quot;</span>);<br>       <span class="hljs-keyword">try</span>&#123;<br>           Files.delete(dir);<br>       &#125;<span class="hljs-keyword">catch</span> (DirectoryNotEmptyException e)&#123;<br>           System.out.println(<span class="hljs-string">&quot;Directory does not exist&quot;</span>);<br>       &#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>好吧我收回之前的话，再查了一通资料后我发现<code>java.io.file</code>包中就有直接的删除目录的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">deleteDirectory</span><span class="hljs-params">(File directory)</span> &#123;<br>       <span class="hljs-keyword">if</span> (!directory.exists()) &#123;<br>           System.out.println(<span class="hljs-string">&quot;目录不存在: &quot;</span> + directory.getAbsolutePath());<br>           <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>       &#125;<br><br>       <span class="hljs-comment">// 如果是文件，直接删除</span><br>       <span class="hljs-keyword">if</span> (directory.isFile()) &#123;<br>           <span class="hljs-keyword">return</span> directory.delete();<br>       &#125;<br><br>       <span class="hljs-comment">// 如果是目录，递归删除子文件和子目录</span><br>       File[] files = directory.listFiles();<br>       <span class="hljs-keyword">if</span> (files != <span class="hljs-literal">null</span>) &#123;<br>           <span class="hljs-keyword">for</span> (File file : files) &#123;<br>               deleteDirectory(file);<br>           &#125;<br>       &#125;<br><br>       <span class="hljs-comment">// 删除目录本身</span><br>       <span class="hljs-keyword">return</span> directory.delete();<br>   &#125;<br><br>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>       <span class="hljs-type">String</span> <span class="hljs-variable">dirPath</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;path/to/directory&quot;</span>; <span class="hljs-comment">// 替换为你的目录路径</span><br>       <span class="hljs-type">File</span> <span class="hljs-variable">directory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(dirPath);<br><br>       <span class="hljs-type">boolean</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> deleteDirectory(directory);<br>       <span class="hljs-keyword">if</span> (result) &#123;<br>           System.out.println(<span class="hljs-string">&quot;目录删除成功: &quot;</span> + dirPath);<br>       &#125; <span class="hljs-keyword">else</span> &#123;<br>           System.out.println(<span class="hljs-string">&quot;目录删除失败: &quot;</span> + dirPath);<br>       &#125;<br>   &#125;<br></code></pre></td></tr></table></figure>
+
+<p>这是我从网上找到的一段较为标准的删除目录树的方法,只使用了<code>java.io.file</code>包中的方法,相较于调用<code>java.nio.file.path</code>中的方法显得可读性更强,也可一看看使用path包的删除流程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> (Stream&lt;Path&gt; walk = Files.walk(tmpDir)) &#123;<br>    walk.sorted(Comparator.reverseOrder()).forEach(path -&gt; &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            Files.delete(path);<br>        &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>            <span class="hljs-comment">// something could not be deleted..</span><br>            e.printStackTrace();<br>        &#125;<br>    &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>显然，还是<code>java.io.file</code>中的方法可读性强</p>
+<p>在这一部分的最后,我们可以了解一下关于绝对路径与相对路径的关系,我个人推荐在使用过程中尽可能使用绝对路径如<code>E:/some/s</code>而不是</p>
+<p><code>./s</code>(这代指当前目录下的s子目录)这样的相对路径,这总会带来奇奇怪怪的bug.所以涉及到的路径的转换方法略去不谈,有需要可以自行寻找</p>
+<h2 id="文件的读与写"><a href="#文件的读与写" class="headerlink" title="文件的读与写"></a>文件的读与写</h2><p>文件的读写是程序很重要的一部分,但幸运的是,得益于前人的完善,这部分的工作相对比较简单</p>
+<p>首先是读取文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">Path path=Path.of(<span class="hljs-string">&quot;E:/some/newFile.txt&quot;</span>);<br>       String s= Files.readString(path);以字符串的形式读取<br>       String s2=Files.readString(path, StandardCharsets.UTF_8);<span class="hljs-comment">//以字符串的形式读取，并声明格式为UTF-8</span><br>       String s3= Arrays.toString(Files.readAllBytes(path));<span class="hljs-comment">//以字节的形式读取，声明格式为UTF-8</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>默认将以utf-8的格式读取,你也可以通过对应的参数指定,就像s2与s3所展示的那样</p>
+<p>当然,也可以选择使用流的方式进行读取,就像这样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">BufferedReader</span> <span class="hljs-variable">bufferedReader</span> <span class="hljs-operator">=</span> Files.newBufferedReader(utfFile)<br><span class="hljs-type">InputStream</span> <span class="hljs-variable">is</span> <span class="hljs-operator">=</span> Files.newInputStream(utfFile)<br></code></pre></td></tr></table></figure>
+
+
+
+<p>接下来是文件的写入,同样的非常简单</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">Files.write(path,<span class="hljs-string">&quot;this is a String&quot;</span>.getBytes(StandardCharsets.UTF_8),StandardOpenOption.APPEND);<br>Files.writeString(path, <span class="hljs-string">&quot;this is my string ää öö üü&quot;</span>, StandardCharsets.ISO_8859_1);<br></code></pre></td></tr></table></figure>
+
+<p>写和上面的读一一对应,默认的格式为UTF-8,但你也可以自己指定</p>
+<p>不过需要强调的是,</p>
+<ol>
+<li><p>如果对应的path不存在,文件将会被自行创建</p>
+</li>
+<li><p>在默认模式下,原文件的内容将会被覆盖,可以添加参数<code>StandardOpenOption.APPEND</code>使添加的内容会在原内容尾被添加,下面是一些可用的(但不是全部)StandardOpenOption,可以了解一下</p>
+<table>
+<thead>
+<tr>
+<th><strong><code>APPEND</code></strong></th>
+<th>将数据写入文件末尾（追加模式）。如果文件不存在，会抛出异常，除非同时指定了 <code>CREATE</code>。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><strong><code>CREATE</code></strong></th>
+<th align="left">如果文件不存在，则创建文件。如果文件已存在，则不会影响文件的内容。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><strong><code>CREATE_NEW</code></strong></th>
+<th>如果文件不存在，则创建新文件。如果文件已存在，则抛出 <code>FileAlreadyExistsException</code>。</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><strong><code>DELETE_ON_CLOSE</code></strong></th>
+<th>在关闭文件时删除文件。这通常用于临时文件操作。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<p>同时,流的使用以没有任何问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">BufferedWriter</span> <span class="hljs-variable">bufferedWriter</span> <span class="hljs-operator">=</span> Files.newBufferedWriter(utfFile)<br><span class="hljs-type">OutputStream</span> <span class="hljs-variable">os</span> <span class="hljs-operator">=</span> Files.newOutputStream(utfFile)<br></code></pre></td></tr></table></figure>
+
+
+
+<p>最后,推荐在有能力的情况下亲自取阅读官方给出的文档,并了解:</p>
+<ol>
+<li>内存文件系统</li>
+<li>文件变化监测</li>
+</ol>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>终于写完了!!!</p>
+<p>当然,虽然花费了不少的心血,但受限于个人的学识与能力,难免会有各种疏漏之处,还望见谅,如有疑问或发现错误,欢迎通过邮箱联系</p>
+<p>老样子,放张图镇楼</p>
+<p><img src="https://s1.imagehub.cc/images/2024/11/17/69141a3a8a16e46ddbfffaa8fd4602b6.jpg" srcset="/img/loading.gif" lazyload></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java%E5%9F%BA%E7%A1%80/" class="print-no-link">#Java基础</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>浅谈Java中的文件处理</div>
+      <div>http://soulmate.org.cn/2024/11/17/浅谈Java中的文件处理/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Soul</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年11月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/11/27/%E9%93%BE%E8%A1%A8%E5%88%9D%E6%AD%A5/" title="链表初步">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">链表初步</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/11/11/firstblog/" title="小白的第一篇blog">
+                        <span class="hidden-mobile">小白的第一篇blog</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://soulmate.org.cn/2024/11/17/%E6%B5%85%E8%B0%88Java%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/';
+          this.page.identifier = '/2024/11/17/%E6%B5%85%E8%B0%88Java%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
