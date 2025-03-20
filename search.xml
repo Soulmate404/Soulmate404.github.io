@@ -3,7 +3,7 @@
   <entry>
     <title>Docker入门</title>
     <url>/2025/03/16/Docker%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h1 id="Docker入门"><a href="#Docker入门" class="headerlink" title="Docker入门"></a>Docker入门</h1><p>最近忙着写项目，好久没更新内容了。而且就在昨天，重装系统的时候我居然忘了把博客的本地文件保存一份！！！现在我已经失去了前面博客的所有内容，不得不花费大量时间重新把前面的内容整理一次，孩子心里苦啊。</p>
+    <content><![CDATA[<p>最近忙着写项目，好久没更新内容了。而且就在昨天，重装系统的时候我居然忘了把博客的本地文件保存一份！！！现在我已经失去了前面博客的所有内容，不得不花费大量时间重新把前面的内容整理一次，孩子心里苦啊。</p>
 <p>闲话就聊到这里,今天我们来了解一下Docker技术.Docker可以帮助我们快速的实现项目依赖环境的完整打包.方便我们将项目快速的部署到不同的设备上去.</p>
 <p>由于Windows上没有原生的Docker,想要运行需要套几层壳,所以这次我们使用Ubuntu.具体版本为Ubuntu24.04.</p>
 <h2 id="Docker的安装"><a href="#Docker的安装" class="headerlink" title="Docker的安装"></a>Docker的安装</h2><p>我们首先来完场Docker的安装.这部分比较简单,先安装一些依赖</p>
@@ -41,7 +41,7 @@
   <entry>
     <title>Java中的IO流</title>
     <url>/2024/12/27/Java%E4%B8%AD%E7%9A%84IO%E6%B5%81/</url>
-    <content><![CDATA[<h2 id="Java中的IO流"><a href="#Java中的IO流" class="headerlink" title="Java中的IO流"></a>Java中的IO流</h2><p>作为一段能实现完整的功能的长期使用的程序，能够读写数据是其必须具备的能力，今天就来看一看关于如何实现不同种类的数据的处理</p>
+    <content><![CDATA[<p>作为一段能实现完整的功能的长期使用的程序，能够读写数据是其必须具备的能力，今天就来看一看关于如何实现不同种类的数据的处理</p>
 <p>什么是IO，input和output，即输入和输出，这两种流分别负责了对不同的数据的输入与输出，想要掌握好IO流，要涉及的方方面面很多,我就得网上找到的一段总结非常好（以下内容引自博客园的@宜春）</p>
 <blockquote>
 <p>（1）明确要操作的数据是数据源还是数据目的(也就是要读还是要写)<br>（2）明确要操作的设备上的数据是字节还是文本<br>（3）明确数据所在的具体设备<br>（4）明确是否需要额外功能（比如是否需要转换流、高效流等）</p>
@@ -117,7 +117,7 @@
   <entry>
     <title>Java中的时间处理</title>
     <url>/2025/02/05/Java%E4%B8%AD%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1 id="Java中的时间处理"><a href="#Java中的时间处理" class="headerlink" title="Java中的时间处理"></a>Java中的时间处理</h1><p>我们来谈一个基本的问题，关于如何在Java中处理时间，首先我们要了解一个基本的概念：时间戳</p>
+    <content><![CDATA[<p>我们来谈一个基本的问题，关于如何在Java中处理时间，首先我们要了解一个基本的概念：时间戳</p>
 <h2 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h2><blockquote>
 <h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. <strong>定义</strong></h3><p>时间戳是表示时间的一种方式，通常是一个数字，用来记录某个事件发生的具体时间点。它以秒或毫秒为单位，从一个特定的起始时间（称为“纪元”或“Epoch”）开始计算，记录到当前时间点的间隔。</p>
 <h3 id="2-纪元时间（Epoch-Time）"><a href="#2-纪元时间（Epoch-Time）" class="headerlink" title="2. 纪元时间（Epoch Time）"></a>2. <strong>纪元时间（Epoch Time）</strong></h3><p>时间戳的计算通常基于某个固定的起始时间点，这个时间点被称为“纪元时间”。最常见的纪元时间是 <strong>1970年1月1日00:00:00 UTC</strong>（协调世界时）。例如，如果当前时间是2025年2月5日10:00:00 UTC，那么从1970年1月1日00:00:00 UTC到这个时间点的总秒数就是当前的时间戳。</p>
@@ -162,7 +162,7 @@
   <entry>
     <title>Java中的注解</title>
     <url>/2024/12/31/Java%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/</url>
-    <content><![CDATA[<h1 id="ava中的注解"><a href="#ava中的注解" class="headerlink" title="ava中的注解"></a>ava中的注解</h1><p>这应该是Java基础部分的最后一篇了。这一篇中我们来详细了解一下什么是注解，注解到底有什么用</p>
+    <content><![CDATA[<p>这应该是Java基础部分的最后一篇了。这一篇中我们来详细了解一下什么是注解，注解到底有什么用</p>
 <h2 id="什么是注解"><a href="#什么是注解" class="headerlink" title="什么是注解"></a>什么是注解</h2><blockquote>
 <p>ava中的注解（Annotation）是一种元数据机制，能够为代码元素（如类、方法、变量等）添加额外的信息，而不会直接影响代码的运行逻辑。注解为编译器、工具和运行时环境提供信息，通常用于以下目的：</p>
 </blockquote>
@@ -248,9 +248,38 @@
       </tags>
   </entry>
   <entry>
+    <title>Java的内存回收机制</title>
+    <url>/2025/02/11/Java%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<p>Java实际上是不允许显示的释放内存的，所有的对象所占用的内存实际上都由JVM负责管理，但这并不意味着我们无权查收内存的回收，我们可以通过下面这些方法来实现内存的回收</p>
+<h2 id="移除对象引用"><a href="#移除对象引用" class="headerlink" title="移除对象引用"></a>移除对象引用</h2><p>我们在某个对象不需要再继续使用时选择移除这个对象的全部引用</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object object =new Object();</span><br><span class="line">//使用这个对象完成一些任务</span><br><span class="line">object =null;//主动地移除引用</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>我们知道此处的object实际上不是对象本身,而是一个对对象的引用,当一个对象的全部引用被移除时jvm会在下一次垃圾回收器运行时将这个对象回收</p>
+<h2 id="设置为弱引用"><a href="#设置为弱引用" class="headerlink" title="设置为弱引用"></a>设置为弱引用</h2><p>我们可以将一个对象设置为弱引用,弱引用及时存在也不会阻止垃圾回收,</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object object =new Object();</span><br><span class="line">//使用这个对象完成一些任务</span><br><span class="line">WeakReference&lt;Object&gt; weakReference =new WeakReference&lt;&gt;(object);//先设置为弱引用</span><br><span class="line">object =null;//再清除强引用</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>通过这种方式我们可以获取一个对象的弱引用,在没有被回收时我们可以正常的使用这个对象,在垃圾回收时</p>
+<p>我们可以试着写一段代码来验证这件事</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.lang.ref.WeakReference;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Object object = new Object();</span><br><span class="line">        // 使用这个对象完成一些任务</span><br><span class="line">        WeakReference&lt;Object&gt; weakReference = new WeakReference&lt;&gt;(object);</span><br><span class="line">        object = null; // 清除强引用</span><br><span class="line"></span><br><span class="line">        List&lt;Object&gt; objects = new ArrayList&lt;&gt;();</span><br><span class="line">        while (weakReference.get() != null) &#123; // 检查弱引用所指向的对象是否被回收</span><br><span class="line">            System.out.println(&quot;对象还没有被回收&quot;);</span><br><span class="line">            objects.add(new Object()); // 创建大量对象，增加内存压力</span><br><span class="line">            System.gc(); // 建议垃圾回收(这个方法只起到建议作用,jvm不一定会接受)</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;对象已被回收&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="设为软引用"><a href="#设为软引用" class="headerlink" title="设为软引用"></a>设为软引用</h2><p>软引用和弱引用的不同之处在于弱引用会在垃圾回收器下次运行时被回收,而软引用只有在内存空间不足时才会被回收,通过这种方式我们可以建立缓存机制,当内存充足时保留某些对象,在内存不足时删除某些对象</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object object =new Object();</span><br><span class="line">//使用这个对象完成一些任务</span><br><span class="line">SoftReference&lt;Object&gt; softReference =new SoftReference&lt;&gt;(object);</span><br><span class="line">object =null;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>这种方式在某些场景下时很有用的</p>
+<h2 id="设为虚引用"><a href="#设为虚引用" class="headerlink" title="设为虚引用"></a>设为虚引用</h2><p>虚引用主要用于一些内存敏感的领域,用于实时监测一个对象是否被回收,我们时无法通过虚引用的<code>get()</code>方法来获取这个对象的,虚引用一般配合引用队列进行使用</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.lang.ref.PhantomReference;</span><br><span class="line">import java.lang.ref.ReferenceQueue;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) throws InterruptedException &#123;</span><br><span class="line">        // 创建一个对象</span><br><span class="line">        Object obj = new Object();</span><br><span class="line"></span><br><span class="line">        // 创建引用队列</span><br><span class="line">        ReferenceQueue&lt;Object&gt; queue = new ReferenceQueue&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        // 创建虚引用，并关联引用队列</span><br><span class="line">        PhantomReference&lt;Object&gt; phantomRef = new PhantomReference&lt;&gt;(obj, queue);</span><br><span class="line"></span><br><span class="line">        // 清除强引用</span><br><span class="line">        obj = null;</span><br><span class="line"></span><br><span class="line">        // 触发垃圾回收</span><br><span class="line">        System.gc();</span><br><span class="line"></span><br><span class="line">        // 稍作等待，让垃圾回收器有机会运行</span><br><span class="line">        Thread.sleep(100);</span><br><span class="line"></span><br><span class="line">        // 检查引用队列，判断对象是否被回收</span><br><span class="line">        if (queue.poll() != null) &#123;</span><br><span class="line">            System.out.println(&quot;对象已被回收&quot;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            System.out.println(&quot;对象尚未被回收&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="System-gc"><a href="#System-gc" class="headerlink" title="System.gc()"></a>System.gc()</h2><p>接下来说一下这个方法,这个方法会建议jvm的垃圾回收器启动一次,但是请注意,这个方法本身只是建议,jvm不一定听,同时,垃圾回收本身就是一件消耗算力的事情,所以过于频繁的垃圾回收反倒会影响性能,所以一定要谨慎使用</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>非常简单的一部分,我上面给出了验证弱引用和虚引用会被回收的代码,你可以自己试着写一个验证软引用被回收的代码来亲身体验一下</p>
+]]></content>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java中的集合类</title>
     <url>/2024/12/24/Java%E4%B8%AD%E7%9A%84%E9%9B%86%E5%90%88%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="Java中的集合类"><a href="#Java中的集合类" class="headerlink" title="Java中的集合类"></a>Java中的集合类</h1><p>就如前几天所说的那样，开个新帖子，写一点关于Java中的集合类的内容，但本篇的内容只关注这些集合类提供的各种功能，不会去太过详细的讲解这些集合类的底层实现（太复杂了，在下实在没弄明白）</p>
+    <content><![CDATA[<p>就如前几天所说的那样，开个新帖子，写一点关于Java中的集合类的内容，但本篇的内容只关注这些集合类提供的各种功能，不会去太过详细的讲解这些集合类的底层实现（太复杂了，在下实在没弄明白）</p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>先来看一看Java中集合类的具体结构</p>
 <p><a href="https://s1.imagehub.cc/images/2024/12/24/507a2adcf224142a1200e8a99d2bcfb5.png"><img  
                      lazyload
@@ -352,38 +381,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Java的内存回收机制</title>
-    <url>/2025/02/11/Java%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</url>
-    <content><![CDATA[<h2 id="Java中的内存回收机制"><a href="#Java中的内存回收机制" class="headerlink" title="Java中的内存回收机制"></a>Java中的内存回收机制</h2><p>Java实际上是不允许显示的释放内存的，所有的对象所占用的内存实际上都由JVM负责管理，但这并不意味着我们无权查收内存的回收，我们可以通过下面这些方法来实现内存的回收</p>
-<h2 id="移除对象引用"><a href="#移除对象引用" class="headerlink" title="移除对象引用"></a>移除对象引用</h2><p>我们在某个对象不需要再继续使用时选择移除这个对象的全部引用</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object object =new Object();</span><br><span class="line">//使用这个对象完成一些任务</span><br><span class="line">object =null;//主动地移除引用</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>我们知道此处的object实际上不是对象本身,而是一个对对象的引用,当一个对象的全部引用被移除时jvm会在下一次垃圾回收器运行时将这个对象回收</p>
-<h2 id="设置为弱引用"><a href="#设置为弱引用" class="headerlink" title="设置为弱引用"></a>设置为弱引用</h2><p>我们可以将一个对象设置为弱引用,弱引用及时存在也不会阻止垃圾回收,</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object object =new Object();</span><br><span class="line">//使用这个对象完成一些任务</span><br><span class="line">WeakReference&lt;Object&gt; weakReference =new WeakReference&lt;&gt;(object);//先设置为弱引用</span><br><span class="line">object =null;//再清除强引用</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>通过这种方式我们可以获取一个对象的弱引用,在没有被回收时我们可以正常的使用这个对象,在垃圾回收时</p>
-<p>我们可以试着写一段代码来验证这件事</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.lang.ref.WeakReference;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Object object = new Object();</span><br><span class="line">        // 使用这个对象完成一些任务</span><br><span class="line">        WeakReference&lt;Object&gt; weakReference = new WeakReference&lt;&gt;(object);</span><br><span class="line">        object = null; // 清除强引用</span><br><span class="line"></span><br><span class="line">        List&lt;Object&gt; objects = new ArrayList&lt;&gt;();</span><br><span class="line">        while (weakReference.get() != null) &#123; // 检查弱引用所指向的对象是否被回收</span><br><span class="line">            System.out.println(&quot;对象还没有被回收&quot;);</span><br><span class="line">            objects.add(new Object()); // 创建大量对象，增加内存压力</span><br><span class="line">            System.gc(); // 建议垃圾回收(这个方法只起到建议作用,jvm不一定会接受)</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;对象已被回收&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="设为软引用"><a href="#设为软引用" class="headerlink" title="设为软引用"></a>设为软引用</h2><p>软引用和弱引用的不同之处在于弱引用会在垃圾回收器下次运行时被回收,而软引用只有在内存空间不足时才会被回收,通过这种方式我们可以建立缓存机制,当内存充足时保留某些对象,在内存不足时删除某些对象</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object object =new Object();</span><br><span class="line">//使用这个对象完成一些任务</span><br><span class="line">SoftReference&lt;Object&gt; softReference =new SoftReference&lt;&gt;(object);</span><br><span class="line">object =null;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>这种方式在某些场景下时很有用的</p>
-<h2 id="设为虚引用"><a href="#设为虚引用" class="headerlink" title="设为虚引用"></a>设为虚引用</h2><p>虚引用主要用于一些内存敏感的领域,用于实时监测一个对象是否被回收,我们时无法通过虚引用的<code>get()</code>方法来获取这个对象的,虚引用一般配合引用队列进行使用</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.lang.ref.PhantomReference;</span><br><span class="line">import java.lang.ref.ReferenceQueue;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) throws InterruptedException &#123;</span><br><span class="line">        // 创建一个对象</span><br><span class="line">        Object obj = new Object();</span><br><span class="line"></span><br><span class="line">        // 创建引用队列</span><br><span class="line">        ReferenceQueue&lt;Object&gt; queue = new ReferenceQueue&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        // 创建虚引用，并关联引用队列</span><br><span class="line">        PhantomReference&lt;Object&gt; phantomRef = new PhantomReference&lt;&gt;(obj, queue);</span><br><span class="line"></span><br><span class="line">        // 清除强引用</span><br><span class="line">        obj = null;</span><br><span class="line"></span><br><span class="line">        // 触发垃圾回收</span><br><span class="line">        System.gc();</span><br><span class="line"></span><br><span class="line">        // 稍作等待，让垃圾回收器有机会运行</span><br><span class="line">        Thread.sleep(100);</span><br><span class="line"></span><br><span class="line">        // 检查引用队列，判断对象是否被回收</span><br><span class="line">        if (queue.poll() != null) &#123;</span><br><span class="line">            System.out.println(&quot;对象已被回收&quot;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            System.out.println(&quot;对象尚未被回收&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="System-gc"><a href="#System-gc" class="headerlink" title="System.gc()"></a>System.gc()</h2><p>接下来说一下这个方法,这个方法会建议jvm的垃圾回收器启动一次,但是请注意,这个方法本身只是建议,jvm不一定听,同时,垃圾回收本身就是一件消耗算力的事情,所以过于频繁的垃圾回收反倒会影响性能,所以一定要谨慎使用</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>非常简单的一部分,我上面给出了验证弱引用和虚引用会被回收的代码,你可以自己试着写一个验证软引用被回收的代码来亲身体验一下</p>
-]]></content>
-      <tags>
-        <tag>Java基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java多线程</title>
-    <url>/2025/12/28/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="java多线程"><a href="#java多线程" class="headerlink" title="java多线程"></a>java多线程</h1><p>在运行了这么久的单线程程序后，我们终于迈入了多线程的大门，在开始讲解之前，先来看一些基本的概念吧</p>
+    <url>/2024/12/28/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<p>在运行了这么久的单线程程序后，我们终于迈入了多线程的大门，在开始讲解之前，先来看一些基本的概念吧</p>
 <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p>什么是线程？要回答这个问题，首先要知道什么是进程？简而言之，一个程序就是一个进程，每个进程独占一部分内存空间，但在古早时期，一个进程中只有一个线程或者说线程这个概念还没有诞生，此时的程序都是线性执行的，后来随着多核CPU的发展，为了提高CPU的利用率，人们想出了线程这一概念。</p>
 <p>一个程序就是一个进程，独享一片内存空间，一个进程中包含多个线程，这些线程同时执行，共享同一片内存空间</p>
 <h2 id="如何实现多线程"><a href="#如何实现多线程" class="headerlink" title="如何实现多线程"></a>如何实现多线程</h2><p>想要实现一个简单的多线程应用,有以下三种方法</p>
@@ -543,7 +543,7 @@
   <entry>
     <title>Java的反射机制</title>
     <url>/2024/12/30/Java%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/</url>
-    <content><![CDATA[<h1 id="ava的反射机制"><a href="#ava的反射机制" class="headerlink" title="ava的反射机制"></a>ava的反射机制</h1><p>今天来研究一下Java的反射机制。反射机制是很多的框架与插件的基础.这部分由于会涉及到JVM的底层机制，会比较晦涩，还是要慢慢学习的</p>
+    <content><![CDATA[<p>今天来研究一下Java的反射机制。反射机制是很多的框架与插件的基础.这部分由于会涉及到JVM的底层机制，会比较晦涩，还是要慢慢学习的</p>
 <h2 id="Java的类加载机制"><a href="#Java的类加载机制" class="headerlink" title="Java的类加载机制"></a>Java的类加载机制</h2><p>在讲反射之前，我们先来了解一下Java的类加载机制。在运行状态下JVM会将类的信息提取之后在内存内生成一个Class对象，这个对象全局唯一</p>
 <p>，我们对static资源的操作实际上就是对Class对象的操作.但是,Class对象与一般的对象不同的是它hi记录了类的各种信息包括类所属的父类,实现的接口,所在的包等等</p>
 <h2 id="反射机制是什么"><a href="#反射机制是什么" class="headerlink" title="反射机制是什么"></a>反射机制是什么</h2><blockquote>
@@ -627,7 +627,7 @@
   <entry>
     <title>Maven入门</title>
     <url>/2025/01/18/Maven%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h1 id="Maven入门"><a href="#Maven入门" class="headerlink" title="Maven入门"></a>Maven入门</h1><p>我们在学习了很多Java的基础语法后总是会有这样的疑问：到底如何才能把我所学到的一个个语法转变成实际可用的应用？到底接下来还应该学习什么？这个问题的答案哼复杂，但我会试着逐渐的向你解释这一切</p>
+    <content><![CDATA[<p>我们在学习了很多Java的基础语法后总是会有这样的疑问：到底如何才能把我所学到的一个个语法转变成实际可用的应用？到底接下来还应该学习什么？这个问题的答案哼复杂，但我会试着逐渐的向你解释这一切</p>
 <p>首先我们需要学习的是Maven，Java程序员使用最多的依赖管理工具。我们都知道只依靠一个人的力量是难以办成大事的，为了简化解决问题的流程，我们必须大量使用前人留下的各种库或者说为程序添加各种依赖，可这种添加该如何进行呢，比如在网上乱七八糟的资料中费尽千辛万苦的找到相应的源代码，在费劲巴拉的下载下来，然后在拷贝到你的项目中吗？这样做行不行，当然没有任何问题，但是请不要忘了，在一个大型项目中会用到数以百计的依赖项，且对这些依赖项的版本有严格要求，此外还存在着数百个依赖项互相依赖的问题。仔细想象，单靠人力一点点排查处理是不是有点太过复杂了呢，所以程序员们创造了Maven。</p>
 <p>Maven译为专家，高手，是Apache旗下的一个开源的纯Java项目，基于项目对象模型（POM）的概念，用于对Java项目构建与依赖管理，当然，随着发展，Maven当前也被应用于其他语言的项目中</p>
 <p>Maven可以帮我们完成代码的编译，测试，打包，安装，部署等操作，轻松管理项目的依赖项</p>
@@ -768,9 +768,56 @@
       </tags>
   </entry>
   <entry>
+    <title>Socket是什么</title>
+    <url>/2025/01/16/Socker%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[<p>期末终于考完啦，接下来这段时间的空闲就比较多了，应该会进入一个比较高速的更新期，在上一篇了解了计算机网络的基本架构后，我们今天来看一看如何用Socket实现一个简单的网络通讯</p>
+<p>Socket是什么东西？如果你打开翻译。会发现这个单词的大概释义是插头，插座等等，一般在计算机语境下我们将其翻译为套接字（这个翻译真的是难以评价，丝毫不能体现其实际作用），也就是一套事先约定的计算机间进行网络通信的一套协议，支持TCP和UDP(Java中的Socket是基于TCP的)。今天我们将会使用这一套协议实现一个简单的群聊，并通过这个过程来初步了解Socket</p>
+<h2 id="建立连接"><a href="#建立连接" class="headerlink" title="建立连接"></a>建立连接</h2><p>在实现聊天之前,我们首先要建立一个连接</p>
+<p>要建立一个连接,我们需要一个服务端来监听与处理请求,一个客户端来发起请求,先来完成服务端</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ServerSocket serverSocket = new ServerSocket(8888);</span><br><span class="line">        System.out.println(&quot;Server started&quot;);</span><br><span class="line">        System.out.println(&quot;等待对方加入&quot;);</span><br><span class="line">        Socket socket = serverSocket.accept();</span><br><span class="line">        System.out.println(&quot;有用户加入&quot;+socket.getInetAddress().getHostAddress());</span><br><span class="line">        Thread.sleep(1000);//保持连接</span><br><span class="line">        System.out.println(&quot;连接结束&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>我们一个个来解释</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ServerSocket serverSocket = new ServerSocket(8888);</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>ServerSocket对象会持续的监听对应端口.即8888端口,检查是否有链接请求(如果不知道端口等相关知识,请阅读<a href="https://soulmate.org.cn/2025/01/11/%E8%B5%B0%E8%BF%9B%E7%BD%91%E7%BB%9C%E4%B8%96%E7%95%8C/">走进网络世界 - Soul的小站 (soulmate.org.cn)</a>)</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Socket socket = serverSocket.accept();</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>这个方法是阻塞的,当监听到连接请求时accept方法会同意连接并将这个连接包装为一个Socket对象,接下来我们的一切通讯都将通过这个对象进行</p>
+<p>接下来我们完成客户端</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"> public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        Socket socket = new Socket(&quot;127.0.0.1&quot;,8888);</span><br><span class="line">        System.out.println(&quot;成功连接到&quot;+socket.getRemoteSocketAddress());</span><br><span class="line">        socket.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br><span class="line">Socket socket = new Socket(&quot;127.0.0.1&quot;,8888);</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>向IP为127.0.0.1的8888端口发送请求建立连接,127.0.0.1是回环地址,即向本地发起连接请求</p>
+<p>怎么样是不是很简单(把上面的两个main方法分别放在两个类中就可以运行了)</p>
+<h2 id="实现信息传输"><a href="#实现信息传输" class="headerlink" title="实现信息传输"></a>实现信息传输</h2><p>要实现信息传输,就要用到IO流,关于IO流(<a href="https://soulmate.org.cn/2024/12/27/Java%E4%B8%AD%E7%9A%84IO%E6%B5%81/">Java中的IO流 - Soul的小站 (soulmate.org.cn)</a>)</p>
+<p>此外,我们要实现收发消息的的异步,所以最好是有两个独立的线程来负责消息的收发,(<a href="https://soulmate.org.cn/2024/12/28/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">Java多线程 - Soul的小站 (soulmate.org.cn)</a>)</p>
+<p>我们将代码稍加完善就可以得到</p>
+<p>服务端</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ServerSocket serverSocket = new ServerSocket(8888);</span><br><span class="line">        System.out.println(&quot;Server started&quot;);</span><br><span class="line">        System.out.println(&quot;如需退出请输入exit&quot;);</span><br><span class="line">        System.out.println(&quot;等待对方加入&quot;);</span><br><span class="line">        Socket socket = serverSocket.accept();</span><br><span class="line">        System.out.println(&quot;有用户加入&quot;+socket.getInetAddress().getHostAddress());</span><br><span class="line">        Thread t1=new Thread(()-&gt;&#123;</span><br><span class="line">            BufferedReader br=null;</span><br><span class="line">            try &#123;</span><br><span class="line">                br=new BufferedReader(new InputStreamReader(socket.getInputStream()));</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                throw new RuntimeException(e);</span><br><span class="line">            &#125;</span><br><span class="line">            try &#123;</span><br><span class="line"></span><br><span class="line">                while(!Thread.currentThread().isInterrupted()) &#123;</span><br><span class="line"></span><br><span class="line">                    String msg= br.readLine();</span><br><span class="line">                    System.out.println(socket.getInetAddress().getHostAddress()+&quot;:&quot;+msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                System.out.println(&quot;连接异常，可能为对方断开连接&quot;);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">        Thread t2=new Thread(()-&gt;&#123;</span><br><span class="line">            BufferedWriter bw=null;</span><br><span class="line">            try&#123;</span><br><span class="line">                bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));</span><br><span class="line">                while(true)&#123;</span><br><span class="line">                    Scanner scanner = new Scanner(System.in);</span><br><span class="line">                    String input=scanner.nextLine();</span><br><span class="line">                    if(input.equals(&quot;exit&quot;))&#123;</span><br><span class="line">                        t1.interrupt();//通过中断机制同时结束所有线程</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                    bw.write(input);</span><br><span class="line">                    bw.flush();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;catch (IOException e)&#123;</span><br><span class="line">                System.out.println(&quot;发送异常&quot;);</span><br><span class="line">            &#125;finally &#123;</span><br><span class="line"></span><br><span class="line">                try &#123;</span><br><span class="line">                    socket.close();</span><br><span class="line">                    serverSocket.close();</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    System.out.println(&quot;未知异常&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>客户端</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">import java.net.Socket;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        Socket socket = new Socket(&quot;127.0.0.1&quot;,8888);</span><br><span class="line">        System.out.println(&quot;成功连接到&quot;+socket.getRemoteSocketAddress());</span><br><span class="line">        System.out.println(&quot;如需退出请输入exit&quot;);</span><br><span class="line"></span><br><span class="line">        Thread t1=new Thread(()-&gt;&#123;</span><br><span class="line">            BufferedReader br=null;</span><br><span class="line">            try &#123;</span><br><span class="line">                br=new BufferedReader(new InputStreamReader(socket.getInputStream()));</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                throw new RuntimeException(e);</span><br><span class="line">            &#125;</span><br><span class="line">           String msg=null;</span><br><span class="line">            while(!Thread.currentThread().isInterrupted())&#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                     msg= br.readLine();</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    System.out.println(&quot;连接断开&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(socket.getRemoteSocketAddress()+&quot;:&quot;+msg);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">        Thread t2=new Thread(()-&gt;&#123;</span><br><span class="line">            BufferedWriter bw=null;</span><br><span class="line">            try&#123;</span><br><span class="line">                bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));</span><br><span class="line">                Scanner scanner=new Scanner(System.in);</span><br><span class="line">                while(true)&#123;</span><br><span class="line">                    String input=scanner.nextLine();</span><br><span class="line">                    if(input.equals(&quot;exit&quot;))&#123;</span><br><span class="line">                        t1.interrupt();//通过中断机制同时结束所有线程</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                    bw.write(input+&quot;\n&quot;);</span><br><span class="line">                    bw.flush();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                throw new RuntimeException(e);</span><br><span class="line">            &#125;finally &#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    socket.close();</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    throw new RuntimeException(e);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>上面的代码中我们使用了缓冲流以提高性能,当然由于没有仔细涉及,这部分代码需要改进的地方还是挺多的</p>
+<h2 id="实现群聊"><a href="#实现群聊" class="headerlink" title="实现群聊"></a>实现群聊</h2><p>其实写到这里我相信你也可以独立的实现一个群聊了,这里我就不具体的写实现了,你可以试着自己完成(最好完善我上面代码的异常处理机制)</p>
+<p>提示:不一定要在我给出的代码的基础上修改,你可以自己从头重新实现</p>
+<h2 id="关于UDP"><a href="#关于UDP" class="headerlink" title="关于UDP"></a>关于UDP</h2><p>既然Socket默认是使用TCP进行通信的,那么我们有改如何实UDP通信呢,我们可以使用DatagramSocket<code>和</code>DatagramPacket两个类来实现</p>
+<p>修改服务端</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">DatagramSocket socket = new DatagramSocket(8888);</span><br><span class="line">byte[] buffer = new byte[1024];</span><br><span class="line">DatagramPacket packet = new DatagramPacket(buffer, buffer.length);</span><br><span class="line">socket.receive(packet); // 接收数据包</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>修改客户端</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">socket = new DatagramSocket(&quot;127.0.0.1&quot;，8888);</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>剩下的就没什么区别了，完全可以和一般的Socket以同种方法使用</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>实际上Socket类中的方法还是很丰富的，但是这些方法与我们无关，我们只需要建立连接，然后用IO流实现信息的传输即可。当然，从使用的角度来说了解这些就足够了，但是作为一个有远大志向的码农，我们最好还是学习一下TCP和UDP的具体实现过程，感兴趣的可以自行了解，我在这里就不过多的讲了</p>
+]]></content>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringBoot初步</title>
     <url>/2025/02/14/SpringBoot%E5%88%9D%E6%AD%A5/</url>
-    <content><![CDATA[<h1 id="SpringBoot初步"><a href="#SpringBoot初步" class="headerlink" title="SpringBoot初步"></a>SpringBoot初步</h1><p>终于，我们学到了这一步，这个系列也快要结束了，SpringBoot是一套更为高级的框架，能够帮我们直接整合当前我们能用到的几乎所有的框架，更为重要的是我们终于不用想SpringMVC部分那样倒腾那一大堆烦人的前端内容了，我们只需要处理后端内容，只写Java即可。在开始之前，我们需要下载一个软件</p>
+    <content><![CDATA[<p>终于，我们学到了这一步，这个系列也快要结束了，SpringBoot是一套更为高级的框架，能够帮我们直接整合当前我们能用到的几乎所有的框架，更为重要的是我们终于不用想SpringMVC部分那样倒腾那一大堆烦人的前端内容了，我们只需要处理后端内容，只写Java即可。在开始之前，我们需要下载一个软件</p>
 <p>Apifox。这是一款功能极为强大的Api测试工具，最重要的是这玩意完全免费，还是国内的产品。这里同样贴一个官网<a class="link"   href="https://apifox.com/" >Apifox - API 文档、调试、Mock、测试一体化协作平台。拥有接口文档管理、接口调试、Mock、自动化测试等功能，接口开发、测试、联调效率，提升 10 倍。最好用的接口文档管理工具，接口自动化测试工具。<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <h2 id="JSON数据格式"><a href="#JSON数据格式" class="headerlink" title="JSON数据格式"></a>JSON数据格式</h2><p>我们要实现前后端分离，什么是前后端分离？将图形化界面等部分完全交给前端，后端只负责返回前端需要的数据而不必在意前端将会如何处理与渲染这些数据</p>
 <p>而要实现这一点，我们就需要约定一种高效的数据传输格式，一开始大家习惯使用xml，但大家都知道这玩意的奇怪格式用起来实际上并不是那么顺手，后来我们就搞出了JSON格式，既方便程序处理，写起来也比较方便，一个简单的JSON长这样</p>
@@ -938,7 +985,7 @@
   <entry>
     <title>MySQL入门</title>
     <url>/2025/01/20/MySQL%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h1 id="MySQL入门"><a href="#MySQL入门" class="headerlink" title="MySQL入门"></a>MySQL入门</h1><p>任何一个软件都会接受，产生，处理大量的数据，这些数据的种类各不相同，为了管理这些数据，我们创建了数据库（DateBase）这一概念并有了相应的数据库管理系统，进一步的创建出了一套复杂的数据库语言。本篇站在一个学习java的新手的角度，快速的过一遍与数据库相关的那些你应当掌握的基础内容</p>
+    <content><![CDATA[<p>任何一个软件都会接受，产生，处理大量的数据，这些数据的种类各不相同，为了管理这些数据，我们创建了数据库（DateBase）这一概念并有了相应的数据库管理系统，进一步的创建出了一套复杂的数据库语言。本篇站在一个学习java的新手的角度，快速的过一遍与数据库相关的那些你应当掌握的基础内容</p>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
 <li><p><strong>数据库</strong>：DataBase，简称DB。按照一定格式存储数据的一些文件的组合顾名思义: 存储数据的仓库，实际上就是一堆文件。这些文件中存储了具有特定格式的数据。</p>
 </li>
@@ -2143,56 +2190,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Socket是什么</title>
-    <url>/2025/01/16/Socker%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-    <content><![CDATA[<h2 id="Socket是什么"><a href="#Socket是什么" class="headerlink" title="Socket是什么"></a>Socket是什么</h2><p>期末终于考完啦，接下来这段时间的空闲就比较多了，应该会进入一个比较高速的更新期，在上一篇了解了计算机网络的基本架构后，我们今天来看一看如何用Socket实现一个简单的网络通讯</p>
-<p>Socket是什么东西？如果你打开翻译。会发现这个单词的大概释义是插头，插座等等，一般在计算机语境下我们将其翻译为套接字（这个翻译真的是难以评价，丝毫不能体现其实际作用），也就是一套事先约定的计算机间进行网络通信的一套协议，支持TCP和UDP(Java中的Socket是基于TCP的)。今天我们将会使用这一套协议实现一个简单的群聊，并通过这个过程来初步了解Socket</p>
-<h2 id="建立连接"><a href="#建立连接" class="headerlink" title="建立连接"></a>建立连接</h2><p>在实现聊天之前,我们首先要建立一个连接</p>
-<p>要建立一个连接,我们需要一个服务端来监听与处理请求,一个客户端来发起请求,先来完成服务端</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ServerSocket serverSocket = new ServerSocket(8888);</span><br><span class="line">        System.out.println(&quot;Server started&quot;);</span><br><span class="line">        System.out.println(&quot;等待对方加入&quot;);</span><br><span class="line">        Socket socket = serverSocket.accept();</span><br><span class="line">        System.out.println(&quot;有用户加入&quot;+socket.getInetAddress().getHostAddress());</span><br><span class="line">        Thread.sleep(1000);//保持连接</span><br><span class="line">        System.out.println(&quot;连接结束&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>我们一个个来解释</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">ServerSocket serverSocket = new ServerSocket(8888);</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>ServerSocket对象会持续的监听对应端口.即8888端口,检查是否有链接请求(如果不知道端口等相关知识,请阅读<a href="https://soulmate.org.cn/2025/01/11/%E8%B5%B0%E8%BF%9B%E7%BD%91%E7%BB%9C%E4%B8%96%E7%95%8C/">走进网络世界 - Soul的小站 (soulmate.org.cn)</a>)</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Socket socket = serverSocket.accept();</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>这个方法是阻塞的,当监听到连接请求时accept方法会同意连接并将这个连接包装为一个Socket对象,接下来我们的一切通讯都将通过这个对象进行</p>
-<p>接下来我们完成客户端</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line"> public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        Socket socket = new Socket(&quot;127.0.0.1&quot;,8888);</span><br><span class="line">        System.out.println(&quot;成功连接到&quot;+socket.getRemoteSocketAddress());</span><br><span class="line">        socket.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br><span class="line">Socket socket = new Socket(&quot;127.0.0.1&quot;,8888);</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>向IP为127.0.0.1的8888端口发送请求建立连接,127.0.0.1是回环地址,即向本地发起连接请求</p>
-<p>怎么样是不是很简单(把上面的两个main方法分别放在两个类中就可以运行了)</p>
-<h2 id="实现信息传输"><a href="#实现信息传输" class="headerlink" title="实现信息传输"></a>实现信息传输</h2><p>要实现信息传输,就要用到IO流,关于IO流(<a href="https://soulmate.org.cn/2024/12/27/Java%E4%B8%AD%E7%9A%84IO%E6%B5%81/">Java中的IO流 - Soul的小站 (soulmate.org.cn)</a>)</p>
-<p>此外,我们要实现收发消息的的异步,所以最好是有两个独立的线程来负责消息的收发,(<a href="https://soulmate.org.cn/2024/12/28/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/">Java多线程 - Soul的小站 (soulmate.org.cn)</a>)</p>
-<p>我们将代码稍加完善就可以得到</p>
-<p>服务端</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">import java.net.ServerSocket;</span><br><span class="line">import java.net.Socket;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ServerSocket serverSocket = new ServerSocket(8888);</span><br><span class="line">        System.out.println(&quot;Server started&quot;);</span><br><span class="line">        System.out.println(&quot;如需退出请输入exit&quot;);</span><br><span class="line">        System.out.println(&quot;等待对方加入&quot;);</span><br><span class="line">        Socket socket = serverSocket.accept();</span><br><span class="line">        System.out.println(&quot;有用户加入&quot;+socket.getInetAddress().getHostAddress());</span><br><span class="line">        Thread t1=new Thread(()-&gt;&#123;</span><br><span class="line">            BufferedReader br=null;</span><br><span class="line">            try &#123;</span><br><span class="line">                br=new BufferedReader(new InputStreamReader(socket.getInputStream()));</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                throw new RuntimeException(e);</span><br><span class="line">            &#125;</span><br><span class="line">            try &#123;</span><br><span class="line"></span><br><span class="line">                while(!Thread.currentThread().isInterrupted()) &#123;</span><br><span class="line"></span><br><span class="line">                    String msg= br.readLine();</span><br><span class="line">                    System.out.println(socket.getInetAddress().getHostAddress()+&quot;:&quot;+msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                System.out.println(&quot;连接异常，可能为对方断开连接&quot;);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">        Thread t2=new Thread(()-&gt;&#123;</span><br><span class="line">            BufferedWriter bw=null;</span><br><span class="line">            try&#123;</span><br><span class="line">                bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));</span><br><span class="line">                while(true)&#123;</span><br><span class="line">                    Scanner scanner = new Scanner(System.in);</span><br><span class="line">                    String input=scanner.nextLine();</span><br><span class="line">                    if(input.equals(&quot;exit&quot;))&#123;</span><br><span class="line">                        t1.interrupt();//通过中断机制同时结束所有线程</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                    bw.write(input);</span><br><span class="line">                    bw.flush();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;catch (IOException e)&#123;</span><br><span class="line">                System.out.println(&quot;发送异常&quot;);</span><br><span class="line">            &#125;finally &#123;</span><br><span class="line"></span><br><span class="line">                try &#123;</span><br><span class="line">                    socket.close();</span><br><span class="line">                    serverSocket.close();</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    System.out.println(&quot;未知异常&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>客户端</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.io.*;</span><br><span class="line">import java.net.Socket;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        Socket socket = new Socket(&quot;127.0.0.1&quot;,8888);</span><br><span class="line">        System.out.println(&quot;成功连接到&quot;+socket.getRemoteSocketAddress());</span><br><span class="line">        System.out.println(&quot;如需退出请输入exit&quot;);</span><br><span class="line"></span><br><span class="line">        Thread t1=new Thread(()-&gt;&#123;</span><br><span class="line">            BufferedReader br=null;</span><br><span class="line">            try &#123;</span><br><span class="line">                br=new BufferedReader(new InputStreamReader(socket.getInputStream()));</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                throw new RuntimeException(e);</span><br><span class="line">            &#125;</span><br><span class="line">           String msg=null;</span><br><span class="line">            while(!Thread.currentThread().isInterrupted())&#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                     msg= br.readLine();</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    System.out.println(&quot;连接断开&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(socket.getRemoteSocketAddress()+&quot;:&quot;+msg);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">        Thread t2=new Thread(()-&gt;&#123;</span><br><span class="line">            BufferedWriter bw=null;</span><br><span class="line">            try&#123;</span><br><span class="line">                bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));</span><br><span class="line">                Scanner scanner=new Scanner(System.in);</span><br><span class="line">                while(true)&#123;</span><br><span class="line">                    String input=scanner.nextLine();</span><br><span class="line">                    if(input.equals(&quot;exit&quot;))&#123;</span><br><span class="line">                        t1.interrupt();//通过中断机制同时结束所有线程</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                    bw.write(input+&quot;\n&quot;);</span><br><span class="line">                    bw.flush();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                throw new RuntimeException(e);</span><br><span class="line">            &#125;finally &#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    socket.close();</span><br><span class="line">                &#125; catch (IOException e) &#123;</span><br><span class="line">                    throw new RuntimeException(e);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        t1.start();</span><br><span class="line">        t2.start();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>上面的代码中我们使用了缓冲流以提高性能,当然由于没有仔细涉及,这部分代码需要改进的地方还是挺多的</p>
-<h2 id="实现群聊"><a href="#实现群聊" class="headerlink" title="实现群聊"></a>实现群聊</h2><p>其实写到这里我相信你也可以独立的实现一个群聊了,这里我就不具体的写实现了,你可以试着自己完成(最好完善我上面代码的异常处理机制)</p>
-<p>提示:不一定要在我给出的代码的基础上修改,你可以自己从头重新实现</p>
-<h2 id="关于UDP"><a href="#关于UDP" class="headerlink" title="关于UDP"></a>关于UDP</h2><p>既然Socket默认是使用TCP进行通信的,那么我们有改如何实UDP通信呢,我们可以使用DatagramSocket<code>和</code>DatagramPacket两个类来实现</p>
-<p>修改服务端</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">DatagramSocket socket = new DatagramSocket(8888);</span><br><span class="line">byte[] buffer = new byte[1024];</span><br><span class="line">DatagramPacket packet = new DatagramPacket(buffer, buffer.length);</span><br><span class="line">socket.receive(packet); // 接收数据包</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>修改客户端</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">socket = new DatagramSocket(&quot;127.0.0.1&quot;，8888);</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>剩下的就没什么区别了，完全可以和一般的Socket以同种方法使用</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>实际上Socket类中的方法还是很丰富的，但是这些方法与我们无关，我们只需要建立连接，然后用IO流实现信息的传输即可。当然，从使用的角度来说了解这些就足够了，但是作为一个有远大志向的码农，我们最好还是学习一下TCP和UDP的具体实现过程，感兴趣的可以自行了解，我在这里就不过多的讲了</p>
-]]></content>
-      <tags>
-        <tag>杂谈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SpringMVC</title>
     <url>/2025/02/11/SpringMVC/</url>
-    <content><![CDATA[<h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><p>接线来我们来了解SpringMVC，这是一套用来实现与前端交互的框架，可以极为方便的帮我们写一些Web应用。不过，在此之前我们需要先了解另一个东西：TomCat，汤姆猫。它可以帮助我们快速的部署我们的Web项目。我这里贴一个官网<a class="link"   href="https://tomcat.apache.org/" >Apache Tomcat® - Welcome!<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>建议直接使用官方提供的Installer，可以直接帮我们跳过环境配置</p>
+    <content><![CDATA[<p>接线来我们来了解SpringMVC，这是一套用来实现与前端交互的框架，可以极为方便的帮我们写一些Web应用。不过，在此之前我们需要先了解另一个东西：TomCat，汤姆猫。它可以帮助我们快速的部署我们的Web项目。我这里贴一个官网<a class="link"   href="https://tomcat.apache.org/" >Apache Tomcat® - Welcome!<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>建议直接使用官方提供的Installer，可以直接帮我们跳过环境配置</p>
 <p>ps:如果你没有前端基础,这将是非常痛苦的一节课,请努力撑下去</p>
 <h2 id="TomCat的简单介绍"><a href="#TomCat的简单介绍" class="headerlink" title="TomCat的简单介绍"></a>TomCat的简单介绍</h2><p>首先我们需要启动它，在下载目录的bin中有一个startup.sh文件,运行这个文件即可,然后试着访问<a href="http://localhost:8080若能够成功访问则说明安装成功/">http://localhost:8080若能够成功访问则说明安装成功</a></p>
 <p>稍微介绍一下各个文件夹的功能</p>
@@ -2426,7 +2426,7 @@
   <entry>
     <title>Spring基础</title>
     <url>/2025/02/06/Spring%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="Spring基础"><a href="#Spring基础" class="headerlink" title="Spring基础"></a>Spring基础</h1><p>今天我们终于来到了Spring篇的相关内容。学完这部分，其实就能够上手一些现实中的比较简单的项目了。在开始之前我们先来了解一下MVC架构</p>
+    <content><![CDATA[<p>今天我们终于来到了Spring篇的相关内容。学完这部分，其实就能够上手一些现实中的比较简单的项目了。在开始之前我们先来了解一下MVC架构</p>
 <h2 id="控制反转与依赖注入"><a href="#控制反转与依赖注入" class="headerlink" title="控制反转与依赖注入"></a>控制反转与依赖注入</h2><p>首先我们要了解两个重要的概念：依赖注入与控制反转。在之前我们写的每一个项目中，我们都通过这样的方式来创建一个对象</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object o = new Object();</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
 
@@ -2653,7 +2653,7 @@
 
 <ul>
 <li><p><strong>示例</strong>：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Pointcut(&quot;execution(public * com.example.*.*(..))&quot;)</span><br><span class="line">public void publicMethodsInPackage() &#123;&#125;</span><br><span class="line">  </span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Pointcut(&quot;execution(public * com.example.*.*(..))&quot;)</span><br><span class="line">public void publicMethodsInPackage() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>拦截<code>com.example</code>包中所有类的<code>public</code>方法。</li>
@@ -2664,7 +2664,7 @@
 
 <ul>
 <li><p><strong>示例</strong>：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Pointcut(&quot;within(com.example.service.*)&quot;)</span><br><span class="line">public void withinServicePackage() &#123;&#125;</span><br><span class="line">  </span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Pointcut(&quot;within(com.example.service.*)&quot;)</span><br><span class="line">public void withinServicePackage() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>拦截<code>com.example.service</code>包中所有类的所有方法。</li>
@@ -2675,7 +2675,7 @@
 
 <ul>
 <li><p><strong>示例</strong>：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Pointcut(&quot;call(* com.example.*.*(..))&quot;)</span><br><span class="line">public void methodCalls() &#123;&#125;</span><br><span class="line">  </span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Pointcut(&quot;call(* com.example.*.*(..))&quot;)</span><br><span class="line">public void methodCalls() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>拦截对<code>com.example</code>包中所有类的所有方法的调用。</li>
@@ -2686,7 +2686,7 @@
 
 <ul>
 <li><p><strong>示例</strong>：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Pointcut(&quot;execution(* com.example.*.*(..)) &amp;&amp; args(java.lang.String)&quot;)</span><br><span class="line">public void methodsWithOneStringArg() &#123;&#125;</span><br><span class="line">  </span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Pointcut(&quot;execution(* com.example.*.*(..)) &amp;&amp; args(java.lang.String)&quot;)</span><br><span class="line">public void methodsWithOneStringArg() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>拦截<code>com.example</code>包中所有类中，参数为<code>String</code>的方法。</li>
@@ -2697,7 +2697,7 @@
 
 <ul>
 <li><p><strong>示例</strong>：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Pointcut(&quot;execution(* com.example.*.*(..)) &amp;&amp; @annotation(org.springframework.web.bind.annotation.GetMapping)&quot;)</span><br><span class="line">public void getMappingMethods() &#123;&#125;</span><br><span class="line">  </span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">@Pointcut(&quot;execution(* com.example.*.*(..)) &amp;&amp; @annotation(org.springframework.web.bind.annotation.GetMapping)&quot;)</span><br><span class="line">public void getMappingMethods() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>拦截<code>com.example</code>包中所有带有<code>@GetMapping</code>注解的方法。</li>
@@ -2782,7 +2782,7 @@
   <entry>
     <title>git使用入门</title>
     <url>/2024/12/02/git%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h2 id="git使用入门"><a href="#git使用入门" class="headerlink" title="git使用入门"></a>git使用入门</h2><p>最近涉及到了团队开发，未进行合作需要使用git，但遇到了很多问题，所以这里稍微总结一下git的简单使用，以供参考</p>
+    <content><![CDATA[<p>最近涉及到了团队开发，未进行合作需要使用git，但遇到了很多问题，所以这里稍微总结一下git的简单使用，以供参考</p>
 <h2 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h2><p>下载git很简单，这是官网</p>
 <p><a class="link"   href="https://git-scm.com/" >Git (git-scm.com)<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>进入官网选择download下载即可（我相信屏幕前的你应该是会一点英文的，跟着官网的引导走即可）</p>
@@ -2906,7 +2906,7 @@
   <entry>
     <title>lambda表达式与函数式接口</title>
     <url>/2024/12/20/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/</url>
-    <content><![CDATA[<h1 id="lambda表达式与函数式接口"><a href="#lambda表达式与函数式接口" class="headerlink" title="lambda表达式与函数式接口"></a>lambda表达式与函数式接口</h1><p>写着一篇的起因是学函数式接口那几个函数式接口的实现真把我整糊涂了，看了半天啥也看不懂，又忽然想起来也没有系统的研究过lambda表达式，索性一起做一个总结，方便以后查阅</p>
+    <content><![CDATA[<p>写着一篇的起因是学函数式接口那几个函数式接口的实现真把我整糊涂了，看了半天啥也看不懂，又忽然想起来也没有系统的研究过lambda表达式，索性一起做一个总结，方便以后查阅</p>
 <h2 id="为什么要有lambda表达式"><a href="#为什么要有lambda表达式" class="headerlink" title="为什么要有lambda表达式"></a>为什么要有lambda表达式</h2><p>首先我们要搞明白一个问题：lambda表达式存在的意义是什么？简化代码，提高代码可读性（虽然在不少时候，这玩意的一些奇奇怪怪的写法反倒让代码看起来更奇怪）</p>
 <p>对于大部分人来说使用lambda表达式最多的地方就是匿名类了吧，那么我们就从匿名类聊起</p>
 <h2 id="匿名内部类与lambda表达式"><a href="#匿名内部类与lambda表达式" class="headerlink" title="匿名内部类与lambda表达式"></a>匿名内部类与lambda表达式</h2><p>首先我还是解释一下什么是匿名内部类吧，我们都知道对于一个抽象类或者接口，我们是不能直接将其实例化的，但是这件事并不是绝对的，我们可以通过匿名内部类来创建一个抽象类或接口的实例</p>
@@ -3052,7 +3052,7 @@
   <entry>
     <title>从JDBC到Mybatis</title>
     <url>/2025/01/31/%E4%BB%8EJDBC%E5%88%B0Mybatis/</url>
-    <content><![CDATA[<h1 id="从JDBC到Mybaits"><a href="#从JDBC到Mybaits" class="headerlink" title="从JDBC到Mybaits"></a>从JDBC到Mybaits</h1><p>在了解本篇之前,你需要对数据库有基本的认识<a href="https://soulmate.org.cn/2025/01/20/MySQL%E5%85%A5%E9%97%A8/">MySQL入门 - Soul的小站 (soulmate.org.cn)</a></p>
+    <content><![CDATA[<p>在了解本篇之前,你需要对数据库有基本的认识<a href="https://soulmate.org.cn/2025/01/20/MySQL%E5%85%A5%E9%97%A8/">MySQL入门 - Soul的小站 (soulmate.org.cn)</a></p>
 <p>在java中该如何连接数据库并对其进行操作呢，当下在实际的开发过程中一般使用Mybatis，而在Mybatis出现之前，JDBC也是一个不错的选择，所以我们今天限简单的看一看JDBC，在进一步去了解Mybatis的使用</p>
 <h2 id="认识JDBC"><a href="#认识JDBC" class="headerlink" title="认识JDBC"></a>认识JDBC</h2><p>JDBC英文名为：Java Data Base Connectivity（Java数据库连接）官方解释它是Java编程语言和广泛的数据库之间独立于数据库的连接标准的Java API，根本上说JDBC是一种规范，它提供的接口，一套完整的，允许便捷式访问底层数据库。所以说几乎所有数据库都支持通过JDBC进行访问，我们这里以MySQL作为例子</p>
 <p>首先我们需要导入JDBC依赖。这有两种方式，你可以直接去MySQL官网上下载属于MySQL的JDBC依赖，也可以通过Maven直接导入依赖</p>
@@ -3407,44 +3407,9 @@ List&lt;User&gt; selectAllUser();
       </tags>
   </entry>
   <entry>
-    <title>再谈多线程（一）</title>
-    <url>/2025/01/10/%E5%86%8D%E8%B0%88%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="再谈多线程"><a href="#再谈多线程" class="headerlink" title="再谈多线程"></a>再谈多线程</h1><p>好久没有更新了，最近忙的复习期末，一直顾不上写博客，今天实在有点手痒，于是就有了这一篇，来进一步谈一谈关于多线程的事，主题如你所见，是关于多线程的内容。至于这一篇，我们就先来看一看Java中的锁机制到底是怎样实现的</p>
-<h2 id="锁机制的原始实现"><a href="#锁机制的原始实现" class="headerlink" title="锁机制的原始实现"></a>锁机制的原始实现</h2><p>事实上，我们的锁机制是经历了多次的迭代的，我们先来看一看在jdk6之前的锁是怎样实现的</p>
-<p>我们都知道想要给某个对象加锁，最简单的方法就是使用<code>synchronized</code>关键字,那么加入这个关键字会具体产生哪些影响呢</p>
-<p>首先我们需要简单的了解一个类<code>ObjectMonitor</code>,这个类具体有哪些方法我们暂且不看,只先了解它有哪些属性</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">objectMonitor() &#123;</span><br><span class="line">    _header       = NULL;</span><br><span class="line">    _count        = 0; </span><br><span class="line">    _waiters      = 0,</span><br><span class="line">    _recursions   = 0;</span><br><span class="line">    _object       = NULL;</span><br><span class="line">    _owner        = NULL;//用来表示当前锁的持有者</span><br><span class="line">    _WaitSet      = NULL; //处于wait状态的线程，会被加入到_WaitSet</span><br><span class="line">    _WaitSetLock  = 0 ;</span><br><span class="line">    _Responsible  = NULL ;</span><br><span class="line">    _succ         = NULL ;</span><br><span class="line">    _cxq          = NULL ;</span><br><span class="line">    FreeNext      = NULL ;</span><br><span class="line">    _EntryList    = NULL ; //处于等待锁block状态的线程，会被加入到该列表</span><br><span class="line">    _SpinFreq     = 0 ;</span><br><span class="line">    _SpinClock    = 0 ;</span><br><span class="line">    OwnerIsThread = 0 ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
-
-<p>每个对象都有一个与之对应的Monitor对象相对应,在这个对象的监视对象有一个entryLIst,所有的需要获得该对象的锁的线程都将被包装为一个<code>objectWaiter</code>对象并放入这个LIst中,随后将会依据LIst中的顺序依次让这些线程获得锁,而使用完锁的线程则调用wait函数挂起并进入waitset,在entryLIst变为空后再次从waitset中获取需要的锁的线程,如此循环往复</p>
-<h2 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h2><p>但这样的锁机制其实存在一个问题,反复的将线程挂起再唤醒的操作实际上会消耗大量的不必要的资源,所以在jdk6时提出来自旋锁的概念,每个线程在使用完锁后不再挂起而是选择进入一个循环,反复尝试获取锁,这避免了挂起与唤醒时将线程中数据保存再读取的资源浪费</p>
-<p>但这个操作实际上基于一个认知:每个线程都不会长时间占用一个锁,所有的线程都能在可接受的时间内等到锁.如果一个线程长时间无法获得锁,那么这个线程实际上最好还是挂起,避免算力上的无意义浪费.所以后来自旋锁实际上做出了一定的改进,在循环一定的次数后如果仍然无法获取锁,那么这个线程同样会被挂起,这个具体的次数由JVM决定</p>
-<h2 id="轻量级锁"><a href="#轻量级锁" class="headerlink" title="轻量级锁"></a>轻量级锁</h2><p>上面说到的锁的原始实现实际上也被称之为重量级锁或者说悲观锁,即我们认为随时都存在某个线程会和当前的线程发生竞争,这种情况我们无法预料也无法阻止.这种做法当然没有问题,但是这会增加切换锁状态的算力开销</p>
-<p>所以后来人们又提出了轻量级锁的概念,在某一个线程希望获取锁时这个线程将复制此时对象的信息并在该对象的对象头添加此时该对象已经被其他线程获取的信息.,在需要修改这个对象时先检查这个对象的值是否和获取锁时保持一致如果不一致则此次循环无效,一致则正常修改(这种操作成为CAS操作)</p>
-<p>(注意,不管是重量级锁还是轻量级锁,它们的实现实际上都涉及到了硬件底层的不同指令,不止是简单的软件层面的差异)</p>
-<p>由于这种做法在底层实现上与重量级锁的差异,实际上无法阻止别的线程去获取这个对象,所以实际上如果某次CAS操作失败,这个锁就将被直接升级为重量级锁,</p>
-<p>轻量级锁更适合各个线程之间竞争不激烈时使用,这可以显著的加快程序的运行速度,但如果各个线程之间的竞争过于激烈,轻量级锁被升级为重量级锁的过程本身要消耗不少的资源,这是得不偿失的</p>
-<p>Java中的atomic类与unsafe类就是使用轻量级锁实现的</p>
-<h2 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h2><p>实际上还有一类情况,如果在大部分时间内某个对象都是由一个线程反复的占有再释放,那么我们可以使用偏向锁来进一步提升性能,在这种锁机制下,当一个对象的锁反复被同一个线程获取时,这个对象的锁就会被一直打上这个线程的标签,此后该线程获取这个锁时不再需要反复的给对象的对象头添加信息,进一步的提高性能.不过如果某次CAS操作发生异常,这个锁就会升级为轻量级锁</p>
-<p>要使用偏向锁，请修改JVM参数</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">-XX:BiasedLockingStartupDelay=0</span><br><span class="line"></span><br><span class="line">ROUTEROS</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>这里补充一点,所有的锁的升级过程都是不可逆的且消耗资源,所以在码代码时要实现考虑清楚各个线程之间资源的使用情况,避免锁升级造成的资源浪费</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>兴之所至才写了这么一篇,所以内容有点简单,字数也不怎么样,将就着看吧.</p>
-<p><a href="https://s1.imagehub.cc/images/2025/01/10/bfefc14487b740459839738d444d64d0.jpg"><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/bfefc14487b740459839738d444d64d0.jpg"
-                      alt="img"
-                ></a></p>
-]]></content>
-      <tags>
-        <tag>多线程那些事</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于C语言中的Windows.h</title>
     <url>/2024/12/25/%E5%85%B3%E4%BA%8EC%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84Windows-h/</url>
-    <content><![CDATA[<h1 id="C语言中的Windows-h"><a href="#C语言中的Windows-h" class="headerlink" title="C语言中的Windows.h"></a>C语言中的Windows.h</h1><p>其实吧这玩意我是不想写的，只要是个人就能理解这玩意的实用意义几乎为0，谁闲着没事会取用C语言去写一个交互界面啊，所以这玩意属于特殊情况下的特殊产物：老师强制要求使用C语言完成，又为了显得高级所以用这玩意（虽然最后也没有显得多么高级），这玩意写起来简直顶级折磨。其实经过查找，是可以用gui库代替的，但一是这玩意比Windows的原生API简单不了多少，二是引入gui库总会发生各种各样奇奇怪怪的报错，折磨了一会只好放弃（如果你说还有easyx可以用，但不好意思，我没有用msvc，用的是gcc，所以用不了）</p>
+    <content><![CDATA[<p>其实吧这玩意我是不想写的，只要是个人就能理解这玩意的实用意义几乎为0，谁闲着没事会取用C语言去写一个交互界面啊，所以这玩意属于特殊情况下的特殊产物：老师强制要求使用C语言完成，又为了显得高级所以用这玩意（虽然最后也没有显得多么高级），这玩意写起来简直顶级折磨。其实经过查找，是可以用gui库代替的，但一是这玩意比Windows的原生API简单不了多少，二是引入gui库总会发生各种各样奇奇怪怪的报错，折磨了一会只好放弃（如果你说还有easyx可以用，但不好意思，我没有用msvc，用的是gcc，所以用不了）</p>
 <p>总之经过一番痛苦面具，我终于写了一个基础的图形化界面出来，或许不怎么好看，但是它能跑，这就够了</p>
 <p>接下来简单介绍一些需要用到的知识吧</p>
 <h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)</span><br><span class="line"></span><br><span class="line">C</span><br></pre></td></tr></table></figure></div>
@@ -3588,9 +3553,44 @@ List&lt;User&gt; selectAllUser();
       </tags>
   </entry>
   <entry>
+    <title>再谈多线程（一）</title>
+    <url>/2025/01/10/%E5%86%8D%E8%B0%88%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<p>好久没有更新了，最近忙的复习期末，一直顾不上写博客，今天实在有点手痒，于是就有了这一篇，来进一步谈一谈关于多线程的事，主题如你所见，是关于多线程的内容。至于这一篇，我们就先来看一看Java中的锁机制到底是怎样实现的</p>
+<h2 id="锁机制的原始实现"><a href="#锁机制的原始实现" class="headerlink" title="锁机制的原始实现"></a>锁机制的原始实现</h2><p>事实上，我们的锁机制是经历了多次的迭代的，我们先来看一看在jdk6之前的锁是怎样实现的</p>
+<p>我们都知道想要给某个对象加锁，最简单的方法就是使用<code>synchronized</code>关键字,那么加入这个关键字会具体产生哪些影响呢</p>
+<p>首先我们需要简单的了解一个类<code>ObjectMonitor</code>,这个类具体有哪些方法我们暂且不看,只先了解它有哪些属性</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">objectMonitor() &#123;</span><br><span class="line">    _header       = NULL;</span><br><span class="line">    _count        = 0; </span><br><span class="line">    _waiters      = 0,</span><br><span class="line">    _recursions   = 0;</span><br><span class="line">    _object       = NULL;</span><br><span class="line">    _owner        = NULL;//用来表示当前锁的持有者</span><br><span class="line">    _WaitSet      = NULL; //处于wait状态的线程，会被加入到_WaitSet</span><br><span class="line">    _WaitSetLock  = 0 ;</span><br><span class="line">    _Responsible  = NULL ;</span><br><span class="line">    _succ         = NULL ;</span><br><span class="line">    _cxq          = NULL ;</span><br><span class="line">    FreeNext      = NULL ;</span><br><span class="line">    _EntryList    = NULL ; //处于等待锁block状态的线程，会被加入到该列表</span><br><span class="line">    _SpinFreq     = 0 ;</span><br><span class="line">    _SpinClock    = 0 ;</span><br><span class="line">    OwnerIsThread = 0 ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
+
+<p>每个对象都有一个与之对应的Monitor对象相对应,在这个对象的监视对象有一个entryLIst,所有的需要获得该对象的锁的线程都将被包装为一个<code>objectWaiter</code>对象并放入这个LIst中,随后将会依据LIst中的顺序依次让这些线程获得锁,而使用完锁的线程则调用wait函数挂起并进入waitset,在entryLIst变为空后再次从waitset中获取需要的锁的线程,如此循环往复</p>
+<h2 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h2><p>但这样的锁机制其实存在一个问题,反复的将线程挂起再唤醒的操作实际上会消耗大量的不必要的资源,所以在jdk6时提出来自旋锁的概念,每个线程在使用完锁后不再挂起而是选择进入一个循环,反复尝试获取锁,这避免了挂起与唤醒时将线程中数据保存再读取的资源浪费</p>
+<p>但这个操作实际上基于一个认知:每个线程都不会长时间占用一个锁,所有的线程都能在可接受的时间内等到锁.如果一个线程长时间无法获得锁,那么这个线程实际上最好还是挂起,避免算力上的无意义浪费.所以后来自旋锁实际上做出了一定的改进,在循环一定的次数后如果仍然无法获取锁,那么这个线程同样会被挂起,这个具体的次数由JVM决定</p>
+<h2 id="轻量级锁"><a href="#轻量级锁" class="headerlink" title="轻量级锁"></a>轻量级锁</h2><p>上面说到的锁的原始实现实际上也被称之为重量级锁或者说悲观锁,即我们认为随时都存在某个线程会和当前的线程发生竞争,这种情况我们无法预料也无法阻止.这种做法当然没有问题,但是这会增加切换锁状态的算力开销</p>
+<p>所以后来人们又提出了轻量级锁的概念,在某一个线程希望获取锁时这个线程将复制此时对象的信息并在该对象的对象头添加此时该对象已经被其他线程获取的信息.,在需要修改这个对象时先检查这个对象的值是否和获取锁时保持一致如果不一致则此次循环无效,一致则正常修改(这种操作成为CAS操作)</p>
+<p>(注意,不管是重量级锁还是轻量级锁,它们的实现实际上都涉及到了硬件底层的不同指令,不止是简单的软件层面的差异)</p>
+<p>由于这种做法在底层实现上与重量级锁的差异,实际上无法阻止别的线程去获取这个对象,所以实际上如果某次CAS操作失败,这个锁就将被直接升级为重量级锁,</p>
+<p>轻量级锁更适合各个线程之间竞争不激烈时使用,这可以显著的加快程序的运行速度,但如果各个线程之间的竞争过于激烈,轻量级锁被升级为重量级锁的过程本身要消耗不少的资源,这是得不偿失的</p>
+<p>Java中的atomic类与unsafe类就是使用轻量级锁实现的</p>
+<h2 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h2><p>实际上还有一类情况,如果在大部分时间内某个对象都是由一个线程反复的占有再释放,那么我们可以使用偏向锁来进一步提升性能,在这种锁机制下,当一个对象的锁反复被同一个线程获取时,这个对象的锁就会被一直打上这个线程的标签,此后该线程获取这个锁时不再需要反复的给对象的对象头添加信息,进一步的提高性能.不过如果某次CAS操作发生异常,这个锁就会升级为轻量级锁</p>
+<p>要使用偏向锁，请修改JVM参数</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">-XX:BiasedLockingStartupDelay=0</span><br><span class="line"></span><br><span class="line">ROUTEROS</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>这里补充一点,所有的锁的升级过程都是不可逆的且消耗资源,所以在码代码时要实现考虑清楚各个线程之间资源的使用情况,避免锁升级造成的资源浪费</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>兴之所至才写了这么一篇,所以内容有点简单,字数也不怎么样,将就着看吧.</p>
+<p><a href="https://s1.imagehub.cc/images/2025/01/10/bfefc14487b740459839738d444d64d0.jpg"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/bfefc14487b740459839738d444d64d0.jpg"
+                      alt="img"
+                ></a></p>
+]]></content>
+      <tags>
+        <tag>多线程那些事</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>半小时正则表达式入门</title>
     <url>/2024/12/11/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h1 id="正则表达式基础"><a href="#正则表达式基础" class="headerlink" title="正则表达式基础"></a>正则表达式基础</h1><p>今天想要学习一些正则表达式的内容，但是找了好几个教程都不怎么说人话，有点看不懂，为整理混乱的思绪，写一写来做个总结吧</p>
+    <content><![CDATA[<p>今天想要学习一些正则表达式的内容，但是找了好几个教程都不怎么说人话，有点看不懂，为整理混乱的思绪，写一写来做个总结吧</p>
 <h2 id="简答介绍与吐槽"><a href="#简答介绍与吐槽" class="headerlink" title="简答介绍与吐槽"></a>简答介绍与吐槽</h2><p>在学习正则表达式之前我们应当先知道这是个什么东西：一种字符串匹配规则，用于筛选出满足条件的字符串。正则表达式在Java，JavaScript，Python等语言中得到了广泛的支持。但是，我有一点还是想吐槽的，这玩意的符号体系到底是谁想出来的，这是地球人该有的脑回路吗，这玩意的可阅读性简直了</p>
 <h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><p>首先在学习基础语法前，我们心中要有一个基础的认知，那就是实际上正则表达式就是我们写了一个特殊的字符串，然后交由程序判断这两个字符串是否相等。接下来先看一些基础的概念</p>
 <ol>
@@ -3633,7 +3633,7 @@ List&lt;User&gt; selectAllUser();
 <p>同时，如果稍作修改，加上^就能使范围表达反义，如<code>[^asd]</code>表示不是asd的所有字符</p>
 <p>应用实例：</p>
 <p>如果我们要求用户输入自己的邮箱，我们该如何判断它的格式是否正确呢,首先，我们要考虑一个邮箱的格式一般满足如下格式</p>
-<p><a class="link"   href="mailto:&#x78;&#x78;&#120;&#x78;&#x78;&#120;&#x78;&#x40;&#120;&#120;&#x2e;&#120;&#120;&#120;" >xxxxxxx@xx.xxx<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>,查阅资料可知，@之前的部分除了常见的字母与数字之外还允许包含._%+-,@后的部分一定为xx.xxx</p>
+<p><a class="link"   href="mailto:&#120;&#120;&#120;&#x78;&#x78;&#120;&#x78;&#x40;&#x78;&#x78;&#46;&#120;&#120;&#x78;" >xxxxxxx@xx.xxx<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>,查阅资料可知，@之前的部分除了常见的字母与数字之外还允许包含._%+-,@后的部分一定为xx.xxx</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;$</span><br><span class="line"></span><br><span class="line">INFORM7</span><br></pre></td></tr></table></figure></div>
 
 <p>我们来分解一下这段表达式的含义</p>
@@ -3729,7 +3729,7 @@ List&lt;User&gt; selectAllUser();
   <entry>
     <title>小白的第一篇Blog</title>
     <url>/2024/11/11/%E5%B0%8F%E7%99%BD%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87Blog/</url>
-    <content><![CDATA[<h1 id="小白的第一篇blog"><a href="#小白的第一篇blog" class="headerlink" title="小白的第一篇blog"></a>小白的第一篇blog</h1><p>出于好玩，花了一天的时间创建了这个基于hexo的blog，十分的朴实无华，但至少，它能用了。</p>
+    <content><![CDATA[<p>出于好玩，花了一天的时间创建了这个基于hexo的blog，十分的朴实无华，但至少，它能用了。</p>
 <p>以后呢会在这里放一些自己的技术实践和总结文章，最近主要会以Java为主，也可能会有部分C语言</p>
 <p>当然，小白一个，如有不足还望指正</p>
 <p>最后呢，放一张图镇楼：</p>
@@ -3746,8 +3746,8 @@ List&lt;User&gt; selectAllUser();
   </entry>
   <entry>
     <title>浅谈Java中的文件处理</title>
-    <url>/2025/11/17/%E6%B5%85%E8%B0%88Java%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1 id="浅谈Java中的文件处理"><a href="#浅谈Java中的文件处理" class="headerlink" title="浅谈Java中的文件处理"></a>浅谈Java中的文件处理</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>本篇文章面向小白,各位大佬无需浪费时间</strong></p>
+    <url>/2024/11/17/%E6%B5%85%E8%B0%88Java%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>本篇文章面向小白,各位大佬无需浪费时间</strong></p>
 <p>今天来总结一下Java中的文件处理api，主要以<code>java.nio.file</code>包中的api为主（事实上，<code>java.io.file</code>中的相关api在过去更多的被使用，但nio包中的api技术更新，因此主要展示nio包中的api）</p>
 <h2 id="Path-api"><a href="#Path-api" class="headerlink" title="Path api"></a>Path api</h2><p>path api 所对应的是文件的地址（可以是绝对的，也可以是相对的），从性质上来讲，它是一个引用。下面是一些简单的实例：</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Path path1 =Path.of(&quot;E:/some/s.txt&quot;);//注意，你无需区分/与\\,无论哪一种都可以被正常识别</span><br><span class="line">System.out.println(path1);</span><br><span class="line">Path path2 =Path.of(&quot;E:/some/&quot;).resolve(&quot;some.txt&quot;);</span><br><span class="line">System.out.println(path2);</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
@@ -3906,473 +3906,9 @@ List&lt;User&gt; selectAllUser();
       </tags>
   </entry>
   <entry>
-    <title>走进网络世界</title>
-    <url>/2025/01/11/%E8%B5%B0%E8%BF%9B%E7%BD%91%E7%BB%9C%E4%B8%96%E7%95%8C/</url>
-    <content><![CDATA[<h1 id="走进网络世界"><a href="#走进网络世界" class="headerlink" title="走进网络世界"></a>走进网络世界</h1><p>在开始学习网络编程之前，你至少应当了解一些关于网络的基础知识，这些东西算不得很难，但却是学习网络编程之前的必备知识。这期的内容不会少，慢慢来吧</p>
-<h2 id="我们是如何连接到互联网的"><a href="#我们是如何连接到互联网的" class="headerlink" title="我们是如何连接到互联网的"></a>我们是如何连接到互联网的</h2><p>首先我们来聊一聊你的手机是如何连接到互联网的。这涉及多个设备，我们一个个来看</p>
-<ol>
-<li><p>终端设备，也就是我们的电脑，手机或其他的一切联网设备，在我们需要访问网络时向路由器发出一个信息，说明我们需要访问的网址与请求的 内容</p>
-</li>
-<li><p>路由器，互联网设备之间需要唯一的地址作为标识，也就是我们所说的ip地址，但是IP地址是有限的。如果每个设备都有一个公网上的IP地址，那么当前的地址是不够用的。所以就需要做出这样的处理：由一个路由器占据一个公网地址，然后再由路由器给与这个路由器相连的每个设备分配一个私网地址。此后这个路由器将作为一个转发者负责转发每个设备的请求信息并将获得的信息返回给设备</p>
-<p>这里要说一点，实际上我们大部分人家中的路由器同样不是直连公网，而是连接到全小区公用的一个大服务器中</p>
-</li>
-<li><p>光猫，当今的网络主要通过光纤来传递信息，而我们所使用的设备传递的是电信号，光猫就是负责将路由器发出的电信号传递为光信号的设备</p>
-</li>
-<li><p>寻址服务器：这玩意涉及到一个流传已久的谣言，说什么所有的根服务器都在国外，一旦国外想要针对我们，我们全国范围内都会断网。这些所谓的根服务器就是寻址服务器，我们发送的请求时是向某个网址发送的，但是只有将网址转换为具体的ip地址才能够找到对应的服务器，此时就需要寻址服务器。这些服务器内存储了不同的网址ip地址的对应关系，我们的请求通过这种服务器知道了自己需要下一步去往哪里。想必你一定可以想到，所谓的根服务器只是存储的更多的不同网址与ip的关系，并没有什么高端的技术与神秘的数据</p>
-</li>
-<li><p>服务器，当你的请求到达各大厂商的服务器，这些服务器会处理你的请求并返回相应的信息</p>
-</li>
-</ol>
-<h2 id="IP地址与端口"><a href="#IP地址与端口" class="headerlink" title="IP地址与端口"></a>IP地址与端口</h2><p>接下来我们再来聊一聊与IP地址和端口相关的事吧。先说说什么是IP地址</p>
-<p>当前主要使用的是IPv4地址，这种地址由4个0到255之间的数字组成,（实际上是二进制的从0到10000000）每个数字之间由<code>.</code>进行分割，这些地址每一个都代表着一个唯一的互联网中的地址，这些地址又被分为以下几类</p>
-<h3 id="1-A类地址-Class-A"><a href="#1-A类地址-Class-A" class="headerlink" title="1. A类地址 (Class A)"></a>1. <strong>A类地址 (Class A)</strong></h3><ul>
-<li><strong>地址范围</strong>：<code>0.0.0.0</code> 到 <code>127.255.255.255</code></li>
-<li><strong>网络前缀</strong>：第一个字节的最高位是0，表示A类地址。</li>
-<li><strong>网络数量</strong>：128个网络（从0到127），但是有些保留地址不能使用。</li>
-<li><strong>主机数量</strong>：每个网络支持大约 1677万个主机。</li>
-<li><strong>用途</strong>：适用于大型网络，需要大量主机的网络。</li>
-</ul>
-<h3 id="2-B类地址-Class-B"><a href="#2-B类地址-Class-B" class="headerlink" title="2. B类地址 (Class B)"></a>2. <strong>B类地址 (Class B)</strong></h3><ul>
-<li><strong>地址范围</strong>：<code>128.0.0.0</code> 到 <code>191.255.255.255</code></li>
-<li><strong>网络前缀</strong>：第一个字节的前两位是 <code>10</code>，表示B类地址。</li>
-<li><strong>网络数量</strong>：16384个网络。</li>
-<li><strong>主机数量</strong>：每个网络支持大约 65,000个主机。</li>
-<li><strong>用途</strong>：适用于中等规模的网络，能够满足较大数量的主机需求。</li>
-</ul>
-<h3 id="3-C类地址-Class-C"><a href="#3-C类地址-Class-C" class="headerlink" title="3. C类地址 (Class C)"></a>3. <strong>C类地址 (Class C)</strong></h3><ul>
-<li><strong>地址范围</strong>：<code>192.0.0.0</code> 到 <code>223.255.255.255</code></li>
-<li><strong>网络前缀</strong>：第一个字节的前三位是 <code>110</code>，表示C类地址。</li>
-<li><strong>网络数量</strong>：2097152个网络。</li>
-<li><strong>主机数量</strong>：每个网络支持254个主机（地址的第一位和最后一位用于网络标识和广播地址，无法分配给主机）。</li>
-<li><strong>用途</strong>：适用于小型网络，通常用于局域网（LAN）中。</li>
-</ul>
-<h3 id="4-D类地址-Class-D"><a href="#4-D类地址-Class-D" class="headerlink" title="4. D类地址 (Class D)"></a>4. <strong>D类地址 (Class D)</strong></h3><ul>
-<li><strong>地址范围</strong>：<code>224.0.0.0</code> 到 <code>239.255.255.255</code></li>
-<li><strong>网络前缀</strong>：第一个字节的前四位是 <code>1110</code>，表示D类地址。</li>
-<li><strong>用途</strong>：D类地址用于多播（Multicast）通信，不用于普通主机和网络分配。</li>
-<li><strong>特别说明</strong>：它不分配给单个主机，而是用于一次发送给多个接收者的情况。</li>
-</ul>
-<h3 id="5-E类地址-Class-E"><a href="#5-E类地址-Class-E" class="headerlink" title="5. E类地址 (Class E)"></a>5. <strong>E类地址 (Class E)</strong></h3><ul>
-<li><strong>地址范围</strong>：<code>240.0.0.0</code> 到 <code>255.255.255.255</code></li>
-<li><strong>网络前缀</strong>：第一个字节的前五位是 <code>11110</code>，表示E类地址。</li>
-<li><strong>用途</strong>：E类地址保留用于未来的研究或实验用途，通常不用于实际的网络通信。</li>
-<li><strong>特别说明</strong>：E类地址目前未被分配给公共网络，它主要用于实验、开发或特殊的协议。</li>
-</ul>
-<p>这里稍微解释一下什么是主机数量，一般情况下分配IP地址时并不是单独分配，而是按照网段分配，几乎每个互联网大企业都占据这一个完整的网段，这里的不同类地址其实是指分配时网段的大小，如A类指明确4个数中的第一个，B类则明确四个数中的前两个，至于后面的数字则有每个获得网段的人自由分配</p>
-<p>此外，从<code>127.0.0.0</code>到<code>127.255.255.255</code>的地址被称为回环地址,这些地址不会被发送到外界而是只会在本机内回环,通常用来访问当前的设备上的服务.当然,一般情况下我们都使用127.0.0.1</p>
-<p>还有一部分私有地址是不会在互联网上使用的,这些地址仅在局域网内使用</p>
-<ul>
-<li><p>A类私有地址</p>
-<p>：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">10.0.0.0</span><br></pre></td></tr></table></figure></div>
-
-<p>到</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">10.255.255.255</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>子网掩码：<code>255.0.0.0</code></li>
-<li>地址范围：<code>10.0.0.0/8</code></li>
-</ul>
-</li>
-<li><p>B类私有地址</p>
-<p>：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">172.16.0.0</span><br></pre></td></tr></table></figure></div>
-
-<p>到</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">172.31.255.255</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>子网掩码：<code>255.240.0.0</code></li>
-<li>地址范围：<code>172.16.0.0/12</code></li>
-</ul>
-</li>
-<li><p>C类私有地址</p>
-<p>：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">192.168.0.0</span><br></pre></td></tr></table></figure></div>
-
-<p>到</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">192.168.255.255</span><br></pre></td></tr></table></figure></div>
-
-<ul>
-<li>子网掩码：<code>255.255.0.0</code></li>
-<li>地址范围：<code>192.168.0.0/16</code></li>
-</ul>
-</li>
-</ul>
-<p>现在你可以打开看一看你电脑的ip地址了,打开powershell,输入<code>ipconfig</code>即可看到当前设备的ip信息</p>
-<p>那么什么是端口呢，我们的设备上一般情况下都会运行着众多的服务，这些服务都需要联网，为了不造成各个服务之间的冲突，系统将信道划分为65536个端口，以数字0到65535标识。不同的应用会占用不同的端口进行通信。一般情况下，系统占用0到1023端口，剩下的端口由用户配置，大部分常用的端口实际上是固定的，比如一般的http使用80端口，mysql数据库使用3306端口等。特定的应用只会监听特定端口的信息</p>
-<p>上面提到的路由器正是将不同的设备映射到路由器自身不同的端口上来实现区分不同的设备的（这被称为NAT技术）</p>
-<p>最后再补充一点关于IPv6的知识，我们都知道IPv4的最大容量实际上只有2^32，也就是大概四十多亿，以目前的互联网体量来看是远不够用的，最明显的就是现在个人申请独立的公网ip越来越难了，所以我们创建了IPv6，它一般长这样</p>
-<p>2001:0db<em>8:85</em>a3:0000:0000:8<em>a</em>2e:0370:7334</p>
-<p>由八组四位的十六进制数组成，每组之间由<code>:</code>分割，如果有一组数全为0，那么也可以省略为<code>::</code>，但注意为了避免识别混乱，最多智能省略一组，它的存储上限几乎够给地球上的每一粒沙子编码，不用再担心用尽，但问题在于这玩意现在的使用推广情况还不是特别高，有部分路由器甚至依然不支持IPv6</p>
-<h2 id="域名与DNS"><a href="#域名与DNS" class="headerlink" title="域名与DNS"></a>域名与DNS</h2><p>接下来解释一下域名与DNS是什么，所谓的域名也就是我们所说的网址，我们常见的.com,.cn等被称为顶级域名，这些顶级域名再加上一个二级域名如baidu就组了baidu.com就是我们一般使用的网址了。值得注意的是二级域名之下还有三级域名，四级域名等等只是一直在上一级域名之前加前缀而已。</p>
-<p>这些域名被保存在DNS解析服务器也就是我们之前提到的寻址服务器中，当设备需要访问某个网址时通过域名解析服务器获得需要访问的具体ip地址</p>
-<p>顺路提一嘴，如果你希望获得一个自己的域名，可以直接找阿里云，华为云，腾讯云等大厂，它们都提供域名出售服务，便宜一点的也就十几块钱一年（域名先到先得，被人占了就没办法了），然后在这些厂商提供的免费的DNS解析服务上添加你自己的信息即可</p>
-<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>接下来要解释的是子网掩码，其定义如下</p>
-<blockquote>
-<p><strong>子网掩码（Subnet Mask）**是用于在IPv4网络中划分子网的工具，它定义了一个IP地址中哪些部分用于标识*<em>网络*</em>，哪些部分用于标识**主机</strong>。通过子网掩码，路由器和设备可以识别出IP地址属于哪个网络，以及它们是否处于同一子网内，从而决定是否需要跨网络通信。</p>
-</blockquote>
-<p>有点整不明白是吗，再来看一些子网掩码的其他信息</p>
-<p>一个IPv4地址是由32个比特（位）组成的，通常表示为四个8位的十进制数字。例如：<code>192.168.1.1</code>。</p>
-<p>子网掩码也是一个32位的地址，通常由四个十进制数字表示。其作用是通过“掩盖”IP地址的一部分来区分网络部分和主机部分。子网掩码中的“1”表示网络部分，“0”表示主机部分。</p>
-<p>例如：</p>
-<ul>
-<li><strong>子网掩码</strong>：<code>255.255.255.0</code></li>
-<li><strong>对应的二进制表示</strong>：<code>11111111.11111111.11111111.00000000</code></li>
-</ul>
-<p>在这个例子中，前24位（即<code>255.255.255</code>）用于表示网络地址，而后8位（即<code>0</code>）用于表示主机地址。</p>
-<p>通常，子网掩码有一些常见的默认值，依据网络规模的不同，子网掩码也不同。最常见的默认子网掩码包括：</p>
-<ol>
-<li><p>A类地址</p>
-<p>（</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">0.0.0.0</span><br></pre></td></tr></table></figure></div>
-
-<p>到</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">127.255.255.255</span><br></pre></td></tr></table></figure></div>
-
-<p>）:</p>
-<ul>
-<li><strong>默认子网掩码</strong>：<code>255.0.0.0</code>（或 <code>/8</code>）</li>
-<li>网络部分：8位</li>
-<li>主机部分：24位</li>
-</ul>
-</li>
-<li><p>B类地址</p>
-<p>（</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">128.0.0.0</span><br></pre></td></tr></table></figure></div>
-
-<p>到</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">191.255.255.255</span><br></pre></td></tr></table></figure></div>
-
-<p>）:</p>
-<ul>
-<li><strong>默认子网掩码</strong>：<code>255.255.0.0</code>（或 <code>/16</code>）</li>
-<li>网络部分：16位</li>
-<li>主机部分：16位</li>
-</ul>
-</li>
-<li><p>C类地址</p>
-<p>（</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">192.0.0.0</span><br></pre></td></tr></table></figure></div>
-
-<p>到</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">223.255.255.255</span><br></pre></td></tr></table></figure></div>
-
-<p>）:</p>
-<ul>
-<li><strong>默认子网掩码</strong>：<code>255.255.255.0</code>（或 <code>/24</code>）</li>
-<li>网络部分：24位</li>
-<li>主机部分：8位</li>
-</ul>
-</li>
-</ol>
-<p>现在是不是有点感觉了，所谓的子网掩码就是用来区分不同的网段的通过将子网掩码与ip地址进行与运算就能获得该网段的第一个地址，用于判断该地址到底是属于哪一个网段</p>
-<p>一般子网掩码通过一下的方式表示</p>
-<p><strong>十进制表示</strong>：像 <code>255.255.255.0</code> 这样表示，每个部分是一个8位数的十进制数。</p>
-<p><strong>CIDR表示法</strong>（Classless Inter-Domain Routing，无类域间路由）：例如 <code>192.168.1.0/24</code>，<code>/24</code> 表示子网掩码的前24位是“1”。</p>
-<p><strong>二进制表示法</strong>：例如 <code>11111111.11111111.11111111.00000000</code>，每个数字对应一个8位二进制数。</p>
-<h2 id="物理地址（MAC）"><a href="#物理地址（MAC）" class="headerlink" title="物理地址（MAC）"></a>物理地址（MAC）</h2><p>接下来再了解一下物理地址，所谓的物理地址是每一台能够联网的设备在互联网上世界的唯一标识，通常在网卡的制作阶段被烧录到网卡之中，</p>
-<p>MAC地址通常由12位十六进制数表示，分为6组，每组2位，组与组之间用冒号（:）或连字符（-）分隔。例如，00:1A:2B:3C:4D:5E或00-1A-2B-3C-4D-5E都是常见的MAC地址格式。</p>
-<p>MAC也可以作为网络中唯一的标识用于不同设备之间的通信</p>
-<p>它与ip地址的主要区别是一般情况下物理地址只用在局域网中寻址，此时先天唯一的物理地址被路由器用来区分不同的设备，而ip地址更多的用于网络间的通信</p>
-<h2 id="OSI网络模型"><a href="#OSI网络模型" class="headerlink" title="OSI网络模型"></a>OSI网络模型</h2><p>在了解了这么多知识后我们终于可以开始了解真实的网络架构了，先来看一看这样的网络模型</p>
-<h4 id="第1层：物理层"><a href="#第1层：物理层" class="headerlink" title="第1层：物理层"></a><strong>第1层：物理层</strong></h4><ul>
-<li>主要功能<ul>
-<li>定义硬件接口、传输介质和信号特性（如电压、电流、光信号）。</li>
-<li>负责比特流的编码、调制和传输。</li>
-<li>常见设备：网线、光纤、集线器（Hub）。</li>
-</ul>
-</li>
-<li>协议和标准<ul>
-<li>IEEE 802.3（以太网）、RS-232、USB、Bluetooth。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="第2层：数据链路层"><a href="#第2层：数据链路层" class="headerlink" title="第2层：数据链路层"></a><strong>第2层：数据链路层</strong></h4><ul>
-<li>主要功能<ul>
-<li>将数据打包成帧（Frame），提供点到点的传输。</li>
-<li>提供物理地址（MAC地址），支持局域网通信。</li>
-<li>实现差错检测和流量控制。</li>
-<li>常见设备：交换机（Switch）、网卡（NIC）。</li>
-</ul>
-</li>
-<li>协议和标准<ul>
-<li>以太网（Ethernet）、Wi-Fi（IEEE 802.11）、PPP、HDLC。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="第3层：网络层"><a href="#第3层：网络层" class="headerlink" title="第3层：网络层"></a><strong>第3层：网络层</strong></h4><ul>
-<li>主要功能<ul>
-<li>负责不同网络之间的路由和转发。</li>
-<li>使用逻辑地址（如IP地址）来标识设备。</li>
-<li>实现拥塞控制和分组拆分。</li>
-<li>常见设备：路由器（Router）。</li>
-</ul>
-</li>
-<li>协议和标准<ul>
-<li>IPv4、IPv6、ICMP、OSPF、BGP。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="第4层：传输层"><a href="#第4层：传输层" class="headerlink" title="第4层：传输层"></a><strong>第4层：传输层</strong></h4><ul>
-<li>主要功能<ul>
-<li>提供端到端的可靠或快速数据传输服务。</li>
-<li>实现数据分段、流量控制和差错校验。</li>
-<li>区分不同应用程序的数据流（使用端口号）。</li>
-<li>常见设备：网关（Gateway）、防火墙。</li>
-</ul>
-</li>
-<li>协议和标准<ul>
-<li>TCP（传输控制协议）、UDP（用户数据报协议）。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="第5层：会话层"><a href="#第5层：会话层" class="headerlink" title="第5层：会话层"></a><strong>第5层：会话层</strong></h4><ul>
-<li>主要功能<ul>
-<li>管理应用程序之间的会话（通信）。</li>
-<li>负责会话的建立、维护和终止。</li>
-<li>提供会话恢复和同步功能。</li>
-</ul>
-</li>
-<li>协议和标准<ul>
-<li>NetBIOS、RPC（远程过程调用）。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="第6层：表示层"><a href="#第6层：表示层" class="headerlink" title="第6层：表示层"></a><strong>第6层：表示层</strong></h4><ul>
-<li>主要功能<ul>
-<li>确保数据的格式一致性和可读性。</li>
-<li>实现数据压缩、加密和解密。</li>
-<li>数据表示的转换，如文本编码（ASCII、Unicode）、图片格式（JPEG、PNG）。</li>
-</ul>
-</li>
-<li>协议和标准<ul>
-<li>SSL&#x2F;TLS、JPEG、MPEG。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="第7层：应用层"><a href="#第7层：应用层" class="headerlink" title="第7层：应用层"></a><strong>第7层：应用层</strong></h4><ul>
-<li>主要功能<ul>
-<li>直接为用户提供网络服务和接口。</li>
-<li>实现文件传输、邮件、远程登录等功能。</li>
-<li>常见应用程序和服务：Web浏览器、邮件客户端。</li>
-</ul>
-</li>
-<li>协议和标准<ul>
-<li>HTTP、FTP、SMTP、DNS、Telnet、SNMP。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="OSI模型的特点"><a href="#OSI模型的特点" class="headerlink" title="OSI模型的特点"></a>OSI模型的特点</h3><ol>
-<li><p>分层设计</p>
-<p>：</p>
-<ul>
-<li>将复杂的网络通信分为七个独立的层次，每层完成特定的功能。</li>
-<li>每层只需要与相邻层通信，层与层之间通过接口进行交互。</li>
-</ul>
-</li>
-<li><p>模块化和灵活性</p>
-<p>：</p>
-<ul>
-<li>各层独立，可以方便地替换或升级其中的某一层而不影响其他层。</li>
-</ul>
-</li>
-<li><p>标准化</p>
-<p>：</p>
-<ul>
-<li>提供统一的通信参考框架，使不同厂商和设备能够互联互通。</li>
-</ul>
-</li>
-<li><p>可移植性</p>
-<p>：</p>
-<ul>
-<li>OSI模型适用于各种硬件和软件环境。</li>
-</ul>
-</li>
-</ol>
-<p>怎么样，是不是有点记不住，放心，不用着急，时间长了自然理解</p>
-<h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><p>那么说了这么多，互联网之间的通讯到底是怎样进行的呢，我们先来看一种当下使用最多的TCP协议</p>
-<p>TCP作为使用最多的传输层协议，主要有以下这些特点</p>
-<ol>
-<li>面向连接：在数据传输前需要建立连接，在数据传输结束后需要释放连接。</li>
-<li>可靠性：通过数据确认和重传机制，确保数据能够按照正确的顺序到达目的地。</li>
-<li>拥塞控制：通过拥塞窗口和慢启动等机制，避免网络拥塞和数据丢失。</li>
-<li>全双工通信：允许双方同时发送和接收数据。</li>
-<li>流量控制：根据接收方的处理能力，控制发送数据的速度，避免数据丢失。</li>
-</ol>
-<p>首先看一看建立连接的过程</p>
-<p>第一步：客户端向服务器发送SYN（同步）包，请求建立连接。客户端发送的包中包含一个初始序列号，用于数据传输的顺序编号。</p>
-<p>第二步：服务器接收到客户端发送的SYN包后，向客户端发送 SYN + ACK 包作为应答。服务器发送的包中除了确认客户端的SYN包外，还会发送自己的初始化序列号。</p>
-<p>第三步：客户端接收到服务器发送的 SYN + ACK 包后，向服务器发送 ACK 包以确认连接。这时TCP连接建立成功，双方可以开始传输数据了。</p>
-<p>为什么要进行这么复杂的操作呢</p>
-<p>首先如果直接连接，连接双方都不知道对方是否是自己要连接的对象，会出现各种异常</p>
-<p>其次如果在第一步后开始数据传输，万一服务器实际上没有收到消息呢，这样不就白传输了吗，所以第二部服务器的回传是必要的</p>
-<p>那么我们只进行两步呢，万一客户端实际上收不到服务器的信息呢，第三步就可以很好的避免这一点</p>
-<p>这三步很好的确保了双方都可以正常的收发消息，通常这些步骤被称为三次握手</p>
-<p>那么通信结束后有改怎样呢，分为四步</p>
-<p>第一步：客户端（或主动关闭方）发送一个带有FIN（完成）标志的报文段给服务器，表示它已经完成数据的发送工作，不再需要保持连接。</p>
-<p>第二步：服务器（或被动关闭方）接收到FIN报文，回复一个带有ACK（Acknowledgment）标志的报文段，表明它已经收到关闭请求，但是由于连接可能还在使用，比如有数据包还没发完之类的，所以此时不会立即关闭。</p>
-<p>第三步：服务器处理完手头剩下的事情后，发送一个带有FIN标志的报文段给客户端，表示它也准备好关闭连接。</p>
-<p>第四步：客户端收到服务器的FIN报文，发送一个带有ACK标志的报文段作为最终确认。此时，客户端进入 <code>TIME_WAIT</code> 状态，一段时间后才真正关闭连接，目的是确保服务器能够收到ACK报文。</p>
-<p>这四步的具体作用我不再具体分析，但想必你一定能看明白，这是一个十分严谨的过程，能充分保证信息的完整传输</p>
-<p>而在数据传输时，收信方在收到信息后还会再向发信方再发送一个ack包告诉发信方信息已确认收到</p>
-<p>在发信的过程中，发信方实际上会将一个大数据包拆分为多个小数据包放入缓存再一次发送，收信方也会将所有的信息缓存后再同意读取</p>
-<h2 id="TCP-IP协议栈"><a href="#TCP-IP协议栈" class="headerlink" title="TCP\IP协议栈"></a>TCP\IP协议栈</h2><p>在前面我们谈到了OIS网络模型，事实上我们一般认为当前的网络是另一套更为简洁的架构，也就是TCP&#x2F;IP协议栈，但注意OIS模型的不同层实际上都是可以映射到TCP&#x2F;IP协议栈中的，先来看看它的结构吧</p>
-<h4 id="1-应用层"><a href="#1-应用层" class="headerlink" title="1. 应用层"></a><strong>1. 应用层</strong></h4><ul>
-<li>功能<ul>
-<li>提供用户与网络通信的接口。</li>
-<li>定义用于具体网络服务的协议，例如网页浏览、文件传输、邮件发送等。</li>
-<li>将数据打包为适合网络传输的格式，并将接收到的数据转换为用户可理解的格式。</li>
-</ul>
-</li>
-<li>常见协议<ul>
-<li><strong>HTTP（超文本传输协议）</strong>：用于Web浏览器和服务器之间的通信。</li>
-<li><strong>DNS（域名系统）</strong>：将域名解析为IP地址。</li>
-<li><strong>FTP（文件传输协议）</strong>：用于文件上传和下载。</li>
-<li><strong>SMTP（简单邮件传输协议）</strong>：用于电子邮件发送。</li>
-<li><strong>Telnet</strong>：用于远程登录。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="2-传输层"><a href="#2-传输层" class="headerlink" title="2. 传输层"></a><strong>2. 传输层</strong></h4><ul>
-<li>功能<ul>
-<li>提供端到端的数据传输服务。</li>
-<li>负责数据的分段、重组，以及流量控制和差错检测。</li>
-<li>使用端口号区分应用程序的数据流。</li>
-</ul>
-</li>
-<li>主要协议<ul>
-<li>TCP（传输控制协议）<ul>
-<li>面向连接，提供可靠的数据传输。</li>
-<li>包括数据分段、确认应答、重传和流量控制。</li>
-<li>使用场景：文件传输（FTP）、邮件（SMTP）、网页浏览（HTTP）。</li>
-</ul>
-</li>
-<li>UDP（用户数据报协议）<ul>
-<li>无连接，不保证可靠性，但传输速度快。</li>
-<li>使用场景：实时通信（VoIP）、视频流传输（直播）、DNS查询。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="3-网络层"><a href="#3-网络层" class="headerlink" title="3. 网络层"></a><strong>3. 网络层</strong></h4><ul>
-<li>功能<ul>
-<li>负责数据包的路由和转发。</li>
-<li>使用逻辑地址（IP地址）标识网络中的设备。</li>
-<li>实现跨网络的通信。</li>
-</ul>
-</li>
-<li>主要协议<ul>
-<li>IP（互联网协议）<ul>
-<li><strong>IPv4</strong>：32位地址空间，广泛使用。</li>
-<li><strong>IPv6</strong>：128位地址空间，支持更大范围的设备。</li>
-</ul>
-</li>
-<li>ICMP（互联网控制消息协议）<ul>
-<li>用于发送网络状态信息，如Ping测试的回应。</li>
-</ul>
-</li>
-<li>ARP（地址解析协议）<ul>
-<li>将IP地址解析为物理地址（MAC地址）。</li>
-</ul>
-</li>
-<li>RARP（反向地址解析协议）<ul>
-<li>将MAC地址解析为IP地址。</li>
-</ul>
-</li>
-<li>OSPF、BGP<ul>
-<li>路由协议，用于动态路由信息交换。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="4-数据链路层"><a href="#4-数据链路层" class="headerlink" title="4. 数据链路层"></a><strong>4. 数据链路层</strong></h4><ul>
-<li>功能<ul>
-<li>负责点到点的数据帧传输。</li>
-<li>提供物理地址（MAC地址）和错误检测功能。</li>
-<li>定义如何通过物理介质传输数据。</li>
-</ul>
-</li>
-<li>主要协议<ul>
-<li>Ethernet（以太网协议）<ul>
-<li>定义局域网通信标准。</li>
-</ul>
-</li>
-<li>Wi-Fi（无线网络协议）<ul>
-<li>提供无线局域网通信。</li>
-</ul>
-</li>
-<li>PPP（点对点协议）<ul>
-<li>用于串行链路上的数据传输。</li>
-</ul>
-</li>
-<li>VLAN（虚拟局域网）<ul>
-<li>提供局域网的逻辑分段。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="TCP-IP协议栈与OSI模型的对比"><a href="#TCP-IP协议栈与OSI模型的对比" class="headerlink" title="TCP&#x2F;IP协议栈与OSI模型的对比"></a>TCP&#x2F;IP协议栈与OSI模型的对比</h3><table>
-<thead>
-<tr>
-<th>OSI模型</th>
-<th>TCP&#x2F;IP协议栈</th>
-<th>功能描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>应用层、表示层、会话层</td>
-<td>应用层</td>
-<td>提供用户服务和应用接口。</td>
-</tr>
-<tr>
-<td>传输层</td>
-<td>传输层</td>
-<td>实现端到端的可靠或快速数据传输。</td>
-</tr>
-<tr>
-<td>网络层</td>
-<td>网络层</td>
-<td>负责路由和跨网络传输，使用逻辑地址标识设备。</td>
-</tr>
-<tr>
-<td>数据链路层、物理层</td>
-<td>链路层</td>
-<td>定义局域网通信和物理信号传输。</td>
-</tr>
-</tbody></table>
-<p>好的，我知道你记不住，我也记不住，但你至少要知道有这么回事，用得着的时候要知道查什么</p>
-<h2 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h2><p>好的,接下来简单说一说udp报文通信,这是和TCP并列的一种通信的方式,这种方式没有那么多复杂的流程,简单来说就是闭着眼发信息,只在信息头添加一个自己来自于何处,要发到哪里的声明,然后就是闭着眼发,没有任何的数据校验流程</p>
-<p>这种方式显而易见的好处是快,或者说方便,一般在一些对信息的完整性要求没那么高又要求快的领域如直播内大量使用</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>其实这些东西只是一点皮毛,但至少有了这么一个认识,接下来要讲的内容就好说多了.(我不会告诉你实际上是东西太多我有点写不动了),下一期预计也会在这几天,我们一起实现一个简单的群聊功能认识一下Java中如何实现网络通信</p>
-<p><a href="https://s1.imagehub.cc/images/2025/01/11/836345e64d72b8094d2b7494c3a71a94.jpg"><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/../img/836345e64d72b8094d2b7494c3a71a94.jpg"
-                      alt="06bc52d5 6ad1 415c a4ff b06aa530e20f"
-                ></a></p>
-]]></content>
-      <tags>
-        <tag>杂谈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>日志与测试</title>
     <url>/2025/02/04/%E6%97%A5%E5%BF%97%E4%B8%8E%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<h1 id="日志与测试"><a href="#日志与测试" class="headerlink" title="日志与测试"></a>日志与测试</h1><p>今天将一个相对来说比较重要的内容，如何给程序添加日志与对程序进行测试。这两部分在大型的项目中显得尤为重要。</p>
+    <content><![CDATA[<p>今天将一个相对来说比较重要的内容，如何给程序添加日志与对程序进行测试。这两部分在大型的项目中显得尤为重要。</p>
 <h2 id="JUL日志系统"><a href="#JUL日志系统" class="headerlink" title="JUL日志系统"></a>JUL日志系统</h2><p>日志部分我们今天主要使用jdk自带的一个日志框架，在<code>java.util.logging</code>包下,我们可以使用此框架来实现日志的规范化打印</p>
 <p>首先随便写一个例子</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Logger logger = Logger.getLogger(&quot;org.example&quot;);</span><br><span class="line">        logger.info( &quot;Hello World!&quot; );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">JAVA</span><br></pre></td></tr></table></figure></div>
@@ -5262,9 +4798,473 @@ List&lt;User&gt; selectAllUser();
       </tags>
   </entry>
   <entry>
+    <title>走进网络世界</title>
+    <url>/2025/01/11/%E8%B5%B0%E8%BF%9B%E7%BD%91%E7%BB%9C%E4%B8%96%E7%95%8C/</url>
+    <content><![CDATA[<p>在开始学习网络编程之前，你至少应当了解一些关于网络的基础知识，这些东西算不得很难，但却是学习网络编程之前的必备知识。这期的内容不会少，慢慢来吧</p>
+<h2 id="我们是如何连接到互联网的"><a href="#我们是如何连接到互联网的" class="headerlink" title="我们是如何连接到互联网的"></a>我们是如何连接到互联网的</h2><p>首先我们来聊一聊你的手机是如何连接到互联网的。这涉及多个设备，我们一个个来看</p>
+<ol>
+<li><p>终端设备，也就是我们的电脑，手机或其他的一切联网设备，在我们需要访问网络时向路由器发出一个信息，说明我们需要访问的网址与请求的 内容</p>
+</li>
+<li><p>路由器，互联网设备之间需要唯一的地址作为标识，也就是我们所说的ip地址，但是IP地址是有限的。如果每个设备都有一个公网上的IP地址，那么当前的地址是不够用的。所以就需要做出这样的处理：由一个路由器占据一个公网地址，然后再由路由器给与这个路由器相连的每个设备分配一个私网地址。此后这个路由器将作为一个转发者负责转发每个设备的请求信息并将获得的信息返回给设备</p>
+<p>这里要说一点，实际上我们大部分人家中的路由器同样不是直连公网，而是连接到全小区公用的一个大服务器中</p>
+</li>
+<li><p>光猫，当今的网络主要通过光纤来传递信息，而我们所使用的设备传递的是电信号，光猫就是负责将路由器发出的电信号传递为光信号的设备</p>
+</li>
+<li><p>寻址服务器：这玩意涉及到一个流传已久的谣言，说什么所有的根服务器都在国外，一旦国外想要针对我们，我们全国范围内都会断网。这些所谓的根服务器就是寻址服务器，我们发送的请求时是向某个网址发送的，但是只有将网址转换为具体的ip地址才能够找到对应的服务器，此时就需要寻址服务器。这些服务器内存储了不同的网址ip地址的对应关系，我们的请求通过这种服务器知道了自己需要下一步去往哪里。想必你一定可以想到，所谓的根服务器只是存储的更多的不同网址与ip的关系，并没有什么高端的技术与神秘的数据</p>
+</li>
+<li><p>服务器，当你的请求到达各大厂商的服务器，这些服务器会处理你的请求并返回相应的信息</p>
+</li>
+</ol>
+<h2 id="IP地址与端口"><a href="#IP地址与端口" class="headerlink" title="IP地址与端口"></a>IP地址与端口</h2><p>接下来我们再来聊一聊与IP地址和端口相关的事吧。先说说什么是IP地址</p>
+<p>当前主要使用的是IPv4地址，这种地址由4个0到255之间的数字组成,（实际上是二进制的从0到10000000）每个数字之间由<code>.</code>进行分割，这些地址每一个都代表着一个唯一的互联网中的地址，这些地址又被分为以下几类</p>
+<h3 id="1-A类地址-Class-A"><a href="#1-A类地址-Class-A" class="headerlink" title="1. A类地址 (Class A)"></a>1. <strong>A类地址 (Class A)</strong></h3><ul>
+<li><strong>地址范围</strong>：<code>0.0.0.0</code> 到 <code>127.255.255.255</code></li>
+<li><strong>网络前缀</strong>：第一个字节的最高位是0，表示A类地址。</li>
+<li><strong>网络数量</strong>：128个网络（从0到127），但是有些保留地址不能使用。</li>
+<li><strong>主机数量</strong>：每个网络支持大约 1677万个主机。</li>
+<li><strong>用途</strong>：适用于大型网络，需要大量主机的网络。</li>
+</ul>
+<h3 id="2-B类地址-Class-B"><a href="#2-B类地址-Class-B" class="headerlink" title="2. B类地址 (Class B)"></a>2. <strong>B类地址 (Class B)</strong></h3><ul>
+<li><strong>地址范围</strong>：<code>128.0.0.0</code> 到 <code>191.255.255.255</code></li>
+<li><strong>网络前缀</strong>：第一个字节的前两位是 <code>10</code>，表示B类地址。</li>
+<li><strong>网络数量</strong>：16384个网络。</li>
+<li><strong>主机数量</strong>：每个网络支持大约 65,000个主机。</li>
+<li><strong>用途</strong>：适用于中等规模的网络，能够满足较大数量的主机需求。</li>
+</ul>
+<h3 id="3-C类地址-Class-C"><a href="#3-C类地址-Class-C" class="headerlink" title="3. C类地址 (Class C)"></a>3. <strong>C类地址 (Class C)</strong></h3><ul>
+<li><strong>地址范围</strong>：<code>192.0.0.0</code> 到 <code>223.255.255.255</code></li>
+<li><strong>网络前缀</strong>：第一个字节的前三位是 <code>110</code>，表示C类地址。</li>
+<li><strong>网络数量</strong>：2097152个网络。</li>
+<li><strong>主机数量</strong>：每个网络支持254个主机（地址的第一位和最后一位用于网络标识和广播地址，无法分配给主机）。</li>
+<li><strong>用途</strong>：适用于小型网络，通常用于局域网（LAN）中。</li>
+</ul>
+<h3 id="4-D类地址-Class-D"><a href="#4-D类地址-Class-D" class="headerlink" title="4. D类地址 (Class D)"></a>4. <strong>D类地址 (Class D)</strong></h3><ul>
+<li><strong>地址范围</strong>：<code>224.0.0.0</code> 到 <code>239.255.255.255</code></li>
+<li><strong>网络前缀</strong>：第一个字节的前四位是 <code>1110</code>，表示D类地址。</li>
+<li><strong>用途</strong>：D类地址用于多播（Multicast）通信，不用于普通主机和网络分配。</li>
+<li><strong>特别说明</strong>：它不分配给单个主机，而是用于一次发送给多个接收者的情况。</li>
+</ul>
+<h3 id="5-E类地址-Class-E"><a href="#5-E类地址-Class-E" class="headerlink" title="5. E类地址 (Class E)"></a>5. <strong>E类地址 (Class E)</strong></h3><ul>
+<li><strong>地址范围</strong>：<code>240.0.0.0</code> 到 <code>255.255.255.255</code></li>
+<li><strong>网络前缀</strong>：第一个字节的前五位是 <code>11110</code>，表示E类地址。</li>
+<li><strong>用途</strong>：E类地址保留用于未来的研究或实验用途，通常不用于实际的网络通信。</li>
+<li><strong>特别说明</strong>：E类地址目前未被分配给公共网络，它主要用于实验、开发或特殊的协议。</li>
+</ul>
+<p>这里稍微解释一下什么是主机数量，一般情况下分配IP地址时并不是单独分配，而是按照网段分配，几乎每个互联网大企业都占据这一个完整的网段，这里的不同类地址其实是指分配时网段的大小，如A类指明确4个数中的第一个，B类则明确四个数中的前两个，至于后面的数字则有每个获得网段的人自由分配</p>
+<p>此外，从<code>127.0.0.0</code>到<code>127.255.255.255</code>的地址被称为回环地址,这些地址不会被发送到外界而是只会在本机内回环,通常用来访问当前的设备上的服务.当然,一般情况下我们都使用127.0.0.1</p>
+<p>还有一部分私有地址是不会在互联网上使用的,这些地址仅在局域网内使用</p>
+<ul>
+<li><p>A类私有地址</p>
+<p>：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">10.0.0.0</span><br></pre></td></tr></table></figure></div>
+
+<p>到</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">10.255.255.255</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>子网掩码：<code>255.0.0.0</code></li>
+<li>地址范围：<code>10.0.0.0/8</code></li>
+</ul>
+</li>
+<li><p>B类私有地址</p>
+<p>：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">172.16.0.0</span><br></pre></td></tr></table></figure></div>
+
+<p>到</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">172.31.255.255</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>子网掩码：<code>255.240.0.0</code></li>
+<li>地址范围：<code>172.16.0.0/12</code></li>
+</ul>
+</li>
+<li><p>C类私有地址</p>
+<p>：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">192.168.0.0</span><br></pre></td></tr></table></figure></div>
+
+<p>到</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">192.168.255.255</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>子网掩码：<code>255.255.0.0</code></li>
+<li>地址范围：<code>192.168.0.0/16</code></li>
+</ul>
+</li>
+</ul>
+<p>现在你可以打开看一看你电脑的ip地址了,打开powershell,输入<code>ipconfig</code>即可看到当前设备的ip信息</p>
+<p>那么什么是端口呢，我们的设备上一般情况下都会运行着众多的服务，这些服务都需要联网，为了不造成各个服务之间的冲突，系统将信道划分为65536个端口，以数字0到65535标识。不同的应用会占用不同的端口进行通信。一般情况下，系统占用0到1023端口，剩下的端口由用户配置，大部分常用的端口实际上是固定的，比如一般的http使用80端口，mysql数据库使用3306端口等。特定的应用只会监听特定端口的信息</p>
+<p>上面提到的路由器正是将不同的设备映射到路由器自身不同的端口上来实现区分不同的设备的（这被称为NAT技术）</p>
+<p>最后再补充一点关于IPv6的知识，我们都知道IPv4的最大容量实际上只有2^32，也就是大概四十多亿，以目前的互联网体量来看是远不够用的，最明显的就是现在个人申请独立的公网ip越来越难了，所以我们创建了IPv6，它一般长这样</p>
+<p>2001:0db<em>8:85</em>a3:0000:0000:8<em>a</em>2e:0370:7334</p>
+<p>由八组四位的十六进制数组成，每组之间由<code>:</code>分割，如果有一组数全为0，那么也可以省略为<code>::</code>，但注意为了避免识别混乱，最多智能省略一组，它的存储上限几乎够给地球上的每一粒沙子编码，不用再担心用尽，但问题在于这玩意现在的使用推广情况还不是特别高，有部分路由器甚至依然不支持IPv6</p>
+<h2 id="域名与DNS"><a href="#域名与DNS" class="headerlink" title="域名与DNS"></a>域名与DNS</h2><p>接下来解释一下域名与DNS是什么，所谓的域名也就是我们所说的网址，我们常见的.com,.cn等被称为顶级域名，这些顶级域名再加上一个二级域名如baidu就组了baidu.com就是我们一般使用的网址了。值得注意的是二级域名之下还有三级域名，四级域名等等只是一直在上一级域名之前加前缀而已。</p>
+<p>这些域名被保存在DNS解析服务器也就是我们之前提到的寻址服务器中，当设备需要访问某个网址时通过域名解析服务器获得需要访问的具体ip地址</p>
+<p>顺路提一嘴，如果你希望获得一个自己的域名，可以直接找阿里云，华为云，腾讯云等大厂，它们都提供域名出售服务，便宜一点的也就十几块钱一年（域名先到先得，被人占了就没办法了），然后在这些厂商提供的免费的DNS解析服务上添加你自己的信息即可</p>
+<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>接下来要解释的是子网掩码，其定义如下</p>
+<blockquote>
+<p><strong>子网掩码（Subnet Mask）**是用于在IPv4网络中划分子网的工具，它定义了一个IP地址中哪些部分用于标识*<em>网络*</em>，哪些部分用于标识**主机</strong>。通过子网掩码，路由器和设备可以识别出IP地址属于哪个网络，以及它们是否处于同一子网内，从而决定是否需要跨网络通信。</p>
+</blockquote>
+<p>有点整不明白是吗，再来看一些子网掩码的其他信息</p>
+<p>一个IPv4地址是由32个比特（位）组成的，通常表示为四个8位的十进制数字。例如：<code>192.168.1.1</code>。</p>
+<p>子网掩码也是一个32位的地址，通常由四个十进制数字表示。其作用是通过“掩盖”IP地址的一部分来区分网络部分和主机部分。子网掩码中的“1”表示网络部分，“0”表示主机部分。</p>
+<p>例如：</p>
+<ul>
+<li><strong>子网掩码</strong>：<code>255.255.255.0</code></li>
+<li><strong>对应的二进制表示</strong>：<code>11111111.11111111.11111111.00000000</code></li>
+</ul>
+<p>在这个例子中，前24位（即<code>255.255.255</code>）用于表示网络地址，而后8位（即<code>0</code>）用于表示主机地址。</p>
+<p>通常，子网掩码有一些常见的默认值，依据网络规模的不同，子网掩码也不同。最常见的默认子网掩码包括：</p>
+<ol>
+<li><p>A类地址</p>
+<p>（</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">0.0.0.0</span><br></pre></td></tr></table></figure></div>
+
+<p>到</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">127.255.255.255</span><br></pre></td></tr></table></figure></div>
+
+<p>）:</p>
+<ul>
+<li><strong>默认子网掩码</strong>：<code>255.0.0.0</code>（或 <code>/8</code>）</li>
+<li>网络部分：8位</li>
+<li>主机部分：24位</li>
+</ul>
+</li>
+<li><p>B类地址</p>
+<p>（</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">128.0.0.0</span><br></pre></td></tr></table></figure></div>
+
+<p>到</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">191.255.255.255</span><br></pre></td></tr></table></figure></div>
+
+<p>）:</p>
+<ul>
+<li><strong>默认子网掩码</strong>：<code>255.255.0.0</code>（或 <code>/16</code>）</li>
+<li>网络部分：16位</li>
+<li>主机部分：16位</li>
+</ul>
+</li>
+<li><p>C类地址</p>
+<p>（</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">192.0.0.0</span><br></pre></td></tr></table></figure></div>
+
+<p>到</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">223.255.255.255</span><br></pre></td></tr></table></figure></div>
+
+<p>）:</p>
+<ul>
+<li><strong>默认子网掩码</strong>：<code>255.255.255.0</code>（或 <code>/24</code>）</li>
+<li>网络部分：24位</li>
+<li>主机部分：8位</li>
+</ul>
+</li>
+</ol>
+<p>现在是不是有点感觉了，所谓的子网掩码就是用来区分不同的网段的通过将子网掩码与ip地址进行与运算就能获得该网段的第一个地址，用于判断该地址到底是属于哪一个网段</p>
+<p>一般子网掩码通过一下的方式表示</p>
+<p><strong>十进制表示</strong>：像 <code>255.255.255.0</code> 这样表示，每个部分是一个8位数的十进制数。</p>
+<p><strong>CIDR表示法</strong>（Classless Inter-Domain Routing，无类域间路由）：例如 <code>192.168.1.0/24</code>，<code>/24</code> 表示子网掩码的前24位是“1”。</p>
+<p><strong>二进制表示法</strong>：例如 <code>11111111.11111111.11111111.00000000</code>，每个数字对应一个8位二进制数。</p>
+<h2 id="物理地址（MAC）"><a href="#物理地址（MAC）" class="headerlink" title="物理地址（MAC）"></a>物理地址（MAC）</h2><p>接下来再了解一下物理地址，所谓的物理地址是每一台能够联网的设备在互联网上世界的唯一标识，通常在网卡的制作阶段被烧录到网卡之中，</p>
+<p>MAC地址通常由12位十六进制数表示，分为6组，每组2位，组与组之间用冒号（:）或连字符（-）分隔。例如，00:1A:2B:3C:4D:5E或00-1A-2B-3C-4D-5E都是常见的MAC地址格式。</p>
+<p>MAC也可以作为网络中唯一的标识用于不同设备之间的通信</p>
+<p>它与ip地址的主要区别是一般情况下物理地址只用在局域网中寻址，此时先天唯一的物理地址被路由器用来区分不同的设备，而ip地址更多的用于网络间的通信</p>
+<h2 id="OSI网络模型"><a href="#OSI网络模型" class="headerlink" title="OSI网络模型"></a>OSI网络模型</h2><p>在了解了这么多知识后我们终于可以开始了解真实的网络架构了，先来看一看这样的网络模型</p>
+<h4 id="第1层：物理层"><a href="#第1层：物理层" class="headerlink" title="第1层：物理层"></a><strong>第1层：物理层</strong></h4><ul>
+<li>主要功能<ul>
+<li>定义硬件接口、传输介质和信号特性（如电压、电流、光信号）。</li>
+<li>负责比特流的编码、调制和传输。</li>
+<li>常见设备：网线、光纤、集线器（Hub）。</li>
+</ul>
+</li>
+<li>协议和标准<ul>
+<li>IEEE 802.3（以太网）、RS-232、USB、Bluetooth。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="第2层：数据链路层"><a href="#第2层：数据链路层" class="headerlink" title="第2层：数据链路层"></a><strong>第2层：数据链路层</strong></h4><ul>
+<li>主要功能<ul>
+<li>将数据打包成帧（Frame），提供点到点的传输。</li>
+<li>提供物理地址（MAC地址），支持局域网通信。</li>
+<li>实现差错检测和流量控制。</li>
+<li>常见设备：交换机（Switch）、网卡（NIC）。</li>
+</ul>
+</li>
+<li>协议和标准<ul>
+<li>以太网（Ethernet）、Wi-Fi（IEEE 802.11）、PPP、HDLC。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="第3层：网络层"><a href="#第3层：网络层" class="headerlink" title="第3层：网络层"></a><strong>第3层：网络层</strong></h4><ul>
+<li>主要功能<ul>
+<li>负责不同网络之间的路由和转发。</li>
+<li>使用逻辑地址（如IP地址）来标识设备。</li>
+<li>实现拥塞控制和分组拆分。</li>
+<li>常见设备：路由器（Router）。</li>
+</ul>
+</li>
+<li>协议和标准<ul>
+<li>IPv4、IPv6、ICMP、OSPF、BGP。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="第4层：传输层"><a href="#第4层：传输层" class="headerlink" title="第4层：传输层"></a><strong>第4层：传输层</strong></h4><ul>
+<li>主要功能<ul>
+<li>提供端到端的可靠或快速数据传输服务。</li>
+<li>实现数据分段、流量控制和差错校验。</li>
+<li>区分不同应用程序的数据流（使用端口号）。</li>
+<li>常见设备：网关（Gateway）、防火墙。</li>
+</ul>
+</li>
+<li>协议和标准<ul>
+<li>TCP（传输控制协议）、UDP（用户数据报协议）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="第5层：会话层"><a href="#第5层：会话层" class="headerlink" title="第5层：会话层"></a><strong>第5层：会话层</strong></h4><ul>
+<li>主要功能<ul>
+<li>管理应用程序之间的会话（通信）。</li>
+<li>负责会话的建立、维护和终止。</li>
+<li>提供会话恢复和同步功能。</li>
+</ul>
+</li>
+<li>协议和标准<ul>
+<li>NetBIOS、RPC（远程过程调用）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="第6层：表示层"><a href="#第6层：表示层" class="headerlink" title="第6层：表示层"></a><strong>第6层：表示层</strong></h4><ul>
+<li>主要功能<ul>
+<li>确保数据的格式一致性和可读性。</li>
+<li>实现数据压缩、加密和解密。</li>
+<li>数据表示的转换，如文本编码（ASCII、Unicode）、图片格式（JPEG、PNG）。</li>
+</ul>
+</li>
+<li>协议和标准<ul>
+<li>SSL&#x2F;TLS、JPEG、MPEG。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="第7层：应用层"><a href="#第7层：应用层" class="headerlink" title="第7层：应用层"></a><strong>第7层：应用层</strong></h4><ul>
+<li>主要功能<ul>
+<li>直接为用户提供网络服务和接口。</li>
+<li>实现文件传输、邮件、远程登录等功能。</li>
+<li>常见应用程序和服务：Web浏览器、邮件客户端。</li>
+</ul>
+</li>
+<li>协议和标准<ul>
+<li>HTTP、FTP、SMTP、DNS、Telnet、SNMP。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="OSI模型的特点"><a href="#OSI模型的特点" class="headerlink" title="OSI模型的特点"></a>OSI模型的特点</h3><ol>
+<li><p>分层设计</p>
+<p>：</p>
+<ul>
+<li>将复杂的网络通信分为七个独立的层次，每层完成特定的功能。</li>
+<li>每层只需要与相邻层通信，层与层之间通过接口进行交互。</li>
+</ul>
+</li>
+<li><p>模块化和灵活性</p>
+<p>：</p>
+<ul>
+<li>各层独立，可以方便地替换或升级其中的某一层而不影响其他层。</li>
+</ul>
+</li>
+<li><p>标准化</p>
+<p>：</p>
+<ul>
+<li>提供统一的通信参考框架，使不同厂商和设备能够互联互通。</li>
+</ul>
+</li>
+<li><p>可移植性</p>
+<p>：</p>
+<ul>
+<li>OSI模型适用于各种硬件和软件环境。</li>
+</ul>
+</li>
+</ol>
+<p>怎么样，是不是有点记不住，放心，不用着急，时间长了自然理解</p>
+<h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><p>那么说了这么多，互联网之间的通讯到底是怎样进行的呢，我们先来看一种当下使用最多的TCP协议</p>
+<p>TCP作为使用最多的传输层协议，主要有以下这些特点</p>
+<ol>
+<li>面向连接：在数据传输前需要建立连接，在数据传输结束后需要释放连接。</li>
+<li>可靠性：通过数据确认和重传机制，确保数据能够按照正确的顺序到达目的地。</li>
+<li>拥塞控制：通过拥塞窗口和慢启动等机制，避免网络拥塞和数据丢失。</li>
+<li>全双工通信：允许双方同时发送和接收数据。</li>
+<li>流量控制：根据接收方的处理能力，控制发送数据的速度，避免数据丢失。</li>
+</ol>
+<p>首先看一看建立连接的过程</p>
+<p>第一步：客户端向服务器发送SYN（同步）包，请求建立连接。客户端发送的包中包含一个初始序列号，用于数据传输的顺序编号。</p>
+<p>第二步：服务器接收到客户端发送的SYN包后，向客户端发送 SYN + ACK 包作为应答。服务器发送的包中除了确认客户端的SYN包外，还会发送自己的初始化序列号。</p>
+<p>第三步：客户端接收到服务器发送的 SYN + ACK 包后，向服务器发送 ACK 包以确认连接。这时TCP连接建立成功，双方可以开始传输数据了。</p>
+<p>为什么要进行这么复杂的操作呢</p>
+<p>首先如果直接连接，连接双方都不知道对方是否是自己要连接的对象，会出现各种异常</p>
+<p>其次如果在第一步后开始数据传输，万一服务器实际上没有收到消息呢，这样不就白传输了吗，所以第二部服务器的回传是必要的</p>
+<p>那么我们只进行两步呢，万一客户端实际上收不到服务器的信息呢，第三步就可以很好的避免这一点</p>
+<p>这三步很好的确保了双方都可以正常的收发消息，通常这些步骤被称为三次握手</p>
+<p>那么通信结束后有改怎样呢，分为四步</p>
+<p>第一步：客户端（或主动关闭方）发送一个带有FIN（完成）标志的报文段给服务器，表示它已经完成数据的发送工作，不再需要保持连接。</p>
+<p>第二步：服务器（或被动关闭方）接收到FIN报文，回复一个带有ACK（Acknowledgment）标志的报文段，表明它已经收到关闭请求，但是由于连接可能还在使用，比如有数据包还没发完之类的，所以此时不会立即关闭。</p>
+<p>第三步：服务器处理完手头剩下的事情后，发送一个带有FIN标志的报文段给客户端，表示它也准备好关闭连接。</p>
+<p>第四步：客户端收到服务器的FIN报文，发送一个带有ACK标志的报文段作为最终确认。此时，客户端进入 <code>TIME_WAIT</code> 状态，一段时间后才真正关闭连接，目的是确保服务器能够收到ACK报文。</p>
+<p>这四步的具体作用我不再具体分析，但想必你一定能看明白，这是一个十分严谨的过程，能充分保证信息的完整传输</p>
+<p>而在数据传输时，收信方在收到信息后还会再向发信方再发送一个ack包告诉发信方信息已确认收到</p>
+<p>在发信的过程中，发信方实际上会将一个大数据包拆分为多个小数据包放入缓存再一次发送，收信方也会将所有的信息缓存后再同意读取</p>
+<h2 id="TCP-IP协议栈"><a href="#TCP-IP协议栈" class="headerlink" title="TCP\IP协议栈"></a>TCP\IP协议栈</h2><p>在前面我们谈到了OIS网络模型，事实上我们一般认为当前的网络是另一套更为简洁的架构，也就是TCP&#x2F;IP协议栈，但注意OIS模型的不同层实际上都是可以映射到TCP&#x2F;IP协议栈中的，先来看看它的结构吧</p>
+<h4 id="1-应用层"><a href="#1-应用层" class="headerlink" title="1. 应用层"></a><strong>1. 应用层</strong></h4><ul>
+<li>功能<ul>
+<li>提供用户与网络通信的接口。</li>
+<li>定义用于具体网络服务的协议，例如网页浏览、文件传输、邮件发送等。</li>
+<li>将数据打包为适合网络传输的格式，并将接收到的数据转换为用户可理解的格式。</li>
+</ul>
+</li>
+<li>常见协议<ul>
+<li><strong>HTTP（超文本传输协议）</strong>：用于Web浏览器和服务器之间的通信。</li>
+<li><strong>DNS（域名系统）</strong>：将域名解析为IP地址。</li>
+<li><strong>FTP（文件传输协议）</strong>：用于文件上传和下载。</li>
+<li><strong>SMTP（简单邮件传输协议）</strong>：用于电子邮件发送。</li>
+<li><strong>Telnet</strong>：用于远程登录。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="2-传输层"><a href="#2-传输层" class="headerlink" title="2. 传输层"></a><strong>2. 传输层</strong></h4><ul>
+<li>功能<ul>
+<li>提供端到端的数据传输服务。</li>
+<li>负责数据的分段、重组，以及流量控制和差错检测。</li>
+<li>使用端口号区分应用程序的数据流。</li>
+</ul>
+</li>
+<li>主要协议<ul>
+<li>TCP（传输控制协议）<ul>
+<li>面向连接，提供可靠的数据传输。</li>
+<li>包括数据分段、确认应答、重传和流量控制。</li>
+<li>使用场景：文件传输（FTP）、邮件（SMTP）、网页浏览（HTTP）。</li>
+</ul>
+</li>
+<li>UDP（用户数据报协议）<ul>
+<li>无连接，不保证可靠性，但传输速度快。</li>
+<li>使用场景：实时通信（VoIP）、视频流传输（直播）、DNS查询。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="3-网络层"><a href="#3-网络层" class="headerlink" title="3. 网络层"></a><strong>3. 网络层</strong></h4><ul>
+<li>功能<ul>
+<li>负责数据包的路由和转发。</li>
+<li>使用逻辑地址（IP地址）标识网络中的设备。</li>
+<li>实现跨网络的通信。</li>
+</ul>
+</li>
+<li>主要协议<ul>
+<li>IP（互联网协议）<ul>
+<li><strong>IPv4</strong>：32位地址空间，广泛使用。</li>
+<li><strong>IPv6</strong>：128位地址空间，支持更大范围的设备。</li>
+</ul>
+</li>
+<li>ICMP（互联网控制消息协议）<ul>
+<li>用于发送网络状态信息，如Ping测试的回应。</li>
+</ul>
+</li>
+<li>ARP（地址解析协议）<ul>
+<li>将IP地址解析为物理地址（MAC地址）。</li>
+</ul>
+</li>
+<li>RARP（反向地址解析协议）<ul>
+<li>将MAC地址解析为IP地址。</li>
+</ul>
+</li>
+<li>OSPF、BGP<ul>
+<li>路由协议，用于动态路由信息交换。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="4-数据链路层"><a href="#4-数据链路层" class="headerlink" title="4. 数据链路层"></a><strong>4. 数据链路层</strong></h4><ul>
+<li>功能<ul>
+<li>负责点到点的数据帧传输。</li>
+<li>提供物理地址（MAC地址）和错误检测功能。</li>
+<li>定义如何通过物理介质传输数据。</li>
+</ul>
+</li>
+<li>主要协议<ul>
+<li>Ethernet（以太网协议）<ul>
+<li>定义局域网通信标准。</li>
+</ul>
+</li>
+<li>Wi-Fi（无线网络协议）<ul>
+<li>提供无线局域网通信。</li>
+</ul>
+</li>
+<li>PPP（点对点协议）<ul>
+<li>用于串行链路上的数据传输。</li>
+</ul>
+</li>
+<li>VLAN（虚拟局域网）<ul>
+<li>提供局域网的逻辑分段。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="TCP-IP协议栈与OSI模型的对比"><a href="#TCP-IP协议栈与OSI模型的对比" class="headerlink" title="TCP&#x2F;IP协议栈与OSI模型的对比"></a>TCP&#x2F;IP协议栈与OSI模型的对比</h3><table>
+<thead>
+<tr>
+<th>OSI模型</th>
+<th>TCP&#x2F;IP协议栈</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>应用层、表示层、会话层</td>
+<td>应用层</td>
+<td>提供用户服务和应用接口。</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>传输层</td>
+<td>实现端到端的可靠或快速数据传输。</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>网络层</td>
+<td>负责路由和跨网络传输，使用逻辑地址标识设备。</td>
+</tr>
+<tr>
+<td>数据链路层、物理层</td>
+<td>链路层</td>
+<td>定义局域网通信和物理信号传输。</td>
+</tr>
+</tbody></table>
+<p>好的，我知道你记不住，我也记不住，但你至少要知道有这么回事，用得着的时候要知道查什么</p>
+<h2 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h2><p>好的,接下来简单说一说udp报文通信,这是和TCP并列的一种通信的方式,这种方式没有那么多复杂的流程,简单来说就是闭着眼发信息,只在信息头添加一个自己来自于何处,要发到哪里的声明,然后就是闭着眼发,没有任何的数据校验流程</p>
+<p>这种方式显而易见的好处是快,或者说方便,一般在一些对信息的完整性要求没那么高又要求快的领域如直播内大量使用</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>其实这些东西只是一点皮毛,但至少有了这么一个认识,接下来要讲的内容就好说多了.(我不会告诉你实际上是东西太多我有点写不动了),下一期预计也会在这几天,我们一起实现一个简单的群聊功能认识一下Java中如何实现网络通信</p>
+<p><a href="https://s1.imagehub.cc/images/2025/01/11/836345e64d72b8094d2b7494c3a71a94.jpg"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/836345e64d72b8094d2b7494c3a71a94.jpg"
+                      alt="06bc52d5 6ad1 415c a4ff b06aa530e20f"
+                ></a></p>
+]]></content>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>链表初步</title>
     <url>/2024/11/27/%E9%93%BE%E8%A1%A8%E5%88%9D%E6%AD%A5/</url>
-    <content><![CDATA[<h1 id="链表初步"><a href="#链表初步" class="headerlink" title="链表初步"></a>链表初步</h1><p>最近也是开始入算法的坑，学校要求完成一个小的C语言项目实践，主要用到链表和文件处理，索性先对链表做一个简单的总结。</p>
+    <content><![CDATA[<p>最近也是开始入算法的坑，学校要求完成一个小的C语言项目实践，主要用到链表和文件处理，索性先对链表做一个简单的总结。</p>
 <h2 id="认识链表"><a href="#认识链表" class="headerlink" title="认识链表"></a>认识链表</h2><p>要创建链表，我们首先要了解链表的本质：一连串的结构体或者说对象（由于是C语言，我在下文统一称为结构体），每个结构体中都保存了下个结构体的指针（当然，这并不绝对），也就是说，链表的存储并不是类似于数组的存放在一片连续的内存空间，而是存放在随机的内存空间中</p>
 <p>现在，来创造一个简单的链表的结构</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">struct ListNode&#123;</span><br><span class="line">    int num;</span><br><span class="line">    struct ListNode *next;</span><br><span class="line">&#125;;//一般的表达方式</span><br><span class="line">typedef struct ListNode&#123;</span><br><span class="line">    int num;</span><br><span class="line">    struct ListNode *next;</span><br><span class="line">&#125;Node;//为了后文书写方便，我们直接定义类型Node</span><br><span class="line"></span><br><span class="line">C</span><br></pre></td></tr></table></figure></div>
